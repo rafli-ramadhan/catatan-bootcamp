@@ -53,5 +53,6 @@
 * [Package](package/README.md)
   * [Fmt](package/fmt.md)
   * [Args](package/args.md)
-  * [Atoi](package/atoi.md)
-  * [Itoa](package/itoa.md)
+  * [Strings](package/strings/README.md)
+    * [Atoi](package/strings/atoi.md)
+    * [Itoa](package/strings/itoa.md)
