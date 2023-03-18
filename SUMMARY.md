@@ -27,7 +27,7 @@
       * [Function vs Procedure](function-in-golang/function-vs-procedure.md)
       * [Private vs Public Function](function-in-golang/private-vs-public-function.md)
       * [Function dengan Return Multiple Value](function-in-golang/function-dengan-return-multiple-value.md)
-      * [Vardiac Function](function-in-golang/vardiac-function.md)
+      * [Variadic Function](variable-and-data-type/reference-type/function-in-golang/variadic-function.md)
       * [Function as Parameter](function-in-golang/function-as-parameter.md)
       * [Function Type Declaration](function-in-golang/function-type-declaration.md)
       * [Anonymous Function](function-in-golang/anonymous-function.md)

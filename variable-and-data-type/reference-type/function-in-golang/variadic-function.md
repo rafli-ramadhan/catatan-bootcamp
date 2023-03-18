@@ -1,8 +1,6 @@
-# Vardiac Function
+# Variadic Function
 
-Variadic -> untuk memungkinkan fungsi dengan input parameter lebih dari 1 data (varargs) dengan tipe data yang sama.
-
-Parameter terkahir dari sebuah function dapat dibuat variadic.
+Variadic -> untuk memungkinkan fungsi dengan input parameter lebih dari 1 data (varargs) dengan tipe data yang sama. -> Hanya untuk parameter terkahir dari sebuah function.
 
 Keunggulannya ->tidak perlu membuat array atau slice terlebih dahulu, kita bisa langsung mengirim datanya dan dipisahkan dengan tanda koma.
 
