@@ -1,4 +1,4 @@
-# Struct & Interface
+# Interface
 
 \-> Kumpulan definisi properti berupa variabel dengan berbagai tipe data, struct atau fungsi dalam bentuk method.
 

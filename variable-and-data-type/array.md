@@ -1,7 +1,5 @@
 # Array
 
-
-
 ```go
 package main
 

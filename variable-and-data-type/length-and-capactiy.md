@@ -2,7 +2,7 @@
 description: Slice dan Array
 ---
 
-# Length and Capactiy
+# Slice Length and Capactiy
 
 ```go
 package main
