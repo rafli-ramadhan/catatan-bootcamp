@@ -50,6 +50,7 @@
 * [Nil](nil.md)
 * [Pointer](pointer/README.md)
   * [Pointer vs Pass By Value](pointer/pointer-vs-pass-by-value.md)
+  * [Nil Pointer](pointer/nil-pointer.md)
   * [Operator & dan \*](pointer/operator-and-dan.md)
   * [Pointer di Function](pointer/pointer-di-function.md)
   * [Pointer di Method](pointer/pointer-di-method.md)
