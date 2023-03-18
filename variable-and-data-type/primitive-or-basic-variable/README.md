@@ -1,9 +1,6 @@
-# Primitive Variable
+# Primitive or Basic Variable
 
-Int -> default 0\
-Float -> default 0\
-String -> default ""\
-Bool -> default false
+Tipe data basic : number (int, float), string dan boolean
 
 ```go
 package main
