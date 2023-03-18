@@ -1,6 +1,6 @@
 # Tricky Case
 
-Kenapa saat akses data variabel pointer di struct tidak pakai \*, sementara di variabel primitif pakai \*.
+Saat akses data variabel pointer di struct tidak pakai \*, sementara di variabel primitif pakai \*.
 
 ```go
 package main

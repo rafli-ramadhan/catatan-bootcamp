@@ -1,4 +1,4 @@
-# Pointer di Function
+# Pointer in Function
 
 ```go
 package main

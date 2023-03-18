@@ -1,4 +1,4 @@
-# Pointer di Method
+# Pointer in Method
 
 ```go
 package main
