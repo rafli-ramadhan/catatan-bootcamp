@@ -2,6 +2,7 @@
 
 * [Variable and Data Type](README.md)
   * [Primitive Variable](variable-and-data-type/primitive-variable.md)
+  * [Int32, Int64, Float32, Float64](variable-and-data-type/int32-int64-float32-float64.md)
   * [Iota (Auto incement)](variable-and-data-type/iota-auto-incement.md)
   * [Array](variable-and-data-type/array.md)
   * [Slice](variable-and-data-type/slice/README.md)
@@ -13,8 +14,7 @@
     * [Make Slice 2](variable-and-data-type/slice/make-slice-2.md)
   * [Map](variable-and-data-type/map.md)
   * [Length and Capactiy](variable-and-data-type/length-and-capactiy.md)
-  * [Type Declaration](variable-and-data-type/type-declaration.md)
-  * [Untitled](variable-and-data-type/untitled.md)
+  * [Type Declaration (Alias)](variable-and-data-type/type-declaration-alias.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
   * [If Else](if-else-dan-switch/if-else.md)
   * [Exercise](if-else-dan-switch/exercise.md)
