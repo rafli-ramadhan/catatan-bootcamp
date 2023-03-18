@@ -56,3 +56,4 @@
   * [Strings](package/strings/README.md)
     * [Atoi](package/strings/atoi.md)
     * [Itoa](package/strings/itoa.md)
+* [Implementasi Struct dan Interface](implementasi-struct-dan-interface.md)
