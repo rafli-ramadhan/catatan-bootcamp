@@ -8,30 +8,42 @@ Kekurangan pointer -> jika nilai variabel yang me-reference variabel lain diubah
 
 ```go
 package main
-
-import (
-    "fmt"
-)
-
-type Address struct{
-    City     string
-    Province string
-    Country  string
-}
+import "fmt"
 
 func main() {
-    name1 := "member_1"
-    name1 = ChangeName(name1)
-    fmt.Println(name1)
-}
+  var num  int
+  var ptr *int
+    
+  num = 22
+  fmt.Println("Address of num:",&num)
+  fmt.Println("Value of num:",num)
 
-func ChangeName(name string) string {
-    name = "member_2"
-    return name
+  // assign the memory address of variable to the pointer
+  ptr = &num
+  fmt.Println("\nAddress of pointer:",ptr)
+  fmt.Println("Value of pointer:",*ptr)
+    
+  num = 11
+  fmt.Println("\nAddress of pointer:",ptr)
+  fmt.Println("Value of pointer:",*ptr)
+    
+  *ptr = 2
+  fmt.Println("\nAddress of num:",&num)
+  fmt.Println("Value of num:",num)
 }
 ```
 
 ```
-member_2
+Address of num: 0xc0000ba000
+Value of num: 22
+
+Address of pointer: 0xc0000ba000
+Value of pointer: 22
+
+Address of pointer: 0xc0000ba000
+Value of pointer: 11
+
+Address of num: 0xc0000ba000
+Value of num: 2
 ```
 
