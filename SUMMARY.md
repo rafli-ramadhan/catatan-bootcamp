@@ -34,6 +34,7 @@
       * [Function Input from CLI](function-in-golang/function-input-from-cli.md)
       * [Exercise (Function)](function-in-golang/exercise-function.md)
   * [Type Declaration (Alias)](variable-and-data-type/type-declaration.md)
+* [🚀 Golang Example Code By Topic](golang-example-code-by-topic.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
   * [If Else](if-else-dan-switch/if-else.md)
   * [Exercise](if-else-dan-switch/exercise.md)
