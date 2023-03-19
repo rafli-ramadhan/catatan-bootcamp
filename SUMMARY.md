@@ -1,10 +1,11 @@
 # Table of contents
 
 * [🚀 Golang Example Code By Topic](README.md)
+* [Static Type of Go](static-type-of-go.md)
 * [Variable and Constant](variable-and-constant/README.md)
   * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
   * [Var vs Operator :=](variable-and-constant/var-vs-operator.md)
-  * [Iota (Auto incement)](variable-and-constant/iota-auto-incement.md)
+  * [Iota (Auto incement)](variable-and-data-type/iota-auto-incement.md)
 * [Variable and Data Type](<README (1).md>)
   * [Primitive or Basic Variable](variable-and-data-type/primitive-variable.md)
     * [Int & Uint (Unsigned Integer)](variable-and-data-type/primitive-or-basic-variable/int-and-uint-unsigned-integer.md)
