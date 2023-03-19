@@ -49,6 +49,13 @@ func main() {
 }
 ```
 
+```
+Welcome Firman
+Bot : Welcome Firman
+Hi Andi
+Bot : Hi Andi
+```
+
 ```go
 package main
 
@@ -63,7 +70,7 @@ func main() {
 
     var number1 any = 2
     var number2 any = 3
-    hasil := number1.(int64) + number2.(int64)
+    hasil := number1.(int) + number2.(int)
     fmt.Println(hasil)
 
     var user any = []string{"member_01", "member_02", "member_03"}
@@ -74,3 +81,10 @@ func main() {
 }
 ```
 
+```
+member_01
+5
+member_01
+member_02
+member_03
+```

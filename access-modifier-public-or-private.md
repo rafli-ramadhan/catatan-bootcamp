@@ -1,4 +1,4 @@
-# Access Modifier
+# Access Modifier (Public or Private)
 
 Menentukan access modifier cukup dengan nama function atau variabel.\
 Nama variabel atau function besar -> bisa diakses di package lain

@@ -73,4 +73,4 @@
   * [Strings](package/strings/README.md)
     * [Atoi](package/strings/atoi.md)
     * [Itoa](package/strings/itoa.md)
-* [Struct dan Interface Implementation](struct-dan-interface-implementation.md)
+* [Struct and Interface Implementation Example](struct-and-interface-implementation-example.md)
