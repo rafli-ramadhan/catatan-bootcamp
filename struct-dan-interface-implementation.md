@@ -1,4 +1,4 @@
-# Struct dan Interface Implementation
+# Struct and Interface Implementation Example
 
 ```go
 package main
