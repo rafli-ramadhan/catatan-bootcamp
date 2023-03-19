@@ -74,3 +74,14 @@ func main() {
     user3.Greeting()
 }
 ```
+
+```
+
+User 1 : {member_001 test01@gmail.com 1234 {Jakarta  } {Malang  }}
+User 2 : {member_002 test02@gmail.com 1234 {Semarang Jawa tengah Indonesia} {Jakarta DKI Jakarta Indonesia}}
+User 3 : {member_003  0 {Solo  } {Jakarta  }}
+
+Hi member_001
+Hi member_002
+Hi member_003
+```
