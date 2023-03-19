@@ -65,7 +65,7 @@
   * [Tricky Case](pointer/tricky-case.md)
   * [Pointer in Function](pointer/pointer-di-function.md)
   * [Pointer in Method](pointer/pointer-di-method.md)
-* [Access Modifier](access-modifier.md)
+* [Access Modifier (Public or Private)](access-modifier-public-or-private.md)
 * [Blank Identifier](blank-identifier.md)
 * [Package](package/README.md)
   * [Fmt](package/fmt.md)
