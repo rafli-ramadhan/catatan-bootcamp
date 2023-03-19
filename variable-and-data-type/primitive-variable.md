@@ -7,7 +7,7 @@ package main
 
 import "fmt"
 
-var d int // bisa digunakan di level package, tidak bisa untuk handle function yang return multi variable
+var d int
 
 // variabel :-> tempat yang digunakan untuk menyimpan suatu nilai baik sementara maupun tetap
 func main() {

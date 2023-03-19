@@ -1,6 +1,10 @@
 # Table of contents
 
 * [🚀 Golang Example Code By Topic](README.md)
+* [Variable and Constant](variable-and-constant/README.md)
+  * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
+  * [Var vs Operator :=](variable-and-constant/var-vs-operator.md)
+  * [Iota (Auto incement)](variable-and-constant/iota-auto-incement.md)
 * [Variable and Data Type](<README (1).md>)
   * [Primitive or Basic Variable](variable-and-data-type/primitive-variable.md)
     * [Int & Uint (Unsigned Integer)](variable-and-data-type/primitive-or-basic-variable/int-and-uint-unsigned-integer.md)
@@ -10,9 +14,8 @@
   * [Aggregate Type](variable-and-data-type/aggregate-type/README.md)
     * [Array](variable-and-data-type/array.md)
     * [Struct](variable-and-data-type/aggregate-type/struct/README.md)
-      * [Struct, Embedded Struct, Struct Method](variable-and-data-type/aggregate-type/struct/struct-embedded-struct-struct-method.md)
+      * [Struct, Embedded Struct, Struct Method](struct-and-interface/struct-embedded-struct-struct-method.md)
       * [Struct Comparation](variable-and-data-type/aggregate-type/struct/struct-comparation.md)
-  * [Iota (Auto incement)](variable-and-data-type/iota-auto-incement.md)
   * [Reference Type](variable-and-data-type/reference-type/README.md)
     * [Slice](variable-and-data-type/slice/README.md)
       * [Slice Get Value from Array](variable-and-data-type/slice/slice-get-value-from-array.md)
