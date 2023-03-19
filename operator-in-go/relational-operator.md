@@ -1,6 +1,6 @@
 # Relational Operator
 
-Relational operator -> == && !=
+Relational operator -> Operasi untuk membadingkan dua buah data untuk menentukan true atau false. ->  >, <, >=, <=, == && !=
 
 ```go
 package main

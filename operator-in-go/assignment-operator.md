@@ -1,6 +1,6 @@
 # Assignment Operator
 
-Assignment operator -> ++, --, +=, -=, \*=, /= and %=
+Assignment operator -> menetapkan nilai -> =,+=, -=, \*=, /= and %=
 
 ```go
 package main

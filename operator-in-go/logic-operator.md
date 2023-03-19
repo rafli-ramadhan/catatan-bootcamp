@@ -1,6 +1,6 @@
 # Logic Operator
 
-Logical -> And (&&), Or(|), Not (!)
+Logical -> And, Or, Not/Negasi -> &&, ||, !
 
 ```go
 package main

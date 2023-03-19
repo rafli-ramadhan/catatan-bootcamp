@@ -1,6 +1,6 @@
 # Aritmetic Operator
 
-Aritmatik -> <, >, =&#x20;
+Aritmetic operator -> +, -, \*, /, %, ++, --
 
 ```go
 package main
