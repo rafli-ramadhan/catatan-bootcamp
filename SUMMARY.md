@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Variable and Data Type](README.md)
+* [🚀 Golang Example Code By Topic](README.md)
+* [Variable and Data Type](<README (1).md>)
   * [Primitive or Basic Variable](variable-and-data-type/primitive-variable.md)
     * [Int & Uint (Unsigned Integer)](variable-and-data-type/primitive-or-basic-variable/int-and-uint-unsigned-integer.md)
     * [Float](variable-and-data-type/primitive-or-basic-variable/float.md)
@@ -34,7 +35,6 @@
       * [Function Input from CLI](function-in-golang/function-input-from-cli.md)
       * [Exercise (Function)](function-in-golang/exercise-function.md)
   * [Type Declaration (Alias)](variable-and-data-type/type-declaration.md)
-* [🚀 Golang Example Code By Topic](golang-example-code-by-topic.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
   * [If Else](if-else-dan-switch/if-else.md)
   * [Exercise](if-else-dan-switch/exercise.md)
