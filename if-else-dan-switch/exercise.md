@@ -1,5 +1,11 @@
 # Exercise
 
+1. Determine student grades.
+2. Calculating the price with the process of input, quantity and discount.
+3. Compute the vowel alphabet from a string.
+4. Calculate the factorial.
+5. Check the odd or even number of the input string.
+
 ```go
 package main
 

@@ -1,6 +1,6 @@
 # Assignment Operator
 
-Assignment operator -> ++, --, +=, -=, \*=, /=
+Assignment operator -> ++, --, +=, -=, \*=, /= and %=
 
 ```go
 package main
@@ -57,4 +57,19 @@ func main() {
 
 	// d /= false // -> invalid operation: operator / not defined for d (variable of type bool)
 }
+```
+
+```
+6
+3
+6
+2
+0
+7.2
+3.2
+9.600000000000001
+4.800000000000001
+test1test2
+true
+
 ```

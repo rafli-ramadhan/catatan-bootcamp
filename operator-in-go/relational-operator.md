@@ -1,6 +1,6 @@
 # Relational Operator
 
-
+Relational operator -> == && !=
 
 ```go
 package main
@@ -46,4 +46,12 @@ func main() {
 	var compareFloat2 bool = float3 == float4
 	fmt.Println(compareFloat2)
 }
+```
+
+```
+false
+false
+true
+false
+true
 ```

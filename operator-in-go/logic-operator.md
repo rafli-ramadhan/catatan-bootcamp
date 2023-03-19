@@ -1,6 +1,6 @@
 # Logic Operator
 
-Logical -> And, Or, Not
+Logical -> And (&&), Or(|), Not (!)
 
 ```go
 package main
@@ -23,3 +23,8 @@ func main() {
 }
 ```
 
+```
+left && right 	(false)
+left || right 	(true)
+!left 		(true)
+```
