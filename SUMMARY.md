@@ -76,3 +76,5 @@
     * [Atoi](package/strings/atoi.md)
     * [Itoa](package/strings/itoa.md)
 * [Struct and Interface Implementation Example](struct-dan-interface-implementation.md)
+* [JSON](json/README.md)
+  * [Decode JSON to Struct](json/decode-json-to-struct.md)
