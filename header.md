@@ -14,7 +14,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
-		fmt.Printf("Server running")
+		fmt.Println("Server running")
 
 		headerAccept := request.Header.Get("Accept")
 		fmt.Fprintf(write, "Header accept data : %s\n", headerAccept)

@@ -10,7 +10,7 @@ import (
 
 func main() {
 	var handler http.HandlerFunc = func(write http.ResponseWriter, result *http.Request) {
-		fmt.Printf("Server running")
+		fmt.Println("Server running")
 		fmt.Fprintf(write, "Server running")
 	}
 

@@ -14,7 +14,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, result *http.Request) {
-		fmt.Printf("Server running")
+		fmt.Println("Server running")
 		fmt.Fprintf(write, "Server running")
 	}
 	mux.HandleFunc("/main", handlerMain)

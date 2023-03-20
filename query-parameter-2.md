@@ -16,7 +16,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
-		fmt.Printf("Server running")
+		fmt.Println("Server running")
 
 		urlValues := request.URL.Query()
 		fmt.Fprintf(write, "Data 1 : %s\n", urlValues["name"])

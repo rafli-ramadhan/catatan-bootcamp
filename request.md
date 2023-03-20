@@ -15,7 +15,7 @@ func main() {
 
 	// r -> struct
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
-		fmt.Printf("Server running")
+		fmt.Println("Server running")
 		fmt.Fprintf(write, "Server running")
 		fmt.Fprintf(write, request.Method)
 		fmt.Fprintf(write, request.RequestURI)
