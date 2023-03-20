@@ -81,3 +81,4 @@
   * [Encode Struct to JSON](json/encode-struct-to-json.md)
   * [Decode JSON to Map Interface](json/decode-json-to-map-interface.md)
   * [Encode Map Interface to JSON](json/encode-map-interface-to-json.md)
+  * [Tag](json/tag.md)
