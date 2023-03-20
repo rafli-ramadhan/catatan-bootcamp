@@ -2,7 +2,9 @@
 
 Query parameter -> data yang disimpan di URI
 
-URL -> localhost:5000?name=andi\&age=21
+Query parameter -> case sensitif -> huruf besar kecil berpengaruh
+
+URL -> [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)&#x20;
 
 Code -> request.URL.Query.Get()
 
@@ -12,7 +14,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"strconv"
 )
 
 func main() {
@@ -20,8 +21,6 @@ func main() {
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
 		fmt.Printf("Server running")
-		// fmt.Fprintf(write, request.Method)
-		// fmt.Fprintf(write, request.RequestURI)
 
 		name := request.URL.Query().Get("name")
 		if name != "" {
@@ -32,7 +31,7 @@ func main() {
 
 		age := request.URL.Query().Get("age")
 		if age != "" {
-			fmt.Fprintf(write, "Age : %s\n", &age)
+			fmt.Fprintf(write, "Age : %s\n", age)
 		} else {
 			fmt.Fprintf(write, "Data in age query parameter is not exist\n")
 		}
@@ -49,4 +48,11 @@ func main() {
 		panic(err.Error())
 	}
 }
+```
+
+Output di web browser:
+
+```
+Name : andi
+Age : 21
 ```

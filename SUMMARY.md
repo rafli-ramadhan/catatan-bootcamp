@@ -92,3 +92,5 @@
 * [Request](request.md)
 * [Query Parameter](query-parameter.md)
 * [Query Parameter 2](query-parameter-2.md)
+* [Header](header.md)
+* [Page 1](page-1.md)
