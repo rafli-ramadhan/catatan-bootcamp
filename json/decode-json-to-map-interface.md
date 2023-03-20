@@ -1,6 +1,6 @@
-# Decode JSON to Struct
+# Decode JSON to Map Interface
 
-JSON -> Struct
+JSON -> Map interface
 
 ```go
 package main
@@ -10,16 +10,11 @@ import (
     "fmt"
 )
 
-type User struct {
-    Name string `json:"Name"`
-    Age  int
-}
-
 func main() {
     var jsonString = `{"Name": "john wick", "Age": 27}`
     var jsonData = []byte(jsonString)
 
-    var user User
+    var user map[string]interface{}
     // json -> struct
     var err = json.Unmarshal(jsonData, &user)
     if err != nil {
@@ -32,5 +27,5 @@ func main() {
 ```
 
 ```
-{john wick 27}
+map[Age:27 Name:john wick]
 ```
