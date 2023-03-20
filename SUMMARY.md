@@ -41,6 +41,7 @@
       * [Function Input from CLI](function-in-golang/function-input-from-cli.md)
       * [Exercise (Function)](function-in-golang/exercise-function.md)
   * [Type Declaration (Alias)](variable-and-data-type/type-declaration.md)
+* [Kebab Case, Camel Case and Snake Case](kebab-case-camel-case-and-snake-case.md)
 * [Data Type Conversion](data-type-conversion/README.md)
   * [Int -> Float, Float -> Int](data-type-conversion/int-greater-than-float-float-greater-than-int.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
