@@ -11,7 +11,7 @@ import (
 )
 
 type User struct {
-    Name string `json:"Name"`
+    Name string
     Age  int
 }
 
