@@ -16,7 +16,8 @@ type User struct {
 }
 
 func main() {
-    users := []User{{"john wick", 27}, {"ethan hunt", 32}}
+    users := []User{{"andi", 21}, {"andre", 20}}
+    // struct -> json
     var jsonData, err = json.Marshal(users)
     if err != nil {
         fmt.Println(err.Error())
@@ -29,5 +30,5 @@ func main() {
 ```
 
 ```
-[{"Name":"john wick","Age":27},{"Name":"ethan hunt","Age":32}]
+[{"Name":"andi","Age":21},{"Name":"andre","Age":20}]
 ```

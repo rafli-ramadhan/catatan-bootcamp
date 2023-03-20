@@ -28,9 +28,13 @@ func main() {
     }
 
     fmt.Println(user)
+    fmt.Println(user.Name)
+    fmt.Println(user.Age)
 }
 ```
 
 ```
-{john wick 27}
+{andri 21}
+andri
+21
 ```

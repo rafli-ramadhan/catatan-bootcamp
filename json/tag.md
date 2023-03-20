@@ -1,6 +1,7 @@
 # Tag
 
-Tag -> anotasi setelah deklarasi variabel di struct.&#x20;
+Tag -> mapping \
+Digunakan untuk penamaan field saat konversi dari JSON ke golang object atau sebaliknya.&#x20;
 
 ```go
 package main
