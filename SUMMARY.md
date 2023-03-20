@@ -77,6 +77,7 @@
     * [Itoa](package/strings/itoa.md)
 * [Struct and Interface Implementation Example](struct-dan-interface-implementation.md)
 * [JSON](json/README.md)
+  * [JSON vs XML](json/json-vs-xml.md)
   * [Decode JSON to Struct](json/decode-json-to-struct.md)
   * [Encode Struct to JSON](json/encode-struct-to-json.md)
   * [Decode JSON to Map Interface](json/decode-json-to-map-interface.md)
