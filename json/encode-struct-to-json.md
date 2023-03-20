@@ -16,7 +16,10 @@ type User struct {
 }
 
 func main() {
-    users := []User{{"andi", 21}, {"andre", 20}}
+    users := []User{
+        {"andi", 21}, 
+        {"andre", 20}
+    }
     // struct -> json
     var jsonData, err = json.Marshal(users)
     if err != nil {

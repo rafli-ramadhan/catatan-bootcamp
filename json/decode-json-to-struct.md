@@ -17,7 +17,7 @@ type User struct {
 
 func main() {
     var jsonString = `{"Name": "john wick", "Age": 27}`
-    var jsonData = []byte(jsonString)
+    var jsonData = []byte(jsonString) // slice byte
 
     var user User
     // json -> struct

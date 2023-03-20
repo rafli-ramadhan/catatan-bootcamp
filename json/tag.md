@@ -1,6 +1,6 @@
 # Tag
 
-Tag -> Digunakan untuk penamaan field saat konversi dari JSON ke golang object atau sebaliknya.&#x20;
+Tag -> Mapping nama parameter ke JSON -> Digunakan untuk penamaan field saat konversi dari struct/map\[string]interface ke JSON.&#x20;
 
 ```go
 package main
