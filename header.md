@@ -1,6 +1,10 @@
 # Header
 
-Code -> request.Header.Get()
+Untuk mendapatkan header dari sisi client
+
+```go
+request.Header.Get()
+```
 
 ```go
 package main

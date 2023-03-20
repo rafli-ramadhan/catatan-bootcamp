@@ -46,7 +46,7 @@ Server running
 Success
 ```
 
-## HTTP Test for 2 Path
+## HTTP Test for > 1 URL
 
 ```go
 package main

@@ -2,7 +2,9 @@
 
 URL -> [http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)
 
-Code -> request.URL.Query() -> Output -> map\[string]\[]string
+```go
+request.URL.Query() // Output -> map[string][]string
+```
 
 ```go
 package main

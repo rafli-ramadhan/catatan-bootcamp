@@ -6,7 +6,9 @@ Query parameter -> case sensitif -> huruf besar kecil berpengaruh
 
 URL -> [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)&#x20;
 
-Code -> request.URL.Query.Get()
+```go
+request.URL.Query.Get()
+```
 
 ```go
 package main

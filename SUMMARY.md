@@ -94,3 +94,4 @@
 * [Query Parameter 2](query-parameter-2.md)
 * [Header](header.md)
 * [HTTP Test](http-test.md)
+* [Add New Request Header](add-new-request-header.md)
