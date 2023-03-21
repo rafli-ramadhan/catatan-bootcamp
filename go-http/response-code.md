@@ -8,7 +8,7 @@ Code :
 
 
 
-## List of Response Code
+## List of Frequently Used Response Code
 
 200 -> http.StatusOk -> Ok
 
