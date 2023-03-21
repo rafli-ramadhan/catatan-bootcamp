@@ -9,7 +9,7 @@ curl -X GET http://localhost:5000
 ## HTTP Post Method, Example :
 
 ```bash
->curl -X POST -d "first_name=Utsman,last_name=Bey,age=20" http://localhost:5000/t
+curl -X POST -d "first_name=Utsman,last_name=Bey,age=20" http://localhost:5000/t
 ```
 
 ## Example Code
@@ -92,3 +92,7 @@ CMD 1 (Response)
 D:\go-server>go run .
 Hello Utsman,last_name=Bey,age=20  and I am  years old
 ```
+
+## Reference
+
+{% embed url="https://superuser.com/questions/149329/how-do-i-make-a-post-request-using-curl" %}
