@@ -98,5 +98,6 @@
   * [Add New Request Header](go-http/add-new-request-header.md)
   * [Form Post, Request.PostForm](go-http/form-post-request.postform.md)
   * [Write Header in Response](go-http/write-header-in-response.md)
+  * [Hit Endpoint using Curl](go-http/hit-endpoint-using-curl.md)
   * [HTTP Stateless](go-http/http-stateless.md)
   * [Get and Set Cookie](go-http/get-and-set-cookie.md)
