@@ -13,7 +13,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	// r -> struct
+	// request -> data type -> struct
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
 		fmt.Println("Server running")
 		fmt.Fprintf(write, "Server running")
