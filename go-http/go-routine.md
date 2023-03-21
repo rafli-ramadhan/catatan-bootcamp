@@ -1,10 +1,10 @@
 # Go Routine
 
-Go routine -> menjalakan go routine,&#x20;
+Go routine -> untuk menjalakan concurrency di golang -> sifatnya asynchronous -> random.
 
-
-
-
+{% embed url="https://miro.medium.com/v2/resize:fit:1400/1*ylONk4ex9q6IK68C6USRBg.jpeg" %}
+[https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg](https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg)
+{% endembed %}
 
 ```go
 package main
