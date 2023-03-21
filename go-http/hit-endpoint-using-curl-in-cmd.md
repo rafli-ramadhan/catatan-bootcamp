@@ -9,7 +9,8 @@ curl -X GET http://localhost:5000
 ## HTTP Post Method, Example :
 
 ```bash
-curl -X POST -d "first_name=Utsman,last_name=Bey,age=20" http://localhost:5000/t
+curl -X POST -d "first_name=Umar&last_name=Bawazir&age=20" http://localhost:5000/post
+Hello Umar Bawazir. Iam 20 years old.
 ```
 
 ## Example Code
@@ -23,6 +24,7 @@ import (
 )
 
 func HandlerGet(write http.ResponseWriter, request *http.Request) {
+	fmt.Println("Success", http.StatusOK)
 	fmt.Println("Success")
 	fmt.Fprintf(write, "Success")
 }
@@ -36,6 +38,7 @@ func HandlerFormPost(write http.ResponseWriter, request *http.Request) {
 	firstName := request.PostForm.Get("first_name")
 	lastName := request.PostForm.Get("last_name")
 	age := request.PostForm.Get("age")
+	fmt.Println("Success", http.StatusOK)
 	fmt.Printf("Hello %s %s and I am %s years old", firstName, lastName, age)
 	fmt.Fprintf(write, "Hello %s %s and I am %s years old", firstName, lastName, age)
 }

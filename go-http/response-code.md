@@ -6,7 +6,11 @@ Code :
  w.WriteHeader(http.StatusBadRequest)
 ```
 
+atau
 
+```go
+fmt.Println("Success", http.StatusOK)
+```
 
 ## List of Frequently Used Response Code
 
