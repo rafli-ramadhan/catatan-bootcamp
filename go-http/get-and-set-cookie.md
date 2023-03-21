@@ -4,6 +4,18 @@ Cookie merupakan data yang dibuat di server dan dikirimkan ke web browser dan se
 
 Penerapan -> untuk menyimpan data token saat user login.
 
+Get Cookie
+
+```
+request.Cookie()
+```
+
+Set Cookie
+
+```
+http.SetCookie(write, cookie)
+```
+
 ```go
 package main
 
