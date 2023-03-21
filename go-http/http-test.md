@@ -22,7 +22,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/test", Test)
 
-	// request & response
+	// httptest
 	request := httptest.NewRequest("GET", "http://localhost:5000/test", nil)
 	recorder := httptest.NewRecorder()
 

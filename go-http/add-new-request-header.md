@@ -3,7 +3,7 @@
 Untuk menambahkan request header baru
 
 ```go
-request.Header.Add()
+request.Header.Add("Content-Type", "application/json")
 ```
 
 ```go
@@ -26,7 +26,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/test", RequestHeader)
 
-	// request & response
+	// httptest
 	request := httptest.NewRequest("GET", "http://localhost:5000/test", nil)
 	request.Header.Add("Content-Type", "application/json")
 	recorder := httptest.NewRecorder()

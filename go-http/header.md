@@ -1,5 +1,9 @@
 # Header
 
+Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request.
+
+Header mirip seperti Query Parameter -> isinya adalah map\[string]\[]string -> Berbeda dengan Query Parameter yang case sensitive, secara spesifikasi, Header key tidaklah case sensitive
+
 Untuk mendapatkan header dari sisi client
 
 ```go
