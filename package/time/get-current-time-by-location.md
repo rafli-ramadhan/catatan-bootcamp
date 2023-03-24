@@ -1,5 +1,14 @@
 # Get Current Time By Location
 
+time.Time -> merupakan struct dan punya method&#x20;
+
+| Method             | Return    |   |
+| ------------------ | --------- | - |
+| time.Now().Local() | time.Time |   |
+| time.Now().Year()  | Int       |   |
+| time.Now().Month() | Int       |   |
+| time.Now().Day()   | Int       |   |
+
 ```go
 package main
 
