@@ -1,4 +1,4 @@
-# Time
+# Get Current Time By Location
 
 ```go
 package main
