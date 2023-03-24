@@ -110,4 +110,6 @@
 * [Go Routine](go-routine/README.md)
   * [Go Routine](go-routine/go-routine.md)
   * [Channel](go-routine/channel.md)
-  * [Go Context](go-routine/go-context.md)
+  * [Wait Group & Defer](go-routine/wait-group-and-defer.md)
+  * [Exit](go-routine/exit.md)
+* [Go Context](go-context.md)

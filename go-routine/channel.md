@@ -1,6 +1,8 @@
 # Channel
 
+Channel -> digunakan untuk menghubungkan goroutine satu dengan goroutine yang lainnya.
 
+Tugas channel -> mengirim dan menerima data
 
 ```go
 package main
@@ -8,7 +10,6 @@ package main
 import "fmt"
   
 func test(value chan int) {
-
     fmt.Println(123 + <-value)
 }
 func main() {
