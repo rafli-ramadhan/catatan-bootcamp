@@ -9,12 +9,26 @@ Encoder -> Go object -> JSON
 ## Decode JSON -> Struct
 
 ```go
+func json.NewDecoder(r io.Reader) *json.Decoder
+```
+
+io.Reader :
+
+```go
+type Reader interface {
+        Read(buf []byte) (n int, err error)
+}
+```
+
+Example :
+
+```go
 package main
 
 import (
     "encoding/json"
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 type Customer struct {
@@ -33,6 +47,20 @@ func main() {
 ```
 
 ## Encode Struct -> JSON
+
+```go
+func json.NewEncoder(w io.Writer) *json.Encoder
+```
+
+io.Writer :
+
+```go
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+```
+
+Example :&#x20;
 
 ```go
 package main
