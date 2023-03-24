@@ -1,4 +1,4 @@
-# Simple HTTP Server in Go
+# HTTP Server in Go
 
 ```go
 package main

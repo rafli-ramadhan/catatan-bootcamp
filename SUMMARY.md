@@ -92,7 +92,7 @@
 * [Go HTTP](go-http/README.md)
   * [Web, Client and Server](go-http/web-client-and-server.md)
   * [HTTP](go-http/http.md)
-  * [HTTP Server in Go](go-http/http-server-in-go.md)
+  * [HTTP Server in Go](go-http/simple-http-server-in-go.md)
   * [HTTP Server using ServeMux in Go](go-http/http-server-using-servemux-in-go.md)
   * [HTTP Server Biasa vs Mux](go-http/http-server-biasa-vs-mux.md)
   * [Request](go-http/request.md)
