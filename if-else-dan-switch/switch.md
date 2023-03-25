@@ -168,3 +168,61 @@ func main() {
 It's February
 ```
 
+## Go Switch Optional Statement
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    switch  day := "Monday"; day {
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday":
+        fmt.Println("Work Day")
+    case "Saturday", "Sunday":
+        fmt.Println("Weekend")
+    }
+}
+```
+
+```
+Work Day
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  switch isValid := false; isValid {
+    case isValid:
+      fmt.Println("true")
+     default:
+      fmt.Println("false")
+  }
+}
+```
+
+```
+true
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  switch numOfDays := 28; numOfDays {
+    case 28:
+      fmt.Println("It's February")
+    default:
+      fmt.Println("Not February")
+  }
+}
+```
+
+```
+It's February
+```
