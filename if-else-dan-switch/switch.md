@@ -2,6 +2,8 @@
 
 ## Switch with Single Case
 
+Value dalam switch bisa diberi () atau bisa juga tidak diberi ().
+
 ```go
 package main
 
@@ -10,7 +12,7 @@ import (
 )
 
 func choose(value int) {
-	switch(value) {
+	switch value {
 	case 1:
 		fmt.Println(1)
 	case 2:
@@ -26,9 +28,14 @@ func main() {
 }
 ```
 
-
+```
+1
+2
+```
 
 ## Switch Case with fallthrough
+
+Value dalam switch bisa diberi () atau bisa juga tidak diberi ().
 
 ```go
 package main
@@ -83,9 +90,9 @@ func main() {
     day := "Monday"
     
     switch day {
-        case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday":
+    case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday":
         fmt.Println("Work Day")
-        case "Saturday", "Sunday":
+    case "Saturday", "Sunday":
         fmt.Println("Weekend")
     }
 }
@@ -93,5 +100,71 @@ func main() {
 
 ```
 Work Day
+```
+
+## Switch without Expression
+
+Bisa digunakan dengan relational operator.&#x20;
+
+```go
+package main
+import "fmt"
+
+func main() {
+    day := "Monday"
+    
+    switch {
+    case day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday" || day == "Friday":
+        fmt.Println("Work Day")
+    case day == "Saturday" || day == "Sunday":
+        fmt.Println("Weekend")
+    }
+}
+```
+
+```
+Work Day
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var isValid bool = true
+
+  switch {
+    case isValid:
+      fmt.Println("true")
+     default:
+      fmt.Println("false")
+  }
+}
+```
+
+```
+true
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  numOfDays := 28
+
+  switch {
+    case numOfDays == 28:
+      fmt.Println("It's February")
+    default:
+      fmt.Println("Not February")
+  }
+}
+```
+
+```
+It's February
 ```
 
