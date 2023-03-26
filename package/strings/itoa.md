@@ -2,6 +2,9 @@
 
 Digunakan untuk konversi integer ke string.
 
+<pre class="language-go"><code class="lang-go"><strong>func Itoa(x int) string
+</strong></code></pre>
+
 ```go
 package main
 

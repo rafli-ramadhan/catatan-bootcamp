@@ -73,6 +73,8 @@
   * [Fmt](package/fmt.md)
   * [Args](package/args.md)
   * [Strings](package/strings/README.md)
+    * [Strings To Lower](package/strings/strings-to-lower.md)
+    * [Strings Contains](package/strings/strings-contains.md)
     * [Atoi](package/strings/atoi.md)
     * [Itoa](package/strings/itoa.md)
   * [Time](package/time/README.md)

@@ -3,6 +3,10 @@
 Digunakan untuk mengkonversi string ke integer.
 
 ```go
+func Atoi(str string) (int, error)
+```
+
+```go
 package main
 
 import (
