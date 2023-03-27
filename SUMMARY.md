@@ -83,7 +83,7 @@
 * [Struct and Interface Implementation Example](struct-dan-interface-implementation.md)
 * [Go JSON](go-json/README.md)
   * [JSON vs XML](go-json/json-vs-xml.md)
-  * [Unmarshal vs Marshal](go-json/unmarshal-vs-marshal.md)
+  * [Unmarshal vs Marshal](go-json/marshal.md)
   * [Decode JSON to Struct](go-json/decode-json-to-struct.md)
   * [Decode JSON to Map Interface](go-json/decode-json-to-map-interface.md)
   * [Encode Struct to JSON](go-json/encode-struct-to-json.md)

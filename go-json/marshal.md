@@ -1,6 +1,14 @@
 # Unmarshal vs Marshal
 
-Umarshal (Decode) dan Marshal (Encode) -> bisa untuk Int, String, Bool, Slice, Struct dan Map String Interface.
+Umarshal (Decoding) dan Marshal (Encoding) -> bisa untuk Int, String, Bool, Slice, Struct dan Map String Interface.
+
+```
+func Unmarshal(data []byte, v interface{}) error
+```
+
+```
+func Marshal(v interface{}) ([]byte, error)
+```
 
 ## Marshal (...-> JSON) & Unmarshal (JSON -> ...) Int
 
