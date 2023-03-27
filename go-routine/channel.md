@@ -1,8 +1,12 @@
 # Channel
 
-Channel -> digunakan untuk menghubungkan goroutine satu dengan goroutine yang lainnya.
+**Fungsi** -> tempat komunikasi data secara synchronous oleh go routine -> saat melakukan pengiriman data, go routine akan terblok sampai ada yang menerima data tersebut (blocking).
 
-Tugas channel -> mengirim dan menerima data.
+**Karakteristik** -> hanya bisa menerima 1 tipe data, secara default hanya bisa menampung 1 data, jika tidak digunakan harus di close atau bisa menyebabkan memory leak.
+
+**Channel In -> Mengirim data**
+
+**Channel Out -> Menerima data**
 
 ```go
 package main

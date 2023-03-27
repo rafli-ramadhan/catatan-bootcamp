@@ -10,6 +10,45 @@ sync.WaitGroup()
 
 ```go
 package main
+
+import (  
+    "fmt"
+    "sync"
+)
+
+func numbers(wg *sync.WaitGroup) {  
+    defer wg.Done()
+    for i := 1; i <= 5; i++ {
+        fmt.Printf("%d ", i)
+    }
+}
+
+func alphabets(wg *sync.WaitGroup) {
+    defer wg.Done()
+    for i := 'a'; i <= 'e'; i++ {
+        fmt.Printf("%c ", i)
+    }
+}
+
+func main() {  
+    wg := new(sync.WaitGroup)
+    wg.Add(2)
+
+    go numbers(wg)
+    go alphabets(wg)
+    fmt.Println("end")
+    
+    wg.Wait()
+}
+```
+
+```
+end
+a b c d e 1 2 3 4 5
+```
+
+```go
+package main
   
 import (
     "fmt"
