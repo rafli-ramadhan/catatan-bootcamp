@@ -39,5 +39,6 @@ func main() {
 ```
 
 ```
-apa kabar apa kabar apa kabar apa kabar apa kabar hai hai hai hai hai halo halo halo halo halo 1 a 2 3 b 4 c 5 d e end
+a 1 2 3 4 5 1 2 3 4 5 a b c d e 1 2 3 4 5 1 2 3 4 5 a b c d e a b c d e 1 2 3 4 5 a b c d e 1 2 3 4 5 a b c d e a b c d e a b c d e 1 2 3 4 5 1 2 3 4 5 a b c d e 1 2 3 4 5 b c d e a 
+b c d e a b c d e 1 2 3 4 5 1 2 3 4 5 end
 ```
