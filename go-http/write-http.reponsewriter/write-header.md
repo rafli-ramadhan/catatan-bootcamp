@@ -1,7 +1,7 @@
-# 2. Write Header
+# Write Header
 
 Untuk me-return status code
 
-```
+```go
 w.WriteHeader(200)
 ```

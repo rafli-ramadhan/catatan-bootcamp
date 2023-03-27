@@ -1,6 +1,14 @@
-# Request
+# Request Method dan URI
 
 Request -> informasi yang dikirim oleh client
+
+```go
+r.Method
+```
+
+```go
+r.RequestURI
+```
 
 ```go
 package main
@@ -14,11 +22,11 @@ func main() {
 	mux := http.NewServeMux()
 
 	// request -> data type -> struct
-	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
+	var handlerMain http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Server running")
-		fmt.Fprintf(write, "Server running")
-		fmt.Fprintf(write, request.Method)
-		fmt.Fprintf(write, request.RequestURI)
+		fmt.Fprintf(w, "Server running")
+		fmt.Fprintf(w, r.Method)
+		fmt.Fprintf(w, r.RequestURI)
 	}
 	mux.HandleFunc("/main", handlerMain)
 

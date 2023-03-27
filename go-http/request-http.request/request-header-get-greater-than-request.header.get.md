@@ -1,4 +1,4 @@
-# Header
+# Request Header Get -> request.Header.Get()
 
 Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request.
 
@@ -7,7 +7,7 @@ Header mirip seperti Query Parameter -> isinya adalah map\[string]\[]string -> B
 Untuk mendapatkan header dari sisi client
 
 ```go
-request.Header.Get()
+request.Header.Get("Content-Type")
 ```
 
 ```go

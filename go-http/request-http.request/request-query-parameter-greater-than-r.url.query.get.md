@@ -1,4 +1,4 @@
-# Query Parameter
+# Request Query Parameter -> r.URL.Query.Get()
 
 Query parameter -> data yang disimpan di URI
 
@@ -7,7 +7,7 @@ Query parameter -> case sensitif -> huruf besar kecil berpengaruh
 URL -> [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)&#x20;
 
 ```go
-request.URL.Query.Get()
+r.URL.Query.Get()
 ```
 
 ```go

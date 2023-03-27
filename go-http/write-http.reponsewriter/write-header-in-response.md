@@ -2,7 +2,7 @@
 
 Untuk menambahkan header di response.
 
-```
+```go
 write.Header().Add("Content-Type", "application/json")
 ```
 

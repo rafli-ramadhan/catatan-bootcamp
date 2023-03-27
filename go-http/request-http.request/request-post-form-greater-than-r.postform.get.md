@@ -1,4 +1,4 @@
-# Form Post, Request.PostForm
+# Request Post Form -> r.PostForm.Get()
 
 Saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST.
 
@@ -6,8 +6,8 @@ Jika menggunakan method GET -> semua data di form akan menjadi query parameter.
 
 Sedangkan jika menggunakan POST -> semua data di form akan dikirim via body HTTP request.
 
-```
-request.PostForm.Get()
+```go
+r.PostForm.Get()
 ```
 
 ```go

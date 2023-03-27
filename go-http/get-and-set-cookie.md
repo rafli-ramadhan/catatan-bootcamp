@@ -6,13 +6,13 @@ Penerapan -> untuk menyimpan data token saat user login.
 
 Get Cookie
 
-```
+```go
 request.Cookie()
 ```
 
 Set Cookie
 
-```
+```go
 http.SetCookie(write, cookie)
 ```
 
