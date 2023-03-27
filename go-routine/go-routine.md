@@ -1,12 +1,14 @@
 # Go Routine
 
-**Go routine** -> thread ringan yang dikelola oleh go runtime -> untuk menjalakan concurrency di golang -> sifatnya asynchronous -> tidak saling tunggu -> dan secara random.
+**Go routine** -> thread ringan yang dikelola oleh go runtime -> untuk menjalakan concurrency (secara bergantian) di golang -> sifatnya asynchronous (tidak berurutan) -> tidak saling tunggu -> dan secara random.
 
 Go routine dijalankan oleh Go Scheduler dalam thread -> jumlah thread nya sebanyak GOMAXPROCS (biasanya sejumlah core CPU).
 
 **Kelebihan** -> Go routine sangat ringan -> ukurannya hanya 2 kB.
 
-**Parallel programming** -> memecahkan suatu blok kode dengan cara membaginya menjadi yang lebih kecil, dan dijalankan secara bersamaan pada waktu yang bersamaan pula.
+**Concurrency** -> eksekusi fungsi yang dijalankan secara pararel, namun saat ada fungsi yang selesai terlebih dahulu, akan membantu mengerjakan fungsi lain.
+
+**Parallel programming** -> eksekusi fungsi yang dijalankan bersamaan, berakhirnya bisa berbeda-beda.
 
 {% embed url="https://miro.medium.com/v2/resize:fit:1400/1*ylONk4ex9q6IK68C6USRBg.jpeg" %}
 [https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg](https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg)
@@ -15,24 +17,10 @@ Go routine dijalankan oleh Go Scheduler dalam thread -> jumlah thread nya sebany
 ```go
 package main
 
-import (
+import (  
     "fmt"
     "time"
 )
-
-func numbers() {
-    for i := 1; i <= 5; i++ {
-        time.Sleep(250*time.Millisecond)
-        fmt.Printf("%d ", i)
-    }
-}
-
-func alphabets() {  
-    for i := 'a'; i <= 'e'; i++ {
-        time.Sleep(400*time.Millisecond)
-        fmt.Printf("%c ", i)
-    }
-}
 
 func text(num int, message string) {
     for i := 0; i < num; i++ {
@@ -41,11 +29,10 @@ func text(num int, message string) {
 }
 
 func main() {
-    go numbers()
-    go alphabets()
-    go text(5, "halo")
-    go text(5, "hai")
-    text(5, "apa kabar")
+    textSlice := []string{"test 1", "test 2", "test 3", "test 4", "test 5", "test 6", "test 7", "test 8", "test 9", "test 10"}
+    for _, val := range textSlice {
+        go text(5, val)
+    }
     time.Sleep(3000*time.Millisecond)
     fmt.Println("end")
 }
