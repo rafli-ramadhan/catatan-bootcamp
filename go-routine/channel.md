@@ -14,26 +14,25 @@ package main
 import "fmt"
   
 func test(value chan int) {
-    fmt.Println(123 + <-value)
+    result := 100 + <- value
+    fmt.Printf("%d ", result)
 }
+
 func main() {
     fmt.Println("Start")
     value := make(chan int)
 
-    go test(value)
-    value <- 25
-    
-    go test(value)
-    value <- 23
-    
-    fmt.Println("End")
+    for i := 0; i < 10; i++ {
+        go test(value)
+        value <- 25
+    }
+    fmt.Println("\nEnd")
 }
 ```
 
 ```
 Start
-148
-146
+125 125 125 125 125 125 125 125 125 125 
 End
 ```
 
