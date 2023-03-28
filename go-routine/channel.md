@@ -8,6 +8,10 @@
 
 **Channel Out -> Menerima data**
 
+**Sifatnya -> Blocking**
+
+**Channel harus di close -> jika tidak bisa menyebabkan memory leak**
+
 ## Contoh #1
 
 ```go
