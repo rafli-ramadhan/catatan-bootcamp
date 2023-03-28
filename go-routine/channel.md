@@ -35,6 +35,7 @@ func main() {
         value <- i
     }
     fmt.Println("\nEnd")
+    close(value)
 }
 ```
 
@@ -69,6 +70,7 @@ func main() {
         fmt.Printf("%d ", result)
     }
     fmt.Println("\nEnd")
+    close(value)
 }
 ```
 
@@ -99,6 +101,7 @@ func main() {
         fmt.Printf("%d ", print)
     }
     fmt.Println("\nEnd")
+    close(value)
 }
 </code></pre>
 

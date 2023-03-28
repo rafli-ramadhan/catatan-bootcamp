@@ -16,4 +16,28 @@ Kita bebas memasukkan berapa jumlah kapasitas antrian di dalam buffer.
 
 Jika kita set misal 5, artinya kita bisa menerima 5 data di buffer.&#x20;
 
-Jika kita mengirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong Ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
+Jika kita mengirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong -> Ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
+
+```go
+package main
+  
+import "fmt"
+
+func main() {
+    fmt.Println("Start")
+    value := make(chan int, 5)
+
+    for i := 0; i < 10; i++ {
+        go func(i int) {
+            result := 100 + i
+            // channel in (sender)
+            value <- result
+        }(i)
+        // channel out (receiver)
+        print := <- value
+        fmt.Printf("%d ", print)
+    }
+    fmt.Println("\nEnd")
+    close(value)
+}
+```

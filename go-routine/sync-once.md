@@ -1,4 +1,4 @@
-# Sync Once
+# Once
 
 Sync Once -> untuk memastikan sebuah function di eksekusi hanya sekali
 
