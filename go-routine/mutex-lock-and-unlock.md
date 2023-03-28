@@ -1,4 +1,4 @@
-# Mutex (Lock & Unlock)
+# Mutex (Mutual Exclusion)
 
 Mutex -> digunakana untuk mengatasi race condition -> locking dan unlocking
 

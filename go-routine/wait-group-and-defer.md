@@ -2,7 +2,7 @@
 
 Wait Group -> digunakan untuk menunggu go routine.
 
-Defer -> mengakhiri eksekusi suatu statement tepat sebelum blok fungsi selesai. akan selalu dieksekusi di akhir.
+Defer -> mengakhiri eksekusi suatu statement tepat sebelum blok fungsi selesai, akan selalu dieksekusi di akhir.
 
 ```go
 var wg sync.WaitGroup()
