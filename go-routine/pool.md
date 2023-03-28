@@ -40,11 +40,15 @@ func main() {
     pool.Put(10)
 
     for i := 0; i < 10; i++ {
-        data := pool.Get().(*v)
+        data := pool.Get()
         fmt.Printf("%d ", data)
     }
 
     time.Sleep(3 * time.Millisecond)    
 }
+```
+
+```
+0 10 9 8 7 6 5 4 3 2
 ```
 
