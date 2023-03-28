@@ -104,11 +104,11 @@ context deadline exceeded
 ## With Cancel
 
 ```go
-ctx, cancelCtx := context.WithCancel(ctx)
+ctx, cancel := context.WithCancel(ctx)
 
 go doAnother(ctx)
 
-cancelCtx()
+cancel()
 ```
 
 ## Done

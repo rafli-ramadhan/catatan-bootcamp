@@ -122,7 +122,7 @@
   * [Mutex (Lock & Unlock)](go-routine/mutex-lock-and-unlock.md)
   * [Sync Once](go-routine/sync-once.md)
   * [Exit](go-routine/exit.md)
-* [Go Context](go-context/README.md)
+* [Go Context](go-context.md)
   * [Context](go-context/context.md)
   * [Context Background & TODO](go-context/context-background-and-todo.md)
   * [Context Parent and Child](go-context/context-parent-and-child.md)
