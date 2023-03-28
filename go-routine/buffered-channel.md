@@ -4,7 +4,11 @@ Default channel itu hanya bisa menerima 1 data -> jika ditambah data ke-2, maka 
 
 Kadang-kadang ada kasus dimana pengirim lebih cepat dibanding penerima, dalam hal ini jika kita menggunakan channel, maka otomatis pengirim akan ikut lambat juga.
 
-Buffered Channel -> buffer yang bisa digunakan untuk menampung data antrian di Channel
+Buffered Channel -> buffer yang bisa digunakan untuk menampung data antrian di Channel.
+
+{% embed url="https://th.bing.com/th/id/OIP.VdZlb_xgxtUYe10p1IPewQHaDx?pid=ImgDet&rs=1" %}
+[https://th.bing.com/th/id/OIP.VdZlb\_xgxtUYe10p1IPewQHaDx?pid=ImgDet\&rs=1](https://th.bing.com/th/id/OIP.VdZlb\_xgxtUYe10p1IPewQHaDx?pid=ImgDet\&rs=1)
+{% endembed %}
 
 ## Buffer Capacity
 

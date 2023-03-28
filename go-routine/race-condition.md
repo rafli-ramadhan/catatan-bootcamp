@@ -10,9 +10,8 @@ import (
     "sync"
 )
  
-func f(v *int, wg *sync.WaitGroup) {
+func f(v *int) {
     *v++
-    wg.Done()
 }
  
 func main() {
@@ -23,6 +22,7 @@ func main() {
     for i := 0; i < 1000; i++ {
         wg.Add(1)
         go f(&v, &wg)
+        wg.Done()
     }
  
     wg.Wait()
@@ -31,5 +31,5 @@ func main() {
 ```
 
 ```
-Finished 988
+Finished 987
 ```

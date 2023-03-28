@@ -24,7 +24,7 @@ func main() {
 
     for i := 0; i < 10; i++ {
         go test(value)
-        value <- 25
+        value <- i
     }
     fmt.Println("\nEnd")
 }
@@ -32,32 +32,36 @@ func main() {
 
 ```
 Start
-125 125 125 125 125 125 125 125 125 125 
+100 101 102 103 104 105 106 107 108 109 
 End
 ```
 
 ```go
 package main
-
-import (
-    "fmt"
-    "math/rand"
-)
-
-func getData(value chan int) {
-    value1 := rand.Int()
-    value <- value1
+  
+import "fmt"
+  
+func test(value chan int) {
+    result := 100 + <- value
+    value <- result
 }
 
 func main() {
+    fmt.Println("Start")
     value := make(chan int)
-    go getData(value)
-    value1 := <- value
-    fmt.Println(value1)
+
+    for i := 0; i < 10; i++ {
+        go test(value)
+        value <- i
+        result := <- value
+        fmt.Printf("%d ", result)
+    }
+    fmt.Println("\nEnd")
 }
-
 ```
 
 ```
-5577006791947779410
+Start
+100 101 102 103 104 105 106 107 108 109 
+End
 ```

@@ -119,7 +119,7 @@
   * [Buffered Channel](go-routine/buffered-channel.md)
   * [Wait Group & Defer](go-routine/wait-group-and-defer.md)
   * [Race Condition](go-routine/race-condition.md)
-  * [Mutex (Lock & Unlock)](go-routine/mutex-lock-and-unlock.md)
+  * [Mutex (Mutual Exclusion)](go-routine/mutex-mutual-exclusion.md)
   * [Sync Once](go-routine/sync-once.md)
   * [Exit](go-routine/exit.md)
 * [Go Context](go-context.md)
