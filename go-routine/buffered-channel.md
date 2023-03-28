@@ -1,6 +1,6 @@
 # Buffered Channel
 
-Default channel itu hanya bisa menerima 1 data -> jika ditambah data ke-2, maka kita akan diminta menunggu sampai data ke-1 ada yang mengambil.
+Default channel hanya bisa menerima 1 data -> jika ditambah data ke-2, maka kita akan diminta menunggu sampai data ke-1 ada yang mengambil.
 
 Kadang-kadang ada kasus dimana pengirim lebih cepat dibanding penerima, dalam hal ini jika kita menggunakan channel, maka otomatis pengirim akan ikut lambat juga.
 
@@ -12,32 +12,41 @@ Buffered Channel -> buffer yang bisa digunakan untuk menampung data antrian di C
 
 ## Buffer Capacity
 
-Kita bebas memasukkan berapa jumlah kapasitas antrian di dalam buffer.
+Jika di set misal 5, artinya channel bisa menerima 5 data di buffer.&#x20;
 
-Jika kita set misal 5, artinya kita bisa menerima 5 data di buffer.&#x20;
-
-Jika kita mengirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong -> Ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
+Jika dikirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong -> Ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
 
 ```go
 package main
-  
-import "fmt"
+
+import (
+	"fmt"
+	"time"
+)
+
+func write(ch chan int) {
+	for i := 0; i < 20; i++ {
+	        // write value
+	        ch <- i
+	        fmt.Printf("write%d ", i)
+	}
+	close(ch)
+}
 
 func main() {
-    fmt.Println("Start")
-    value := make(chan int, 5)
+	ch := make(chan int, 12)
 
-    for i := 0; i < 10; i++ {
-        go func(i int) {
-            result := 100 + i
-            // channel in (sender)
-            value <- result
-        }(i)
-        // channel out (receiver)
-        print := <- value
-        fmt.Printf("%d ", print)
-    }
-    fmt.Println("\nEnd")
-    close(value)
+	go write(ch)
+
+    	for i := range ch {
+        	// read value
+        	fmt.Printf("%d ", i)
+		time.Sleep(700 * time.Millisecond)
+	}
 }
+```
+
+```
+write0 write1 write2 write3 write4 write5 write6 write7 write8 write9 write10 0 1 write11 2 write12 write13 3 4 write14 5 write15 6 write16 7 write17 8 write18 9 write19 10 11 12 13 
+14 15 16 17 18 19 
 ```

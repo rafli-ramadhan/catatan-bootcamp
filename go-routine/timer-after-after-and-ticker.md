@@ -1,0 +1,196 @@
+# Timer, After, After & Ticker
+
+## Timer
+
+Timer adalah representasi waktu satu kejadian
+
+Ketika waktu timer sudah expire, maka event akan dikirim ke dalam channel Untuk membuat Timer kita bisa menggunakan fungsi time.NewTimer(duration).
+
+Fungsi time.NewTimer() mengembalikan struct \*time.Timer yang memiliki property C yang bertipe channel.
+
+```go
+func time.NewTimer(d time.Duration) *time.Timer
+```
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    timer := time.NewTimer(5 * time.Second)
+    fmt.Println(time.Now())
+    
+    timeTimer := <-timer.C
+    fmt.Println(timeTimer)
+}
+```
+
+```
+2023-03-28 11:25:07.7328437 +0700 +07 m=+0.002623201
+2023-03-28 11:25:12.7468608 +0700 +07 m=+5.016640301
+```
+
+## After
+
+Kadang kita hanya butuh channel Timer saja, tidak membutuhkan data Timer -> bisa menggunakan function time.After(duration)
+
+```go
+func time.After(d time.Duration) <-chan time.Time
+```
+
+<pre class="language-go"><code class="lang-go">package main
+ 
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    timer := time.After(1 * time.Second)
+    fmt.Println(time.Now())
+    
+    timeTimer := &#x3C;-timer
+<strong>    fmt.Println(timeTimer)
+</strong>}
+</code></pre>
+
+```
+2023-03-28 11:33:45.2167092 +0700 +07 m=+0.002684001
+2023-03-28 11:33:46.2264751 +0700 +07 m=+1.012449901
+```
+
+## AfterFunc
+
+AfterFunc -> untuk menjalankan sebuah function dengan delay waktu tertentu.
+
+```go
+func time.AfterFunc(d time.Duration, f func()) *time.Timer
+```
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "sync"
+    "time"
+)
+
+func main() {
+    wg := sync.WaitGroup{}
+    wg.Add(1)
+    time.AfterFunc(1*time.Second, func() {
+        fmt.Println("execute after func")
+        wg.Done()
+    })
+
+    fmt.Println("start")
+    wg.Wait()
+    fmt.Println("finish")
+}
+```
+
+```
+start
+execute after func
+finish
+```
+
+## Ticker
+
+Ticker -> untuk menampilkan waktu secara berulang.
+
+```go
+type Ticker struct {
+    C <-chan Time // The channel on which the ticks are delivered.
+    r runtimeTimer
+}
+```
+
+Ketika waktu ticker sudah expire, maka event akan dikirim ke dalam channel.
+
+Ticker.Stop() -> Untuk menghentikan ticker.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	ticker := time.NewTicker(1 * time.Second)
+	fmt.Println(time.Now())
+	for tick := range ticker.C {
+		fmt.Println(tick)
+	}
+}
+```
+
+```
+2023-03-28 14:31:23.778945 +0700 +07 m=+0.002074201
+2023-03-28 14:31:24.7930106 +0700 +07 m=+1.016139801
+2023-03-28 14:31:25.7826779 +0700 +07 m=+2.005807101
+2023-03-28 14:31:26.7938086 +0700 +07 m=+3.016937801
+2023-03-28 14:31:27.7920121 +0700 +07 m=+4.015141301
+2023-03-28 14:31:28.7824301 +0700 +07 m=+5.005559301
+2023-03-28 14:31:29.7934065 +0700 +07 m=+6.016535701
+2023-03-28 14:31:30.7868615 +0700 +07 m=+7.009990701
+2023-03-28 14:31:31.7835526 +0700 +07 m=+8.006681801
+2023-03-28 14:31:32.7896046 +0700 +07 m=+9.012733801
+2023-03-28 14:31:33.7847102 +0700 +07 m=+10.007839401
+2023-03-28 14:31:34.7811885 +0700 +07 m=+11.004317701
+2023-03-28 14:31:35.793886 +0700 +07 m=+12.017015201
+2023-03-28 14:31:36.7790874 +0700 +07 m=+13.002216601
+2023-03-28 14:31:37.7942353 +0700 +07 m=+14.017364501
+2023-03-28 14:31:38.7932559 +0700 +07 m=+15.016385101
+2023-03-28 14:31:39.7789494 +0700 +07 m=+16.002078601
+2023-03-28 14:31:40.7835465 +0700 +07 m=+17.006675701
+...
+```
+
+## Tick
+
+Kadang kita tidak butuh data Ticker nya, kita hanya butuh channel-nya saja -> pakai time.Tick(pause time)
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	ticker := time.Tick(1 * time.Second)
+	fmt.Println(time.Now())
+	for tick := range ticker {
+		fmt.Println(tick)
+	}
+}
+	
+```
+
+```
+2023-03-28 14:37:22.4363103 +0700 +07 m=+0.106200401
+2023-03-28 14:37:23.4503569 +0700 +07 m=+1.120247001
+2023-03-28 14:37:24.445458 +0700 +07 m=+2.115348101
+2023-03-28 14:37:25.4741143 +0700 +07 m=+3.144004401
+2023-03-28 14:37:26.4395713 +0700 +07 m=+4.109461401
+2023-03-28 14:37:27.4467696 +0700 +07 m=+5.116659701
+2023-03-28 14:37:28.4502899 +0700 +07 m=+6.120180001
+2023-03-28 14:37:29.442228 +0700 +07 m=+7.112118101
+2023-03-28 14:37:30.4514359 +0700 +07 m=+8.121326001
+2023-03-28 14:37:31.4425021 +0700 +07 m=+9.112392201
+2023-03-28 14:37:32.4375583 +0700 +07 m=+10.107448401
+2023-03-28 14:37:33.4456249 +0700 +07 m=+11.115515001
+2023-03-28 14:37:34.4422857 +0700 +07 m=+12.112175801
+2023-03-28 14:37:35.4441246 +0700 +07 m=+13.114014701
+2023-03-28 14:37:36.4463128 +0700 +07 m=+14.116202901
+...
+```

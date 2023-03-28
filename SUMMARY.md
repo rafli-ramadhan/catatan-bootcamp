@@ -124,7 +124,7 @@
   * [RW Mutex](go-routine/rw-mutex.md)
   * [Once](go-routine/sync-once.md)
   * [Pool](go-routine/pool.md)
-  * [Timer, After, After](go-routine/timer-after-after.md)
+  * [Timer, After, After & Ticker](go-routine/timer-after-after-and-ticker.md)
   * [Go Max Procs](go-routine/go-max-procs.md)
   * [Exit](go-routine/exit.md)
 * [Go Context](go-context.md)
