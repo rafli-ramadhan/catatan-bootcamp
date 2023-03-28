@@ -1,4 +1,4 @@
-# Go Routine
+# Concurrency vs Parrarel
 
 **Go routine** -> thread ringan yang dikelola oleh go runtime -> untuk menjalakan concurrency (secara bergantian) di golang -> sifatnya asynchronous (tidak berurutan) -> tidak saling tunggu -> dan secara random.
 
@@ -10,9 +10,9 @@ Go routine dijalankan oleh Go Scheduler dalam thread -> jumlah thread nya sebany
 
 **Parallel programming** -> eksekusi fungsi yang dijalankan bersamaan, berakhirnya bisa berbeda-beda.
 
-{% embed url="https://miro.medium.com/v2/resize:fit:1400/1*ylONk4ex9q6IK68C6USRBg.jpeg" %}
-[https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg](https://miro.medium.com/v2/resize:fit:1400/1\*ylONk4ex9q6IK68C6USRBg.jpeg)
-{% endembed %}
+<figure><img src="https://www.baeldung.com/wp-content/uploads/sites/4/2022/01/vs-1024x462-1.png" alt=""><figcaption><p><a href="https://www.baeldung.com/wp-content/uploads/sites/4/2022/01/vs-1024x462-1.png">https://www.baeldung.com/wp-content/uploads/sites/4/2022/01/vs-1024x462-1.png</a></p></figcaption></figure>
+
+<figure><img src="https://miro.medium.com/max/1200/1*V5syja2casc0gCuu9zKV5g.png" alt=""><figcaption><p><a href="https://miro.medium.com/max/1200/1*V5syja2casc0gCuu9zKV5g.png">https://miro.medium.com/max/1200/1*V5syja2casc0gCuu9zKV5g.png</a></p></figcaption></figure>
 
 ```go
 package main

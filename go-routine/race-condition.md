@@ -1,6 +1,6 @@
 # Race Condition
 
-
+Race condition -> beberapa thread mencoba untuk mengakses dan memanipulasi data yang sama secara bersamaan.
 
 ```go
 package main
@@ -28,4 +28,8 @@ func main() {
     wg.Wait()
     fmt.Println("Finished", v)
 }
+```
+
+```
+Finished 988
 ```

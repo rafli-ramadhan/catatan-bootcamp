@@ -1,44 +1,51 @@
 # Mutex (Lock & Unlock)
 
+Mutex -> digunakana untuk mengatasi race condition.
 
+Adad locking dan unlocking
+
+Dimana ketika kita melakukan locking terhadap mutex, maka tidak ada yang bisa melakukan locking lagi sampai kita melakukan unlock.&#x20;
+
+Jika ada beberapa goroutine melakukan lock terhadap Mutex, maka hanya 1 goroutine yang dieksekusi, setelah goroutine tersebut melakukan unlock, baru goroutine selanjutnya melakukan lock lagi.
+
+Kekurangan -> ada kemungkinan beberapa go routine saling menggu untuk melakukan lock -> bisa menimbulkan deadlock.
 
 ```go
 package main
-
-import (  
+ 
+import (
     "fmt"
     "sync"
 )
+ 
+var wg sync.WaitGroup
+var m sync.Mutex
 
-func numbers(wg *sync.WaitGroup, m *sync.Mutex) {  
-    defer wg.Done()
+func f(v *int, wg *sync.WaitGroup) {
     m.Lock()
-    for i := 1; i <= 5; i++ {
-        fmt.Printf("%d ", i)
-    }
+    *v++
     m.Unlock()
+    wg.Done()
 }
-
-func alphabets(wg *sync.WaitGroup, m *sync.Mutex) {
-    defer wg.Done()
-    m.Lock()
-    for i := 'a'; i <= 'e'; i++ {
-        fmt.Printf("%c ", i)
+ 
+func main() {
+    var v int = 0
+ 
+    for i := 0; i < 1000; i++ {
+        wg.Add(1)
+        go f(&v, &wg)
     }
-    m.Unlock()
-}
-
-func main() {  
-    wg := new(sync.WaitGroup)
-    wg.Add(2)
-    m := new(sync.Mutex)
-
-    go numbers(wg, m)
-    go alphabets(wg, m)
-    fmt.Println("end")
-    
+ 
     wg.Wait()
+    fmt.Println("Finished", v)
 }
+```
+
+```
+Finished 1000
+```
+
+```go
 ```
 
 ```
