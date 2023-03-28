@@ -121,6 +121,7 @@
   * [Race Condition](go-routine/race-condition.md)
   * [Mutex (Mutual Exclusion)](go-routine/mutex-lock-and-unlock.md)
   * [Sync Once](go-routine/sync-once.md)
+  * [Pool](go-routine/pool.md)
   * [Exit](go-routine/exit.md)
 * [Go Context](go-context.md)
   * [Context](go-context/context.md)
