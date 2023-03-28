@@ -1,6 +1,6 @@
 # Deadlock
 
-Deadlock -> kondisi dimana go routine saling tunggu.
+Deadlock -> kondisi dimana go routine saling tunggu -> alhasil tidak ada go routine yang berjalan.
 
 ```go
 package main

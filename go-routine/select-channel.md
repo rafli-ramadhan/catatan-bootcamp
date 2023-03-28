@@ -1,6 +1,6 @@
 # Select Channel
 
-Penerapan select pada channel
+Penerapan select pada channel.
 
 ```go
 package main
@@ -14,10 +14,10 @@ import (
 var wg sync.WaitGroup
 
 func main() {
-    success := make(chan bool, 1)
+    	success := make(chan bool, 1)
 	errCh := make(chan error, 1)
 
-    wg.Add(1)
+    	wg.Add(1)
 
 	go func() {
 		defer wg.Done()
@@ -26,7 +26,7 @@ func main() {
 	}()
 
 	wg.Wait()
-    success <- true
+    	success <- true
 
 	select {
 	case err := <-errCh:
@@ -49,4 +49,56 @@ success
 
 D:\go-server>go run .
 there is an error
+```
+
+```go
+package main
+
+import "fmt"
+
+func channelNum(num chan int) {
+	// channel in
+	num <- 15
+}
+
+func channelStr(str chan string) {
+	// channel in
+	str <- "Test"
+}
+
+func main() {
+	num := make(chan int)
+	str := make(chan string)
+
+	go channelNum(num)
+	go channelStr(str)
+
+	// channel out
+	select {
+	case number := <- num:
+		fmt.Println(number)
+	case text := <- str:
+		fmt.Println(text)
+	}
+}
+```
+
+```
+D:\go-server>go run .
+Test
+
+D:\go-server>go run .
+Test
+
+D:\go-server>go run .
+15
+
+D:\go-server>go run .
+Test
+
+D:\go-server>go run .
+Test
+
+D:\go-server>go run .
+15
 ```
