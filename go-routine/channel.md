@@ -8,6 +8,8 @@
 
 **Channel Out -> Menerima data**
 
+## Contoh #1
+
 ```go
 package main
   
@@ -37,6 +39,8 @@ Start
 100 101 102 103 104 105 106 107 108 109 
 End
 ```
+
+## Contoh 2
 
 ```go
 package main
@@ -70,6 +74,8 @@ Start
 End
 ```
 
+## Contoh 3
+
 <pre class="language-go"><code class="lang-go"><strong>package main
 </strong>  
 import "fmt"
@@ -97,4 +103,8 @@ Start
 100 101 102 103 104 105 106 107 108 109 
 End
 ```
+
+## Contoh 4
+
+
 

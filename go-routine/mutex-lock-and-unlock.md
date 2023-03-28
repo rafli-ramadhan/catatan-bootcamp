@@ -15,7 +15,7 @@ import (
     "fmt"
     "sync"
 )
- 
+
 var wg sync.WaitGroup
 var m sync.Mutex
 
@@ -44,9 +44,69 @@ Finished 1000
 ```
 
 ```go
+package main
+ 
+import (
+    "fmt"
+    "sync"
+)
+
+var wg sync.WaitGroup
+var m sync.Mutex
+
+func f(v *int, wg *sync.WaitGroup) {
+    m.Lock()
+    *v++
+    m.Unlock()
+    wg.Done()
+}
+ 
+func main() {
+    var v int = 0
+ 
+    for i := 0; i < 10000; i++ {
+        wg.Add(1)
+        go f(&v, &wg)
+    }
+ 
+    wg.Wait()
+    fmt.Println("Finished", v)
+}
 ```
 
 ```
-end
-a b c d e 1 2 3 4 5
+Finished 10000
+```
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "sync"
+)
+
+var wg sync.WaitGroup
+var m sync.Mutex
+ 
+func main() {
+    var v int = 0
+ 
+    for i := 0; i < 10000; i++ {
+        wg.Add(1)
+        go func() {
+            m.Lock()
+            v++
+            m.Unlock()
+            wg.Done()
+        }()
+    }
+    
+    wg.Wait()
+    fmt.Println("Finished", v)
+}
+```
+
+```
+Finished 10000
 ```
