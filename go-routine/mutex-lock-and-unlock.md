@@ -1,8 +1,6 @@
 # Mutex (Lock & Unlock)
 
-Mutex -> digunakana untuk mengatasi race condition.
-
-Adad locking dan unlocking
+Mutex -> digunakana untuk mengatasi race condition -> locking dan unlocking
 
 Dimana ketika kita melakukan locking terhadap mutex, maka tidak ada yang bisa melakukan locking lagi sampai kita melakukan unlock.&#x20;
 

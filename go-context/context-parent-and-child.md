@@ -1,70 +1,8 @@
-# Go Context
-
-Context -> sebuah data yang membawa value, sinyal cancel, sinyal timeout dan sinyal deadline.
-
-Context biasanya dibuat per request (misal setiap ada request masuk ke server web melalui http request).
-
-Context digunakan untuk mempermudah kita meneruskan value, dan sinyal antar proses.
-
-Context biasa digunakan untuk mengirim data request atau sinyal ke proses lain.
-
-Dengan menggunakan context, ketika kita ingin membatalkan semua proses, kita cukup mengirim sinyal ke context, maka secara otomatis semua proses akan dibatalkan.
-
-Context digunakan untuk -> database, http server, http client, dan lain-lain.
-
-```go
-type Context interface {
-   Deadline() (deadline time.Time, ok bool)
-    Done() <-chan struct{}
-   Err() error
-    Value(key interface{}) interface{}
-}
-```
-
-## Context Background
-
-Membuat context kosong, tidak pernah dibatalkan, tidak pernah time out dan tidak ada value apapun.
-
-Digunakan di main function atau di test atau untuk proses request.
-
-```
-context.Background()
-```
-
-## Context TODO
-
-Membuat context kosong mirip dengan context background. TODO digunakan saat belum jelas context apa yang ingin digunakan.
-
-```
-context.TODO()
-```
-
-```go
-package main
-
-import(
-    "context"
-    "fmt"
-)
-
-func main() {
-    background := context.Background()
-    fmt.Println(background)
-    todo := context.TODO()
-    fmt.Println(todo)
-}
-```
-
-```
-context.Background
-context.TODO
-```
-
-## Context Parent and Child
+# Context Parent and Child
 
 Context bisa diterapkan parent dan chlid, 1 parent bisa punya banyak child, tapi 1 child hanya bisa punya 1 parent.
 
-![](.gitbook/assets/image.png)
+![](../.gitbook/assets/image.png)
 
 Saat dilakukan pembatalan context A, maka semua child dan sub child dari context A akan ikut dibatalkan.
 
