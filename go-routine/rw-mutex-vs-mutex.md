@@ -1,6 +1,6 @@
 # RW Mutex vs Mutex
 
-RW Mutex -> Digunakan untuk menghindari beberapa function membaca  data yang sama secara bersamaan -> bergantian
+RW Mutex -> Digunakan untuk supaya beberapa function dapat membaca data yang sama secara bersamaan.
 
 ## Mutex Only
 
@@ -63,6 +63,8 @@ Finished 100
 
 ## RW Mutex
 
+## Contoh #1
+
 ```go
 package main
  
@@ -118,4 +120,60 @@ iterasi-99 98
 iterasi-100 99
 
 Finished 100
+```
+
+## Contoh #2
+
+```go
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+var (
+    sharedResource int
+    mutex          sync.Mutex
+    rwmu           sync.RWMutex
+)
+
+func main() {
+    // Example using a sync.Mutex
+    var wg sync.WaitGroup
+    for i := 0; i < 10; i++ {
+        wg.Add(1)
+        go func() {
+            mutex.Lock()
+            defer mutex.Unlock()
+            sharedResource++
+            wg.Done()
+        }()
+    }
+    wg.Wait()
+    fmt.Printf("Final value using Mutex: %d\n", sharedResource)
+
+    // Example using a sync.RWMutex
+    var rwg sync.WaitGroup
+    for i := 0; i < 10; i++ {
+        rwg.Add(1)
+        go func() {
+            rwmu.Lock()
+            defer rwmu.Unlock()
+            sharedResource++
+            rwg.Done()
+        }()
+    }
+    for i := 0; i < 10; i++ {
+        rwg.Add(1)
+        go func() {
+            rwmu.RLock()
+            defer rwmu.RUnlock()
+            fmt.Printf("Read value using RWMutex: %d\n", sharedResource)
+            rwg.Done()
+        }()
+    }
+    rwg.Wait()
+    fmt.Printf("Final value using RWMutex: %d\n", sharedResource)
+}
 ```

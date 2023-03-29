@@ -87,7 +87,7 @@
     * [Time Since](package/time/time-since.md)
     * [Timer & After](package/time/timer-and-after.md)
     * [AfterFunc](package/time/afterfunc.md)
-    * [Ticker & Tick](package/time/ticker-and-tick.md)
+    * [Ticker & Tick](go-routine/timer-after-after-and-ticker.md)
 * [Struct and Interface Implementation Example](struct-dan-interface-implementation.md)
 * [Go JSON](go-json/README.md)
   * [JSON vs XML](go-json/json-vs-xml.md)
@@ -140,3 +140,4 @@
   * [Context Background & TODO](go-context/context-background-and-todo.md)
   * [Context Parent and Child](go-context/context-parent-and-child.md)
   * [Context WithValue, WithDeadline, WithTimeout, WithCancel, Done](go-context/context-withvalue-withdeadline-withtimeout-withcancel-done.md)
+* [Golang Database](golang-database.md)
