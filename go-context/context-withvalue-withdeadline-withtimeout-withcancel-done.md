@@ -1,12 +1,16 @@
 # Context WithValue, WithDeadline, WithTimeout, WithCancel, Done
 
-WithValue -> Untuk menambahkan value
+WithValue -> Untuk membuat child atau percabangan context
 
 WithCancel -> Untuk mengakhiri context
 
-WithDeadline -> Untuk mengakhiri context dengan deadline waktu tertentu
+WithDeadline (waktu diakhiri) -> Untuk mengakhiri context dengan deadline waktu sekarang + beberapa waktu.
 
-WithTimeout -> Untuk mengakhiri context mirip with deadline, tapi dengan format yang lebih sederhana
+```
+time.Now().Add(5*Second) // durasi waktu sekarang + 5 detik
+```
+
+WithTimeout (durasi) -> Untuk mengakhiri context mirip with deadline -> Context akan jalan sampai waktu tertentu.
 
 Done -> Untuk cek apakah context sudah selesai atau belum
 
@@ -56,6 +60,8 @@ import (
 
 func main() {
 	deadline := time.Now().Add(1 * time.Millisecond)
+	fmt.Println(deadline)
+
 	ctx, cancel := context.WithDeadline(context.Background(), deadline)
 	defer cancel()
 
@@ -69,6 +75,7 @@ func main() {
 ```
 
 ```
+2023-03-29 08:01:00.50954036 +0000 UTC m=+0.001151960
 context deadline exceeded
 ```
 
@@ -102,6 +109,8 @@ context deadline exceeded
 ```
 
 ## With Cancel
+
+Cancel broadcast -> mengcancel seluruh context.
 
 ```go
 ctx, cancel := context.WithCancel(ctx)

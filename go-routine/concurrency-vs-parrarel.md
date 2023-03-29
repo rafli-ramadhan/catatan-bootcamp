@@ -1,6 +1,10 @@
 # Concurrency vs Parrarel
 
-**Go routine** -> thread ringan yang dikelola oleh go runtime -> untuk menjalakan concurrency (secara bergantian) di golang -> sifatnya asynchronous (tidak berurutan) -> tidak saling tunggu -> dan secara random.
+**Go routine** -> mini thread ringan yang dikelola oleh go runtime & implementasi golang pada concurrency -> untuk menjalakan concurrency (secara bergantian) di golang -> sifatnya asynchronous (tidak berurutan) -> tidak saling tunggu -> dan secara random.
+
+**Thread** -> sebuah segmen dari process.
+
+**Process** -> sebuah eksekusi dari program
 
 Go routine dijalankan oleh Go Scheduler dalam thread -> jumlah thread nya sebanyak GOMAXPROCS (biasanya sejumlah core CPU).
 
