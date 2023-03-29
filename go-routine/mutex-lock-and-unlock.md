@@ -1,6 +1,6 @@
 # Mutex (Mutual Exclusion)
 
-Mutex -> digunakana untuk mengatasi race condition -> locking dan unlocking
+Mutex -> digunakan untuk mengatasi race condition -> locking dan unlocking
 
 Dimana ketika kita melakukan locking terhadap mutex, maka tidak ada yang bisa melakukan locking lagi sampai kita melakukan unlock.&#x20;
 

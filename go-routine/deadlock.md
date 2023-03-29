@@ -4,7 +4,7 @@ Deadlock -> kondisi dimana go routine saling tunggu -> alhasil tidak ada go rout
 
 ## Contoh kasus
 
-Jika channel in (pengirim) di inisisasi terlebih dahulu dan channel out (penerima) di inisiasi setelah channel in -> deadlock.
+Jika channel in (pengirim) di inisisasi terlebih dahulu dan channel out (penerima) di inisiasi setelah channel in -> deadlock -> karena belum ada penerimanya.
 
 Jika channel out (penerima) di inisisasi terlebih dahulu dan channel in (pengirim) di inisiasi setelah channel out -> ada output yang ditampilkan.&#x20;
 
