@@ -122,6 +122,4 @@ Start
 End
 ```
 
-
-
-<figure><img src="https://divan.dev/demos/gifs/hello.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://divan.dev/demos/gifs/hello.gif" alt=""><figcaption><p>Source: <a href="https://divan.dev/posts/go_concurrency_visualize/">https://divan.dev/posts/go_concurrency_visualize/</a></p></figcaption></figure>

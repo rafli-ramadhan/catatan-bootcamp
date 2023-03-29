@@ -1,4 +1,4 @@
-# Type Declaration (Alias)
+# Type Declaration
 
 Membuat variabel baru (alias) dari tipe variabel yang sudah ada (string, int, float, bool, array, slice, map, struct, function).
 
@@ -20,7 +20,3 @@ func main() {
 	fmt.Println(isValid)
 }
 ```
-
-Type declaration built-in Go
-
-<figure><img src="../.gitbook/assets/alias.png" alt=""><figcaption></figcaption></figure>
