@@ -45,7 +45,7 @@
     * [Type Declaration](variable-and-data-type/type-declaration-alias/type-declaration.md)
     * [Type Declaration Built In](variable-and-data-type/type-declaration-alias/type-declaration-built-in.md)
     * [Rune & Byte](variable-and-data-type/type-declaration-alias/rune-and-byte.md)
-* [Kebab Case, Camel Case and Snake Case](kebab-case-camel-case-and-snake-case.md)
+* [Kebab Case, Camel Case Snake Case & Pascal Case](kebab-case-camel-case-snake-case-and-pascal-case.md)
 * [Data Type Conversion](data-type-conversion/README.md)
   * [Int -> Float, Float -> Int](data-type-conversion/int-greater-than-float-float-greater-than-int.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
