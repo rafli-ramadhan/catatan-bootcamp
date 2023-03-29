@@ -115,6 +115,7 @@
   * [File Server](go-http/file-server.md)
 * [Go Routine](go-routine/README.md)
   * [Concurrency vs Parrarel](go-routine/concurrency-vs-parrarel.md)
+  * [Simple Go Routine](go-routine/simple-go-routine.md)
   * [Channel](go-routine/channel.md)
   * [Buffered Channel](go-routine/buffered-channel.md)
   * [Select Channel](go-routine/select-channel.md)
