@@ -1,15 +1,30 @@
 # Running Go
 
-Asumsi ada file main.go
+Inisiasi go mod
 
 ```
-D:\>go run main.go
+go mod init nama_project
+```
+
+Buat file main.go, lalu
+
+```
+go run main.go
+```
+
+atau
+
+```
+go run .
+```
+
+atau bisa menggunakan go build lalu start main.
+
+```
+go build main.go
 ```
 
 ```
-D:\>go run .
+start main
 ```
 
-```
-D:\>go build main.go // then -> start main
-```
