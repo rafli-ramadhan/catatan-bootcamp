@@ -5,6 +5,68 @@ package main
 
 import (
 	"fmt"
+	"time"
+)
+
+func main() {
+    fmt.Println("start")
+
+    go func() {
+        fmt.Println("test 1")
+	}()
+    
+    go func() {
+        fmt.Println("test 2")
+    }()
+        
+    go func() {
+        fmt.Println("test 3")
+    }()
+        
+    go func() {
+        fmt.Println("test 4")
+    }()
+    
+    time.Sleep(3*time.Millisecond)
+    fmt.Println("end")
+}
+```
+
+```
+PS D:\go-server> go run main.go
+start
+test 4
+test 2
+test 3
+test 1
+PS D:\go-server> go run main.go
+start
+test 1
+test 4
+test 2
+test 3
+PS D:\go-server> go run main.go
+start
+test 4
+test 1
+test 3
+test 2
+end
+PS D:\go-server> go run main.go
+start
+test 4
+test 3
+test 2
+test 1
+end
+PS D:\go-server> 
+```
+
+```go
+package main
+
+import (
+	"fmt"
 	"sync"
 )
 
