@@ -1,5 +1,7 @@
 # Simple Go Routine
 
+## Go Routine with Time Sleep
+
 ```go
 package main
 
@@ -61,6 +63,8 @@ test 1
 end
 PS D:\go-server> 
 ```
+
+## Go Routine with Sync Wait Group
 
 ```go
 package main
@@ -154,7 +158,8 @@ func main() {
 	var i int = i
 	wg.Add(1)
         go func() {
-            fmt.Printf("test %d ",i+1)
+            fmt.Printf("start %d ",i+1)
+            fmt.Printf("end %d ",i+1)
 	    wg.Done()
         }()
         wg.Wait()
@@ -163,6 +168,9 @@ func main() {
 ```
 
 ```
-test 1 test 2 test 3 test 4 test 5 test 6 test 7 test 8 test 9 test 10 test 11 test 12 test 13 test 14 test 15 test 16 test 17 test 18 test 19 test 20 test 21 test 22 test 23 test 24 test 25 test 26 test 27 test 28 test 29 test 30 test 31 test 32 test 33 test 34 test 35 test 36 test 37 test 38 test 39 test 40 test 41 test 42 test 43 test 44 test 45 test 46 test 47 test 48 test 49 test 50 test 51 test 52 test 53 test 54 test 55 test 56 test 57 test 58 test 59 test 60 test 61 test 62 test 63 test 64 test 65 test 66 test 67 test 68 test 69 test 
-70 test 71 test 72 test 73 test 74 test 75 test 76 test 77 test 78 test 79 test 80 test 81 test 82 test 83 test 84 test 85 test 86 test 87 test 88 test 89 test 90 test 91 test 92 test 93 test 94 test 95 test 96 test 97 test 98 test 99 test 100
+start 1 end 1 start 2 end 2 start 3 end 3 start 4 end 4 start 5 end 5 start 6 end 6 start 7 end 7 start 8 end 8 start 9 end 9 start 10 end 10 start 11 end 11 start 12 end 12 start 13 end 13 start 14 end 14 start 15 end 15 start 16 end 16 start 17 end 17 start 18 end 18 start 19 end 19 start 20 end 20 start 21 end 21 start 22 end 22 start 23 end 23 start 24 end 24 start 25 end 25 start 26 end 26 start 27 end 
+27 start 28 end 28 start 29 end 29 start 30 end 30 start 31 end 31 start 32 end 32 start 33 end 33 start 34 end 34 start 35 end 35 start 
+36 end 36 start 37 end 37 start 38 end 38 start 39 end 39 start 40 end 40 start 41 end 41 start 42 end 42 start 43 end 43 start 44 end 44 start 45 end 45 start 46 end 46 start 47 end 47 start 48 end 48 start 49 end 49 start 50 end 50 start 51 end 51 start 52 end 52 start 53 end 53 start 54 end 54 start 55 end 55 start 56 end 56 start 57 end 57 start 58 end 58 start 59 end 59 start 60 end 60 start 61 end 61 start 62 end 62 start 63 end 63 start 64 end 64 start 65 end 65 start 66 end 66 start 67 end 67 start 68 end 68 start 69 end 69 start 70 end 70 start 71 end 71 start 72 end 72 start 73 end 73 start 74 end 74 start 75 end 75 start 76 end 76 start 77 end 77 start 78 end 78 start 79 end 79 start 80 end 80 start 81 end 81 start 82 end 82 start 83 end 83 start 84 end 84 start 85 end 85 start 86 end 86 start 87 end 87 start 88 end 88 start 89 end 89 start 
+90 end 90 start 91 end 91 start 92 end 92 start 93 end 93 start 94 end 94 start 95 end 95 start 96 end 96 start 97 end 97 start 98 end 98 start 99 end 
+99 start 100 end 100
 ```
