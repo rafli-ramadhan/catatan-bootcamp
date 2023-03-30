@@ -2,7 +2,7 @@
 
 Deadlock -> kondisi dimana go routine saling tunggu -> alhasil tidak ada go routine yang berjalan.
 
-## Contoh kasus
+## Contoh kasus #1
 
 Jika channel in (pengirim) di inisisasi terlebih dahulu dan channel out (penerima) di inisiasi setelah channel in -> deadlock -> karena belum ada penerimanya.
 
@@ -53,6 +53,45 @@ func main() {
 ```
 1
 ```
+
+```go
+package main
+
+import (
+    "fmt"
+    //"sync"
+)
+
+func main() {
+        //var wg = new(sync.WaitGroup)
+        //wg.Add(2)
+        ch := make(chan int)
+        end := make(chan int)
+        // channel in (pengirim)
+        go func() {
+            //defer wg.Done()
+            ch <- 1
+            fmt.Println("test")
+        }()
+        //channel out (penerima)
+        go func() {
+            //defer wg.Done()
+            result := <- ch
+            fmt.Println(result)
+            end <- 2
+        }()
+
+        <-end
+        //defer wg.Wait()
+}
+```
+
+```
+test
+1
+```
+
+## Contoh Kasus #2
 
 ```go
 package main

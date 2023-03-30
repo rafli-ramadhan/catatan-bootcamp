@@ -1,7 +1,7 @@
 # Table of contents
 
 * [🚀 Golang Example Code By Topic](README.md)
-* [Command in Golang](command-in-golang.md)
+* [Command in Golang](running-go.md)
 * [Static Type of Go](static-type-of-go.md)
 * [Variable and Constant](variable-and-constant/README.md)
   * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
@@ -133,6 +133,7 @@
   * [Pool](go-routine/pool.md)
   * [Go Max Procs](go-routine/go-max-procs.md)
   * [Exit](go-routine/exit.md)
+* [Exercise Go Routine](exercise-go-routine.md)
 * [Go Context](go-context.md)
   * [Context](go-context/context.md)
   * [Context Background & TODO](go-context/context-background-and-todo.md)
