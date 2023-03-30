@@ -12,31 +12,35 @@ import (
     "sync"
 )
 
-var wg sync.WaitGroup
-var m sync.Mutex
+var (
+	wg sync.WaitGroup
+	m sync.Mutex
+	rw sync.RWMutex
+	v int = 0
+)
  
-func print(i, v int) {
-    rw.RLock()
-    fmt.Printf("iterasi-%d %d\n", i, v)
-    rw.RUnlock()
-    wg.Done()
-}
-
 func main() {
-    var v int = 0
- 
-    for i := 1; i <= 100; i++ {
-        wg.Add(2)
-	var i = i
+    for i := 1; i <= 10; i++ {
+		fmt.Printf("\nITERASI-%d\n", i)
+		wg.Add(2)
 
-        go func() {
-            m.Lock()
-            v++
-            m.Unlock()
-            wg.Done()
-        }()
+		go func() {
+			m.Lock()
+			fmt.Println("Write lock")
+			v++
+			fmt.Println("Write unlock")
+			m.Unlock()
+			wg.Done()
+		}()
 
-	print(i, v)
+		go func() {
+			m.Lock()
+			fmt.Println("Read lock")
+			fmt.Println(v)
+			fmt.Println("Read unlock")
+			m.Unlock()
+			wg.Done()
+		}()
     }
     
     wg.Wait()
@@ -45,135 +49,195 @@ func main() {
 ```
 
 ```
-...
-iterasi-90 87
-iterasi-91 87
-iterasi-92 91
-iterasi-93 91
-iterasi-94 91
-iterasi-95 91
-iterasi-96 91
-iterasi-97 91
-iterasi-98 91
-iterasi-99 91
-iterasi-100 91
+ITERASI-1
 
-Finished 100
+ITERASI-2
+
+ITERASI-3
+
+ITERASI-4
+
+ITERASI-5
+
+ITERASI-6
+Write lock
+Write unlock
+Read lock
+1
+Read unlock
+Write lock
+Write unlock
+Read lock
+2
+Read unlock
+Write lock
+Write unlock
+Read lock
+3
+Read unlock
+Write lock
+Write unlock
+Read lock
+4
+Read unlock
+Write lock
+Write unlock
+Read lock
+5
+Read unlock
+Read lock
+5
+Read unlock
+Write lock
+Write unlock
+
+ITERASI-7
+
+ITERASI-8
+
+ITERASI-9
+
+ITERASI-10
+Write lock
+Write unlock
+Read lock
+7
+Read unlock
+Read lock
+7
+Read unlock
+Write lock
+Write unlock
+Write lock
+Write unlock
+Read lock
+9
+Read unlock
+Read lock
+9
+Read unlock
+Write lock
+Write unlock
+
+Finished 10
 ```
 
 ## RW Mutex
 
-## Contoh #1
-
 ```go
 package main
  
-import (
-    "fmt"
-    "sync"
-)
-
-var wg sync.WaitGroup
-var m sync.Mutex
-var rw sync.RWMutex
- 
-func print(i, v int) {
-    rw.RLock()
-    fmt.Printf("iterasi-%d %d\n", i, v)
-    rw.RUnlock()
-    wg.Done()
-}
-
-func main() {
-    var v int = 0
- 
-    for i := 1; i <= 100; i++ {
-        wg.Add(2)
-	var i = i
-
-        go func() {
-            m.Lock()
-            v++
-            m.Unlock()
-            wg.Done()
-        }()
-
-	print(i, v)
-    }
-    
-    wg.Wait()
-    fmt.Println("\nFinished", v)
-}
-```
-
-```
-...
-iterasi-91 90
-iterasi-92 91
-iterasi-93 92
-iterasi-94 93
-iterasi-95 94
-iterasi-96 95
-iterasi-97 96
-iterasi-98 97
-iterasi-99 98
-iterasi-100 99
-
-Finished 100
-```
-
-## Contoh #2
-
-```go
-package main
-
 import (
     "fmt"
     "sync"
 )
 
 var (
-    sharedResource int
-    mutex          sync.Mutex
-    rwmu           sync.RWMutex
+	wg sync.WaitGroup
+	m sync.Mutex
+	rw sync.RWMutex
+	v int = 0
 )
-
+ 
 func main() {
-    // Example using a sync.Mutex
-    var wg sync.WaitGroup
-    for i := 0; i < 10; i++ {
-        wg.Add(1)
-        go func() {
-            mutex.Lock()
-            defer mutex.Unlock()
-            sharedResource++
-            wg.Done()
-        }()
-    }
-    wg.Wait()
-    fmt.Printf("Final value using Mutex: %d\n", sharedResource)
+    for i := 1; i <= 10; i++ {
+		fmt.Printf("\nITERASI-%d\n", i)
+		wg.Add(2)
 
-    // Example using a sync.RWMutex
-    var rwg sync.WaitGroup
-    for i := 0; i < 10; i++ {
-        rwg.Add(1)
-        go func() {
-            rwmu.Lock()
-            defer rwmu.Unlock()
-            sharedResource++
-            rwg.Done()
-        }()
+		go func() {
+			m.Lock()
+			fmt.Println("Write lock")
+			v++
+			fmt.Println("Write unlock")
+			m.Unlock()
+			wg.Done()
+		}()
+
+		go func() {
+			rw.RLock()
+			fmt.Println("Read lock")
+			fmt.Println(v)
+			fmt.Println("Read unlock")
+			rw.RUnlock()
+			wg.Done()
+		}()
     }
-    for i := 0; i < 10; i++ {
-        rwg.Add(1)
-        go func() {
-            rwmu.RLock()
-            defer rwmu.RUnlock()
-            fmt.Printf("Read value using RWMutex: %d\n", sharedResource)
-            rwg.Done()
-        }()
-    }
-    rwg.Wait()
-    fmt.Printf("Final value using RWMutex: %d\n", sharedResource)
+    
+    wg.Wait()
+    fmt.Println("\nFinished", v)
 }
+```
+
+```
+ITERASI-1
+
+ITERASI-2
+Write lock
+Write unlock
+Write lock
+Write unlock
+Read lock
+
+ITERASI-3
+Read lock
+2
+Read unlock
+Read lock
+Write lock
+Write unlock
+
+ITERASI-4
+
+ITERASI-5
+2
+Read unlock
+Write lock
+Write unlock
+Write lock
+Write unlock
+2
+Read unlock
+
+ITERASI-6
+
+ITERASI-7
+
+ITERASI-8
+Read lock
+5
+Read unlock
+Read lock
+Read lock
+5
+Read unlock
+Write lock
+Write unlock
+Write lock
+Write unlock
+Write lock
+Write unlock
+5
+Read unlock
+Read lock
+8
+Read unlock
+Read lock
+8
+Read unlock
+
+ITERASI-9
+
+ITERASI-10
+Write lock
+Read lock
+9
+Read unlock
+Read lock
+9
+Read unlock
+Write unlock
+Write lock
+Write unlock
+
+Finished 10
 ```
