@@ -24,7 +24,7 @@
       * [Slice Add Value](variable-and-data-type/slice/slice-add-value.md)
       * [Slice Update Value](variable-and-data-type/slice/slice-update-value.md)
       * [Slice Delete Value](variable-and-data-type/slice/slice-delete-value.md)
-      * [Make Slice](variable-and-data-type/reference-type/slice/make-slice.md)
+      * [Make Slice](variable-and-data-type/slice/make-slice-2.md)
     * [Map](variable-and-data-type/map.md)
     * [Function in Golang](function-in-golang/README.md)
       * [Function](function-in-golang/function.md)

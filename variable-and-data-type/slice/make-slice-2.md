@@ -110,7 +110,7 @@ cap 24, len 19, 0xc00007a000
 cap 24, len 20, 0xc00007a000
 ```
 
-## Memory Address of Slice Different with Slice's Values
+## Slice Memory Addresses, Different from Their Own Values
 
 ```go
 package main
