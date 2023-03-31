@@ -1,5 +1,56 @@
 # Simple Go Routine
 
+## Go Routine vs Synchronous
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+    fmt.Println("start")
+    duration := time.Now()
+
+    go func() {
+        fmt.Println("test 1", time.Since(duration))
+	}()
+    
+    go func() {
+        fmt.Println("test 2", time.Since(duration))
+    }()
+        
+    go func() {
+        fmt.Println("test 3", time.Since(duration))
+    }()
+        
+    go func() {
+        fmt.Println("test 4", time.Since(duration))
+    }()
+
+    go func() {
+        fmt.Println("test 5", time.Since(duration))
+    }()
+    
+    fmt.Println("end", time.Since(duration))
+    time.Sleep(2*time.Second)
+    fmt.Println("end", time.Since(duration))
+}
+```
+
+```
+start
+end 31.798µs
+test 5 95.089µs
+test 1 116.873µs
+test 2 131.804µs
+test 3 144.583µs
+test 4 156.101µs
+end
+```
+
 ## Go Routine with Time Sleep
 
 ```go
