@@ -42,13 +42,13 @@ func main() {
 
 ```
 start
-end 31.798µs
-test 5 95.089µs
-test 1 116.873µs
-test 2 131.804µs
-test 3 144.583µs
-test 4 156.101µs
-end
+end 20.658µs
+test 5 63.831µs
+test 1 82.573µs
+test 2 93.142µs
+test 3 106.828µs
+test 4 116.795µs
+end 2.001232027s
 ```
 
 ## Go Routine with Time Sleep

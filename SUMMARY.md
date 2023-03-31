@@ -121,6 +121,7 @@
 * [Go Routine](go-routine/README.md)
   * [Concurrency vs Parrarel](go-routine/concurrency-vs-parrarel.md)
   * [Simple Go Routine](go-routine/simple-go-routine.md)
+  * [Go Routine vs Synchronous](go-routine/go-routine-vs-synchronous.md)
   * [Wait Group & Defer](go-routine/wait-group-and-defer.md)
   * [Channel](go-routine/channel.md)
   * [Buffered Channel](go-routine/buffered-channel.md)

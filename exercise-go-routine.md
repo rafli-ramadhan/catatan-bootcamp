@@ -4,8 +4,8 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"log"
 	"strings"
 	"sync"
 	"time"
@@ -50,54 +50,172 @@ var usernames []string = []string{
 	"Winny Rahmah Nia",
 }
 
-var wg sync.WaitGroup
+var wg = new(sync.WaitGroup)
+	
+func main() {	
+	duration := 5000*time.Millisecond
+	ctx, cancel := context.WithTimeout(context.Background(), duration)
+	defer cancel()
+	
+	wg.Add(3)
 
-func check(usernames ...string) (totalData int, checkName []string, totalAperData map[string]int) {
-	totalAperData = map[string]int{}
-	for _, username := range usernames {
-		wg.Add(1)
-		go func(username string) {
-			defer wg.Done()
-			// check if username contain alphabet "A"
-			if strings.Contains(strings.ToLower(username), "wina") {
-				checkName = append(checkName, username)
-			}
+	go func() {
+		checkNameWithWorker(ctx, usernames)
+		defer wg.Done()
+	}()
 
-			// calculate total data
-			totalData++
+	go func() {
+		checkNameWithChannel()
+		defer wg.Done()
+	}()
 
-			// calculate "A" for every data
-			totalA := 0
-			for j := range username {
-				if strings.ToLower(string(username[j])) == "a" {
-					totalA += 1
-				}
-			}
-			totalAperData[username] = totalA
-		}(username)
+	go func() {
+		checkNameWithChannelAndWorker(ctx)
+		defer wg.Done()
+	}()
 
-		wg.Wait()
-	}
-
-	return totalData, checkName, totalAperData
+	wg.Wait()
 }
 
-func main() {
-	log.Println("start")
+func checkNameWithChannel() {
+	numOfBuffer := 5
+	var ch = make(chan string, numOfBuffer)
 	start := time.Now()
-	fmt.Println()
 
-	totalData, checkName, totalAperData := check(usernames...)
+	go func() {
+		fmt.Println("[CHANNEL] - start send data to channel")
+		for _, username := range usernames {
+			ch <- username
+		}
+		fmt.Println("[CHANNEL] - end send data to channel")
+		close(ch)
+	}()
+		
+	var total int
+	fmt.Println("[CHANNEL] - start receive data from channel")
+	for i := range ch {
+		if strings.Contains(strings.ToLower(i), "wina") {
+			total++
+		}
+	}
+	fmt.Println("[CHANNEL] - end receive data from channel")
 
-	fmt.Println(totalData)
-	fmt.Println()
-	fmt.Println(checkName)
-	fmt.Println()
-	fmt.Println(totalAperData)
-	
-	fmt.Println()
 	duration := time.Since(start)
-	log.Println("Done in", duration.Seconds(), "seconds")
+	fmt.Println("[CHANNEL] - found", total, "of Wina. Done in", duration.Seconds(), "seconds")
+	defer wg.Done()
+}
+
+func checkNameWithChannelAndWorker(ctx context.Context) {
+	numOfBuffer := 5
+	done := make(chan int)
+
+	go func() {	
+		var channelUser = make(chan string, numOfBuffer)
+		go func() {
+			fmt.Println("[CHANNEL+WORKER] - start send data to channel")
+			for _, username := range usernames {
+				select{
+				case <-ctx.Done():
+					break
+				default:
+					channelUser <- username
+				}
+			}
+			fmt.Println("[CHANNEL+WORKER] - end send data to channel")
+			close(channelUser)
+		}()
+
+		numberOfWorkers := 10
+		wg.Add(numberOfWorkers)
+
+		var channelUserFound = make(chan string, numOfBuffer)
+		go func() {
+			fmt.Println("[CHANNEL+WORKER] - start check name")
+			for workerIndex := 0; workerIndex < numberOfWorkers; workerIndex++ {
+				var total int
+				go func(workerIndex int) {
+					start := time.Now()
+		
+					for username := range channelUser {
+						select {
+						case <-ctx.Done():
+							break
+						default:
+							if strings.Contains(strings.ToLower(username), "wina") {
+								channelUserFound <- username
+								total++
+							}
+						}
+					}
+					
+					duration := time.Since(start)
+					fmt.Println("[CHANNEL+WORKER] -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
+
+					wg.Done()
+				}(workerIndex)
+			}
+			fmt.Println("[CHANNEL+WORKER] - end check name")
+		}()
+
+		go func() {
+			fmt.Println("[CHANNEL+WORKER] - start wg wait")
+			wg.Wait()
+			fmt.Println("[CHANNEL+WORKER] - end wg wait")
+		}()
+
+		counterSuccess := 0
+		listOfUser := []string{}
+		for ch := range channelUserFound {
+			counterSuccess++
+			listOfUser = append(listOfUser, ch)
+		}
+		done <- counterSuccess
+	}()
+
+	select {
+	case <-ctx.Done():
+		fmt.Println("[CHANNEL+WORKER] - finding stopped, %s", ctx.Err())
+	case counterTotal := <-done:
+		fmt.Printf("[CHANNEL+WORKER] - %d of total found", counterTotal)
+	}
+}
+
+func checkNameWithWorker(ctx context.Context, usernames []string) {
+	numberOfWorkers := 10
+	wg.Add(numberOfWorkers)
+
+	go func() {
+		fmt.Println("[WORKER] - start check name")
+		for workerIndex := 0; workerIndex < numberOfWorkers; workerIndex++ {
+			var total int
+			go func(workerIndex int) {
+				start := time.Now()
+	
+				for _, username := range usernames {
+					select {
+					case <-ctx.Done():
+						break
+					default:
+						if strings.Contains(strings.ToLower(username), "wina") {
+							total++
+						}
+					}
+				}
+				
+				duration := time.Since(start)
+				fmt.Println("[WORKER] -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
+
+				wg.Done()
+			}(workerIndex)
+		}
+		fmt.Println("[WORKER] - end check name")
+	}()
+
+	go func() {
+		fmt.Println("[WORKER] - start wg wait")
+		wg.Wait()
+		fmt.Println("[WORKER] - end wg wait")
+	}()
 }
 ```
 
