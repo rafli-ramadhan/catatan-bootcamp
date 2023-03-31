@@ -1,5 +1,7 @@
 # Exercise Go Routine
 
+
+
 ```go
 package main
 
@@ -50,10 +52,12 @@ var usernames []string = []string{
 	"Winny Rahmah Nia",
 }
 
+var duration = 100*time.Millisecond
 var wg = new(sync.WaitGroup)
-	
-func main() {	
-	duration := 5000*time.Millisecond
+var numberOfWorkers = 5
+var start = time.Now()
+
+func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), duration)
 	defer cancel()
 	
@@ -80,7 +84,6 @@ func main() {
 func checkNameWithChannel() {
 	numOfBuffer := 5
 	var ch = make(chan string, numOfBuffer)
-	start := time.Now()
 
 	go func() {
 		fmt.Println("[CHANNEL] - start send data to channel")
@@ -100,15 +103,13 @@ func checkNameWithChannel() {
 	}
 	fmt.Println("[CHANNEL] - end receive data from channel")
 
-	duration := time.Since(start)
-	fmt.Println("[CHANNEL] - found", total, "of Wina. Done in", duration.Seconds(), "seconds")
-	defer wg.Done()
+	fmt.Println("[CHANNEL] - Found", total, "of Wina. Done in", time.Since(start).Seconds(), "seconds")
+	wg.Done()
 }
 
 func checkNameWithChannelAndWorker(ctx context.Context) {
 	numOfBuffer := 5
-	done := make(chan int)
-
+	
 	go func() {	
 		var channelUser = make(chan string, numOfBuffer)
 		go func() {
@@ -125,7 +126,6 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 			close(channelUser)
 		}()
 
-		numberOfWorkers := 10
 		wg.Add(numberOfWorkers)
 
 		var channelUserFound = make(chan string, numOfBuffer)
@@ -134,7 +134,6 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 			for workerIndex := 0; workerIndex < numberOfWorkers; workerIndex++ {
 				var total int
 				go func(workerIndex int) {
-					start := time.Now()
 		
 					for username := range channelUser {
 						select {
@@ -143,13 +142,13 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 						default:
 							if strings.Contains(strings.ToLower(username), "wina") {
 								channelUserFound <- username
-								total++
+								//total++
 							}
 						}
 					}
 					
 					duration := time.Since(start)
-					fmt.Println("[CHANNEL+WORKER] -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
+					fmt.Println("[CHANNEL+WORKER] - worker -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
 
 					wg.Done()
 				}(workerIndex)
@@ -162,26 +161,15 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 			wg.Wait()
 			fmt.Println("[CHANNEL+WORKER] - end wg wait")
 		}()
-
-		counterSuccess := 0
-		listOfUser := []string{}
-		for ch := range channelUserFound {
-			counterSuccess++
-			listOfUser = append(listOfUser, ch)
-		}
-		done <- counterSuccess
 	}()
 
 	select {
 	case <-ctx.Done():
-		fmt.Println("[CHANNEL+WORKER] - finding stopped, %s", ctx.Err())
-	case counterTotal := <-done:
-		fmt.Printf("[CHANNEL+WORKER] - %d of total found", counterTotal)
+		fmt.Printf("[CHANNEL+WORKER] - finding stopped, %s\n", ctx.Err())
 	}
 }
 
 func checkNameWithWorker(ctx context.Context, usernames []string) {
-	numberOfWorkers := 10
 	wg.Add(numberOfWorkers)
 
 	go func() {
@@ -189,7 +177,6 @@ func checkNameWithWorker(ctx context.Context, usernames []string) {
 		for workerIndex := 0; workerIndex < numberOfWorkers; workerIndex++ {
 			var total int
 			go func(workerIndex int) {
-				start := time.Now()
 	
 				for _, username := range usernames {
 					select {
@@ -203,7 +190,7 @@ func checkNameWithWorker(ctx context.Context, usernames []string) {
 				}
 				
 				duration := time.Since(start)
-				fmt.Println("[WORKER] -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
+				fmt.Println("[WORKER] - worker -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
 
 				wg.Done()
 			}(workerIndex)
@@ -217,6 +204,7 @@ func checkNameWithWorker(ctx context.Context, usernames []string) {
 		fmt.Println("[WORKER] - end wg wait")
 	}()
 }
+
 ```
 
 ```
