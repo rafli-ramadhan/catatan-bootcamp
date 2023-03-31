@@ -1,6 +1,8 @@
 # Go Routine vs Synchronous
 
-Synchronous diwakili dengan fmt.Println()
+Kodingan di bawah ini untuk mengetahui siapa yang lebih cepat antara synchronous dan go routine. Synchronous diwakili dengan fmt.Println() tanpa go func().
+
+## Implementasi Time Sleep
 
 ```go
 package main
@@ -48,19 +50,27 @@ test 1.b 156.41µs
 end 2.000573491s
 ```
 
+## Implementasi Sync Wait Group
+
 ```go
 package main
 
 import (
 	"fmt"
 	"time"
+	"sync"
 )
+
+var wg sync.WaitGroup
 
 func main() {
     fmt.Println("start")
     duration := time.Now()
 
     go func() {
+        fmt.Println("test 1", time.Since(duration))
+        
+        wg.Add(3)
         go func() {
             fmt.Println("test 1.a", time.Since(duration))
         }()
@@ -74,6 +84,8 @@ func main() {
         }()
         
         fmt.Println("test 2", time.Since(duration))
+        wg.Wait()
+        fmt.Println("test 3", time.Since(duration))
 	}()
     
     fmt.Println("end", time.Since(duration))
@@ -84,10 +96,11 @@ func main() {
 
 ```
 start
-end 15.274µs
-test 2 113.019µs
-test 1.c 152.354µs
-test 1.a 169.296µs
-test 1.b 184.646µs
-end 2.001080916s
+end 17.017µs
+test 1 883.865µs
+test 2 1.588318ms
+test 1.c 1.636508ms
+test 1.a 1.658898ms
+test 1.b 1.671221ms
+end 2.002663523s
 ```
