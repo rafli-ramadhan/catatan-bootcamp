@@ -1,6 +1,6 @@
 # Simple Go Routine
 
-## Go Routine vs Synchronous
+## Go Routine with Time Sleep
 
 ```go
 package main
@@ -50,8 +50,6 @@ test 3 106.828µs
 test 4 116.795µs
 end 2.001232027s
 ```
-
-## Go Routine with Time Sleep
 
 ```go
 package main

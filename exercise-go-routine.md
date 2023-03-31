@@ -1,6 +1,6 @@
 # Exercise Go Routine
 
-
+Check name in slice using go routine and context wait timeout.
 
 ```go
 package main
@@ -142,7 +142,7 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 						default:
 							if strings.Contains(strings.ToLower(username), "wina") {
 								channelUserFound <- username
-								//total++
+								total++
 							}
 						}
 					}
@@ -208,13 +208,28 @@ func checkNameWithWorker(ctx context.Context, usernames []string) {
 ```
 
 ```
-2023/03/30 15:16:28 start
-
-36
-
-[Lun Wina]
-
-map[ADNAN NUR JAILANI:4 ANDINI DWI RIZKY PUTRI:1 Aditya Ananta Putra:6 Afrila Zahra Prasetyo:5 Aida Nirmala:4 Amalia Rahma:5 Angga Putra:3 CAHAYA WIJAYA IJAM:6 DEVITA NANDA OKTAVIA:5 DEWI AYU LESTARI:2 DHEVY YANI RIZKI:1 Dea Christina:2 Dhevina Ananda Fitri:4 Dwi Mahani:2 Eri Santosos:1 FAUZIYATUNNISA:3 Faiza Amalia Mahfudz:6 Febriyanti Syabina:3 Hafifah Nur Azmi Pratiwi:4 Juliansyah Husien:2 Kharisa Nur Aziza:4 Lun Wina:1 MAHREVA ROESTHA RAMADANIATY:7 MUHAMMAD FADHILAH:4 Muhammad Fatah Firdaus:5 Muhammad Rafly Ahya:5 Muhammad Rahmin Noor:3 Muhammad Rivaldi:3 Muhammad Rizky Rachmadhani:5 NOLA FEBRIANA SAPUTRI:4 Nadiah Nahdhah Islamiyah:6 RAFADYAN REYHAN MARITZA WERAT:7 Robby Satria:2 STEVI VIONI PAKULLA:2 Salshabilla Wahyu Anafi:6 Winny Rahmah Nia:3]
-
-2023/03/30 15:16:28 Done in 0.0016152 seconds
+[WORKER] - start wg wait
+[CHANNEL] - start receive data from channel
+[CHANNEL] - start send data to channel
+[CHANNEL+WORKER] - start wg wait
+[CHANNEL+WORKER] - start check name
+[WORKER] - start check name
+[CHANNEL+WORKER] - start send data to channel
+[CHANNEL] - end send data to channel
+[CHANNEL] - end receive data from channel
+[CHANNEL] - Found 1 of Wina. Done in 0.0087968 seconds
+[WORKER] - worker - 1 found 1 of Wina. Done in 0.00771 seconds
+[WORKER] - worker - 5 found 1 of Wina. Done in 0.00771 seconds
+[WORKER] - worker - 4 found 1 of Wina. Done in 0.00771 seconds
+[WORKER] - worker - 3 found 1 of Wina. Done in 0.00771 seconds
+[WORKER] - worker - 2 found 1 of Wina. Done in 0.00771 seconds
+[CHANNEL+WORKER] - end send data to channel
+[CHANNEL+WORKER] - worker - 1 found 0 of Wina. Done in 0.0138077 seconds
+[WORKER] - end check name
+[CHANNEL+WORKER] - worker - 3 found 0 of Wina. Done in 0.0138077 seconds
+[CHANNEL+WORKER] - end check name
+[CHANNEL+WORKER] - worker - 2 found 0 of Wina. Done in 0.0138077 seconds
+[CHANNEL+WORKER] - worker - 5 found 1 of Wina. Done in 0.0138077 seconds
+[CHANNEL+WORKER] - worker - 4 found 0 of Wina. Done in 0.0138077 seconds
+[CHANNEL+WORKER] - end wg wait
 ```

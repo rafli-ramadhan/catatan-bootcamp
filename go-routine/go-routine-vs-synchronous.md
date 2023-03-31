@@ -1,6 +1,8 @@
 # Go Routine vs Synchronous
 
-Kodingan di bawah ini untuk mengetahui siapa yang lebih cepat antara synchronous dan go routine. Synchronous diwakili dengan fmt.Println() tanpa go func().
+Kodingan di bawah ini untuk menunjukkan siapa yang lebih cepat antara synchronous dan go routine. Synchronous diwakili dengan fmt.Println() tanpa go func().
+
+Intinya -> go routine tidak selalu lebih cepat dari pada kode program synchronous -> go routine digunakan untuk membuat aplikasi lebih cepat, bukan membuat kodingan lebih cepat.
 
 ## Implementasi Time Sleep
 
