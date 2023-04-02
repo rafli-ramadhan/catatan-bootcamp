@@ -2,7 +2,7 @@
 
 \-> Kumpulan definisi method (hanya definisi saja) dengan nama tertentu\
 \-> Interface syaratnya harus method\
-\-> Method sayaratnya harus struct
+\-> Method sayaratnya type declaration
 
 ```go
 package main
@@ -87,4 +87,42 @@ member_01
 member_01
 member_02
 member_03
+```
+
+```go
+package main
+
+import(
+	"fmt"
+)
+
+// type declaration
+type Value string
+
+func (v Value) Hello() {
+	fmt.Println("Hello", v)
+}
+
+type Example interface {
+	Hello()
+}
+
+func main() {
+	var string1 Value = "Andi"
+	string1.Hello()
+	var interface1 Example = string1
+	interface1.Hello()
+
+	var string2 Value = "Utsman"
+	string2.Hello()
+	var interface2 Example = string2
+	interface2.Hello()
+}
+```
+
+```
+Hello Andi
+Hello Andi
+Hello Utsman
+Hello Utsman
 ```

@@ -38,6 +38,7 @@
     * [Anonymous Function](reference-type/function-in-golang/anonymous-function.md)
     * [Function Input from CLI](reference-type/function-in-golang/function-input-from-cli.md)
     * [Exercise (Function)](reference-type/function-in-golang/exercise-function.md)
+* [Default Variable](default-variable.md)
 * [Type Declaration (Alias)](type-declaration-alias/README.md)
   * [Type Declaration](type-declaration-alias/type-declaration.md)
   * [Type Declaration Built In](type-declaration-alias/type-declaration-built-in.md)
