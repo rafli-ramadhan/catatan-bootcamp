@@ -6,6 +6,8 @@ Jika menggunakan method GET -> semua data di form akan menjadi query parameter.
 
 Sedangkan jika menggunakan POST -> semua data di form akan dikirim via body HTTP request.
 
+ParseForm mengambil (parses) query mentah dari URL seperti dari CURL and melakukan update r.PostForm
+
 ```go
 r.PostForm.Get()
 ```
@@ -30,6 +32,7 @@ func FormPost(write http.ResponseWriter, request *http.Request) {
 	firstName := request.PostForm.Get("first_name")
 	lastName := request.PostForm.Get("last_name")
 	age := request.PostForm.Get("age")
+	
 	fmt.Fprintf(write, "Hello %s %s and I am %s years old", firstName, lastName, age)
 }
 
