@@ -1,5 +1,7 @@
 # Golang Database
 
+
+
 Install Go MySQL Driver
 
 ```
@@ -23,3 +25,5 @@ db.SetConnMaxLifetime(60 * time.Minute)
 // to prevent connection leak
 defer db.Close()
 ```
+
+Pool -> management access
