@@ -2,7 +2,7 @@
 
 ## Query Parameter
 
-Untuk mencegah SQL Injection
+Untuk mencegah SQL Injection -> SQL injection adalah teknik untuk mencari celah keamanan melalui SQL query.
 
 ```go
  queryInsert := `insert into pelanggan (name, no_telp) values (?, ?)`

@@ -145,6 +145,7 @@
   * [Context WithValue, WithDeadline, WithTimeout, WithCancel, Done](go-context/context-withvalue-withdeadline-withtimeout-withcancel-done.md)
 * [Golang Database](golang-database.md)
 * [Go SQL](go-sql/README.md)
+  * [Cara Kerja Database](go-sql/cara-kerja-database.md)
   * [Create Table and Alter Table](go-sql/create-table-and-alter-table.md)
   * [Select & Insert](go-sql/select-and-insert.md)
   * [Database](go-sql/database.md)
