@@ -23,7 +23,6 @@ import (
     "time"
 )
 
-var wg sync.WaitGroup
 var pool sync.Pool
 
 func main() {

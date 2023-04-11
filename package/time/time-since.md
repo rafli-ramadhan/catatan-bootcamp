@@ -10,9 +10,10 @@ import (
 
 func main() {
 	start := time.Now()
+	
 	time.Sleep(5*time.Second)
-	duration := time.Since(start)
-	fmt.Println(duration.Seconds(), "seconds")
+
+	fmt.Println(time.Since(start).Seconds(), "seconds")
 }
 ```
 
