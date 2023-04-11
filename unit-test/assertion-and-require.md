@@ -41,6 +41,7 @@ import (
 )
 
 func TestSayHi(t *testing.T) {
+	// sub test
 	t.Run("Test-1", func(t *testing.T) {
 		result := SayHi("Amar")
 		assert.Equal(t, "Hello Andi", result)
