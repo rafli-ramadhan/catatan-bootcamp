@@ -1,8 +1,14 @@
 # Running Sub Test
 
+Format :
+
 ```
-go test ./usecase -v -run TestContactHTTP
+go test path_name -v -run function_name/sub_unit_name
 ```
+
+Example :&#x20;
+
+main.go
 
 ```go
 package main
