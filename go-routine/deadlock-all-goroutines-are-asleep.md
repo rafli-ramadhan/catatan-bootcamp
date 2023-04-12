@@ -1,12 +1,14 @@
-# Deadlock
+# Deadlock - All goroutines are asleep
 
 Deadlock -> kondisi dimana go routine saling tunggu -> alhasil tidak ada go routine yang berjalan.
 
-## Contoh kasus #1
+## Contoh Kasus #1
 
 Jika channel in (pengirim) di inisisasi terlebih dahulu dan channel out (penerima) di inisiasi setelah channel in -> deadlock -> karena belum ada penerimanya.
 
-Jika channel out (penerima) di inisisasi terlebih dahulu dan channel in (pengirim) di inisiasi setelah channel out -> ada output yang ditampilkan.&#x20;
+Channel in dan channel out harus berjalan bersama -> caranya salah satu di inisiasi terlebih dahulu dan yang pertama di inisiasi dimasukkan ke dalam go routine.
+
+### Program #1
 
 ```go
 package main
@@ -57,41 +59,25 @@ func main() {
 ```go
 package main
 
-import (
-    "fmt"
-    //"sync"
-)
+import "fmt"
 
 func main() {
-        //var wg = new(sync.WaitGroup)
-        //wg.Add(2)
-        ch := make(chan int)
-        end := make(chan int)
-        // channel in (pengirim)
-        go func() {
-            //defer wg.Done()
-            ch <- 1
-            fmt.Println("test")
-        }()
-        //channel out (penerima)
-        go func() {
-            //defer wg.Done()
-            result := <- ch
-            fmt.Println(result)
-            end <- 2
-        }()
-
-        <-end
-        //defer wg.Wait()
+    ch := make(chan int)
+	// channel in (pengirim)
+	go func() {
+	    ch <- 1
+	}()
+    // channel out (penerima)
+    result := <- ch
+    fmt.Println(result)
 }
 ```
 
 ```
-test
 1
 ```
 
-## Contoh Kasus #2
+### Program #2
 
 ```go
 package main
@@ -148,6 +134,40 @@ func main() {
         go f(value)
         // channel in (pengirim)
         value <- i
+    }
+    
+    fmt.Println("\nEnd")
+    close(value)
+}
+```
+
+```
+Start
+100 101 102 103 104 105 106 107 108 109 
+End
+```
+
+```go
+package main
+  
+import "fmt"
+
+func f(value chan int) {
+    result := 100 + <- value
+    fmt.Printf("%d ", result)
+}
+
+func main() {
+    fmt.Println("Start")
+    value := make(chan int)
+
+    for i := 0; i < 10; i++ {
+        // channel in (pengirim)
+		go func() {
+	        value <- i
+		}()
+		//channel out (penerima)
+        f(value)
     }
     
     fmt.Println("\nEnd")
