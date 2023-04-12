@@ -1,4 +1,4 @@
-# Exercise Go Routine
+# Exercise 1.1 : Go Routine + Context + Channel
 
 Check name in slice using go routine and context wait timeout.
 

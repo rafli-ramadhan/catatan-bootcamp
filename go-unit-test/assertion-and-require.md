@@ -101,18 +101,6 @@ FAIL    unit-testing    0.395s
 
 ## Require
 
-```go
-func Equal(t TestingT, expected interface{}, actual interface{}, msgAndArgs ...interface{}) {
-	if h, ok := t.(tHelper); ok {
-		h.Helper()
-	}
-	if assert.Equal(t, expected, actual, msgAndArgs...) {
-		return
-	}
-	t.FailNow()
-}
-```
-
 main\_test.go
 
 ```go

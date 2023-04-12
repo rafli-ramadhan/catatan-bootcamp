@@ -1,5 +1,9 @@
 # Running Sub Test
 
+```
+go test ./usecase -v -run TestContactHTTP
+```
+
 ```go
 package main
 
