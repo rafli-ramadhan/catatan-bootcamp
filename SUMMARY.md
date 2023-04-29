@@ -1,8 +1,8 @@
 # Table of contents
 
-* [🚀 Golang Example Code By Topic](README.md)
-* [Command in Golang](running-go.md)
-* [Static Type of Go](static-type-of-go.md)
+* [🚀 Contoh Kodingan Golang berdasarkan Topik](README.md)
+* [Command di Golang](command-di-golang.md)
+* [Intro (Static Type of Go)](intro-static-type-of-go.md)
 * [Variable and Constant](variable-and-constant/README.md)
   * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
   * [Var vs Operator :=](variable-and-constant/var-vs-operator.md)

@@ -1,14 +1,16 @@
-# Command in Golang
+# Command di Golang
 
-## Running Go
+## Inisiasi Go Module
 
-Inisiasi go mod
+Inisiasi go module :
 
 ```
 go mod init nama_project
 ```
 
-Buat file main.go, lalu
+Buat file main.go, kemudian lakukan running
+
+## Running Go Module
 
 ```
 go run main.go
