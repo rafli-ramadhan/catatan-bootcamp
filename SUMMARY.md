@@ -1,8 +1,8 @@
 # Table of contents
 
 * [🚀 Contoh Kodingan Golang berdasarkan Topik](README.md)
-* [Command di Golang](command-di-golang.md)
-* [Intro (Static Type of Go)](intro-static-type-of-go.md)
+* [Command di Golang](running-go.md)
+* [Static Type of Go](static-type-of-go.md)
 * [Variable and Constant](variable-and-constant/README.md)
   * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
   * [Var vs Operator :=](variable-and-constant/var-vs-operator.md)
@@ -11,7 +11,7 @@
   * [Int & Uint (Unsigned Integer)](primitive-or-basic-variable/int-and-uint-unsigned-integer.md)
   * [Float](primitive-or-basic-variable/float.md)
   * [String](primitive-or-basic-variable/string.md)
-  * [Bool](primitive-or-basic-variable/bool.md)
+  * [Boolean](primitive-or-basic-variable/boolean.md)
 * [Aggregate Type](aggregate-type/README.md)
   * [Array](aggregate-type/array.md)
   * [Struct](aggregate-type/struct/README.md)

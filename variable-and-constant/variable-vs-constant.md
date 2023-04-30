@@ -26,7 +26,6 @@ func main() {
 ```
 
 ```
-// Output
 2
 3
 2

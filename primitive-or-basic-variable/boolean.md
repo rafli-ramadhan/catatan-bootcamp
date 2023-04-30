@@ -1,6 +1,8 @@
-# Bool
+# Boolean
 
-Default -> False
+Default value dari tipe data boolean adalah False.
+
+## Contoh _code_
 
 ```go
 package main
@@ -13,10 +15,10 @@ func main() {
     fmt.Println(IsTrue)
     fmt.Println(!IsTrue)
     if IsTrue {             // -> if IsTrue == true
-        fmt.Println(IsTrue)
+        fmt.Println(true)
     }
     if !IsTrue {            // -> if IsTrue == false
-        fmt.Println(IsTrue)
+        fmt.Println(false)
     }
 }
 ```

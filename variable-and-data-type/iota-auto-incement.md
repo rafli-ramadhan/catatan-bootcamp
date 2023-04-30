@@ -4,9 +4,9 @@ description: by Mochamad Rafli Ramadhan
 
 # Iota (Auto incement)
 
-## Iota
+Iota digunakan untuk menginisiasi beberapa constant yang membutuhkan value auto increment dengan tipe integer atau float.
 
-Iota digunakan untuk mendeklarasikan beberapa constant yang membutuhkan auto increment
+## Contoh _code_
 
 ```go
 package main
@@ -17,11 +17,19 @@ import (
 
 func main() {
 	const (
-		int2 = 2 + iota*2
-		int3
-		int4
+		num1 = 2 + iota*2
+		num2
+		num3
 	)
-	fmt.Println(int2, int3, int4)  // Result -> 2, 4, 6 
+	fmt.Println(num1, num2, num3)
+	
+	
+	const (
+		num4 = 2.2 + iota*3
+		num5
+		num6
+	)
+	fmt.Println(num4, num5, num6)
 
 	// Contoh untuk deklarasi variabel hari menjadi integer dari 1 sampai 7
 	const (
@@ -52,6 +60,13 @@ func main() {
 	)
 	fmt.Println(January)
 }
+```
+
+```
+2 4 6
+2.2 5.2 8.2
+1
+1
 ```
 
 

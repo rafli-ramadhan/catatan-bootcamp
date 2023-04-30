@@ -1,4 +1,4 @@
-# Intro (Static Type of Go)
+# Static Type of Go
 
 Salah satu keunggulan golang yaitu adanya _static type_. _**Static type**_ pada golang menyebabkan suatu variabel hanya dapat di inisiasi dengan 1 tipe data dan tipe data tersebut tidak dapat di ubah. Keunggulan dari static type diantaranya adalah:&#x20;
 
