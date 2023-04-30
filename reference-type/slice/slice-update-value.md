@@ -1,5 +1,7 @@
 # Slice Update Value
 
+Untuk memperbaruhi value dengan index tertentu dari suatu slice, dapat langsung diubah seperti contoh di bawah ini.
+
 ```go
 package main
 import "fmt"

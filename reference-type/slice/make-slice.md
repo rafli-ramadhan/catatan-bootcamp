@@ -1,10 +1,8 @@
 # Make Slice
 
-Make digunakan untuk membuat suatu slice.
+Make digunakan untuk membuat suatu slice. Fungsi make memiliki 3 input parameter yaitu data type, length dan capacity, dimana capacity harus lebih dari length (capacity > length).
 
-Format -> make(data type, length, capacity), **capacity > length**.
-
-## Make Slice with Different Data Types&#x20;
+## Contoh _code_
 
 ```go
 package main
@@ -29,14 +27,13 @@ func main() {
 ```
 
 ```
-// Output
 [0 0 0 0 0]
 [    ]
 [0 0 0 0 0]
 [false false false false false]
 ```
 
-## Length > Capacity
+## Capacity < Length
 
 <pre class="language-go"><code class="lang-go"><strong>package main
 </strong>import "fmt"
@@ -51,7 +48,7 @@ func main() {
 invalid argument: length and capacity swapped
 ```
 
-## Assign Value More Than Slice's Length
+## Input Value lebih dari Length Slice
 
 ```go
 package main
@@ -68,9 +65,9 @@ func main() {
 panic: runtime error: index out of range [5] with length 5
 ```
 
-## Disadvantages of Using Make Slice
+## Kekurangan Make Slice
 
-Saat kita assign suatu value ke dalam slice yang melebihi length dari slice, capacity dari slice tersebut akan menjadi 2 kali lipatnya.
+Saat kita menginputkan suatu value ke dalam slice yang melebihi length dari slice, capacity dari slice tersebut akan menjadi 2 kali lipatnya. Cotohnya seperti _code_ dibawah ini. Slice s yang awalnya tidak mempunyai value, kemudian di isi value secara bertahap menggunakan _looping_. Lalu di print kapasitas dan length dari slice tersebut.
 
 ```go
 package main
@@ -110,7 +107,9 @@ cap 24, len 19, 0xc00007a000
 cap 24, len 20, 0xc00007a000
 ```
 
-## Slice Memory Addresses, Different from Their Own Values
+## Informasi tambahan
+
+Suatu slice misalkan s disimpan dengan _memory address_ yang berbeda dengan value-value di dalam array tersebut.
 
 ```go
 package main

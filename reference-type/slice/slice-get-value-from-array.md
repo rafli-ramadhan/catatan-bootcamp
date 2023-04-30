@@ -1,5 +1,7 @@
 # Slice Get Value from Array
 
+Slice dapat dibuat dengan mengambil value dari suatu array seperti contoh di bawah ini.
+
 ```go
 package main
 import "fmt"

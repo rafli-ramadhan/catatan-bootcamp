@@ -1,5 +1,7 @@
 # Slice Add Value
 
+Untuk menambahkan value dalam suatu slice dapat menggunakan fungsi append.
+
 ```go
 package main
 import "fmt"

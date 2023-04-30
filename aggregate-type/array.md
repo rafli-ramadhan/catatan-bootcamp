@@ -34,7 +34,7 @@ Test1 Test2 Test3
 
 ## Informasi tambahan
 
-Suatu variabel array misalkan arr1 disimpan dengan _memory address_ yang berbeda dari value-value di dalam array tersebut. Sebagai contoh _code_ di bawah ini, variabel arr1 disimpan pada _memory address_ 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.
+Suatu array misalkan arr1 disimpan dengan _memory address_ yang berbeda dari value-value di dalam array tersebut. Sebagai contoh _code_ di bawah ini, array arr1 disimpan pada _memory address_ 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.
 
 ```go
 package main

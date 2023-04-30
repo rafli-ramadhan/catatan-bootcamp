@@ -1,6 +1,6 @@
 # Slice Delete Value
 
-Format append -> append(\[]int, ...int) -> append(slice, value) -> variadic function
+Untuk menghapus suatu value dengan index tertentu di slice dapat menggunakan fungsi append. Dimana append memiliki format append(slice, ...value). Parameter kedua dalam fungsi append merupakan variadic function, yang berarti append dapat menerima lebih dari 2 input.
 
 ```go
 package main
@@ -17,7 +17,7 @@ func main() {
 [1 2 4 5]
 ```
 
-Kodingan di atas sama dengan kodingan di bawah ini :
+Kodingan di atas sama memiliki algoritma yang sama dengan kodingan di bawah ini :
 
 ```go
 package main
