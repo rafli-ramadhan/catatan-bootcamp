@@ -1,6 +1,6 @@
 # Array
 
-Array merupakan jenis tipe data aggregate di Golang yang mampu menampung beberapa value dengan tipe data yang sama dengan jumlah (length) tertentu. Kekurangan dari array adalah hanya bisa di isi value sesuai dengan length yang telah di deklarasikan.
+Array merupakan jenis tipe data aggregate di Golang yang mampu menampung beberapa value dengan tipe data yang sama dengan jumlah (length) tertentu. Kekurangan dari array adalah hanya bisa di isi value sesuai dengan length yang telah di deklarasikan. Untuk default value dari suatu array akan bergantung pada tipe data yang digunakan.
 
 ## Contoh _code_
 
@@ -13,6 +13,8 @@ import (
 
 func main() {
 	var names [3]string
+	fmt.Println(names)
+
 	names[0] = "Test1"
 	names[1] = "Test2"
 	names[2] = "Test3"
@@ -25,6 +27,7 @@ func main() {
 ```
 
 ```
+[  ]
 Test1 Test2 Test3 
 [12 13 14]
 ```
