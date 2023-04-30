@@ -1,6 +1,8 @@
 # Type Declaration
 
-Membuat variabel baru (alias) dari tipe variabel yang sudah ada (string, int, float, bool, array, slice, map, struct, function).
+Type declaration digunakan untuk membuat variabel baru (alias) dari tipe data yang sudah ada (string, int, float, bool, array, slice, map, struct, interface atau function).
+
+## Contoh _code_
 
 ```go
 package main
@@ -10,7 +12,6 @@ import (
 )
 
 func main() {
-	// static type: store data only for one data type / tipe data yang tidak dapat diubah.
 	type NoKTP string
 	var KTPNumber NoKTP = "43284234928347293"
 	fmt.Println(KTPNumber)
@@ -19,4 +20,9 @@ func main() {
 	var isValid IsValid = true
 	fmt.Println(isValid)
 }
+```
+
+```
+43284234928347293
+true
 ```
