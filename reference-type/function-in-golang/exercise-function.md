@@ -44,6 +44,8 @@ a. Menghitung jumlah data\
 b. Mencari data yang terdapat kata “Muhammad” dengan return slice\
 c. Menghitung huruf a dari masing-masing nama dengan return map key:nama dan value:jumlah huruf a
 
+## Answer
+
 ```go
 package main
 
@@ -121,7 +123,6 @@ func main() {
 ```
 
 ```
-// Output :
 36
 [MUHAMMAD FADHILAH Muhammad Fatah Firdaus Muhammad Rafly Ahya Muhammad Rahmin Noor Muhammad Rivaldi Muhammad Rizky Rachmadhani]
 map[ADNAN NUR JAILANI:4 ANDINI DWI RIZKY PUTRI:1 Aditya Ananta Putra:6 Afrila Zahra Prasetyo:5 Aida Nirmala:4 Amalia Rahma:5 Angga Putra:3 CAHAYA WIJAYA 

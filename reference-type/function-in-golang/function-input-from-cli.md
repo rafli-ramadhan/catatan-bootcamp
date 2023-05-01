@@ -1,6 +1,10 @@
 # Function Input from CLI
 
-Use -> fmt.Scanln
+Untuk memperoleh input dari CLI (_Command Line Interface_) seperti dari CMD atau Bash di Golang dapat menggunakan fmt.Scanln.
+
+## Contoh _code_
+
+_Copy code_ dibawah ini, lalu jalankan di local dengan `go run main.go`.
 
 ```go
 package main

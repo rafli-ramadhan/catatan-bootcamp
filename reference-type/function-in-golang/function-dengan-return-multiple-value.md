@@ -1,8 +1,8 @@
 # Function dengan Return Multiple Value
 
-Me-return lebih dari 1 value dalam sebuah fungsi
+Function dengan return multiple value memungkinkan output lebih dari 1 value.
 
-## Contoh function #1
+## Contoh _code_ 1
 
 ```go
 package main
@@ -22,7 +22,11 @@ func sayHi(name string) (string, string) {
 
 ```
 
-## Contoh function #2 dengan mengabaikan 1 return value
+```
+Hi Dawam nice to meet you. Welcome.
+```
+
+## Contoh _code_ 2 dengan mengabaikan 1 return value
 
 ```go
 package main
@@ -42,3 +46,6 @@ func sayHi(name string) (string, string) {
 
 ```
 
+```
+Hi Dawam nice to meet you.
+```

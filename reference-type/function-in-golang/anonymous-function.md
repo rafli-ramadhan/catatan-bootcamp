@@ -1,8 +1,8 @@
 # Anonymous Function
 
-Membuat function secara langsung di variabel atau parameter tanpa harus membuat parameter terlebih dahulu
+Anonymous function hampir mirip function biasa, bedanya anonymous function bisa secara langsung di inisiasi ke suatu variabel.
 
-## 1. Anonymous Function sebagai Variabel
+## Contoh _code_ : anonymous function sebagai variabel
 
 ```go
 package main
@@ -33,7 +33,12 @@ func main() {
 	
 ```
 
-## 2. Anonymous Function sebagai Parameter
+```
+Hello Umar
+Hello Andi
+```
+
+## Contoh _code_ 2 : anonymous function sebagai parameter
 
 ```go
 package main
@@ -69,5 +74,7 @@ func main() {
 	
 ```
 
-
-
+```
+Hello Umar
+Hello Andi
+```

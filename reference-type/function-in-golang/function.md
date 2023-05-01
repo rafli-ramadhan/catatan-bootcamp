@@ -1,6 +1,6 @@
 # Function
 
-## Istilah penting :
+## Istilah penting dalam function :
 
 * Parameter -> Data yang di input saat mengeksekusi sebuah function
 * Function -> Barisan suatu kode yang dapat mengeksekusi suatu perintah dan bisa digunakan **secara berulang-ulang**.

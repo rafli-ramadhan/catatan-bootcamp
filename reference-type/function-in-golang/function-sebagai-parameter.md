@@ -1,8 +1,8 @@
-# Function as Parameter
+# Function sebagai Parameter
 
-Function bisa disimpan sebagai value dalam variabel dan bisa digunakan untuk function yang lain.
+Function bisa digunakan sebagai parameter untuk function yang lain.
 
-## Contoh function #1
+## Contoh _code_ 1
 
 ```go
 package main
@@ -11,9 +11,10 @@ import (
 	"fmt"
 )
 
-// function type declaration
+// type declaration
 type Filter func(name string) string
 
+// function as parameter
 func sayHelloWithFilter(name string, filter Filter) {
 	nameFiltered := filter(name)
 	fmt.Println("Hello", nameFiltered)
@@ -35,10 +36,11 @@ func main() {
 ```
 
 ```
-// Output :
 Hello Alan
 Hello Hana
 ```
+
+## Contoh _code_ 2
 
 ```go
 package main
@@ -74,7 +76,6 @@ func main() {
 ```
 
 ```
-// Output :
 That is not dirty word
 That is dirty word
 ```

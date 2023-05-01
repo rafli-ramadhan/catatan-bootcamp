@@ -1,4 +1,4 @@
-# Type Declaration Built In
+# Type Declaration Built In di Golang
 
 Golang juga memiliki tipe data built in menggunakan type declaration sebagai berikut.
 

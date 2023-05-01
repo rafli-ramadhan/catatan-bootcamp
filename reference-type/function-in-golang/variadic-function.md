@@ -1,8 +1,14 @@
 # Variadic Function
 
-Variadic -> untuk memungkinkan fungsi dengan input parameter lebih dari 1 data (varargs) dengan tipe data yang sama. -> Hanya untuk parameter terkahir dari sebuah function.
+Variadic memungkinkan fungsi dengan input parameter lebih dari 1 data (varargs) dengan tipe data yang sama. Namun hanya untuk input parameter terakhir dari sebuah function. Contohnya sebagai berikut :
 
-Keunggulannya ->tidak perlu membuat array atau slice terlebih dahulu, kita bisa langsung mengirim datanya dan dipisahkan dengan tanda koma.
+```
+func Example(a, b, c, ....d) {}
+```
+
+Keunggulannya variadic yaitu tidak perlu membuat slice terlebih dahulu untuk input lebih dari 1 data dengan tipe data yang sama, sehingga bisa langsung mengirim keseluruhan data yang dipisahkan dengan tanda koma.
+
+## Contoh _code_
 
 ```go
 package main
@@ -22,15 +28,17 @@ func main() {
 	// fmt.Println(sumAll(numbers...))
 }
 
-// the input will be a slice
+// input harus berupa slice
 func sumAll(numbers ...int) int {
 	total := 0
 	for _, value := range numbers {
-		total += value // total = total + value
+		total += value
 	}
 	return total
 }
 ```
 
-
-
+```
+280
+280
+```

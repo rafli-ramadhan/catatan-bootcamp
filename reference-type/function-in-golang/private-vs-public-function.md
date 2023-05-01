@@ -1,9 +1,8 @@
 # Private vs Public Function
 
-* Public : bisa dipakai di beberapa function, contoh : func Calculate()&#x20;
-* Private : bisa dipakai hanya dalam 1 package yang sama, contoh: func calculate()
+Public function ditandai dengan huruf besar di awal nama function, sementara private dengan huruf kecil. Public function memungkinkan function tersebut untuk digunakan di package lain, sementara private function tidak bisa digunakan di package lain.
 
-Misal kita ingin mengirim beberapa function di beberapa file.go yang mengharuskan mengirim data ke firebase. Public function bisa dipakai untuk kasus ini.
+## Contoh _code_
 
 ```go
 package main
@@ -36,7 +35,6 @@ func main() {
 ```
 
 ```
-// Output :
 5
 5
 5

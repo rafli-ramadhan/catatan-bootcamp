@@ -1,6 +1,8 @@
 # Function Init dan Main
 
-Di golang func main dieksekusi saat perintah `go run` di jalankan. Sementara func Init tidak menerima parameter atau me-return suatu value. Baik ada atau tidak ada func main, func init akan selalu dijalankan saat go run .
+Di golang function main dieksekusi saat perintah `go run` di jalankan. Sementara function Init tidak menerima parameter atau me-return suatu value. Baik ada atau tidak ada function main, function init akan selalu dijalankan saat `go run` .
+
+## Contoh _code_
 
 ```go
 package main
