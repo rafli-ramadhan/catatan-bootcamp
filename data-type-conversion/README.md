@@ -1,9 +1,8 @@
 # Data Type Conversion
 
-Int di ubah menjadi float -> bisa, karena di tipe data float terdapat integer.\
-Float di konversi menjadi Int -> tidak bisa, karena di tipe data integer tidak terdapat data desimal.
-
 ## Contoh _code_ konversi integer ke float
+
+Int di ubah menjadi float bisa, karena di tipe data float terdapat integer (contoh = 1, 2, 3, dsb).
 
 ```go
 package main
@@ -26,6 +25,8 @@ float64
 ```
 
 ## Contoh _code_ konversi float ke integer
+
+Float di konversi menjadi Int tidak bisa, karena di tipe data integer tidak terdapat data desimal.
 
 ```go
 package main

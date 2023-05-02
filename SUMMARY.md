@@ -40,7 +40,7 @@
   * [Type Declaration](type-declaration-alias/type-declaration.md)
   * [Type Declaration Built In di Golang](type-declaration-alias/type-declaration-built-in.md)
 * [Kebab Case, Camel Case, Snake Case & Pascal Case](kebab-case-camel-case-snake-case-and-pascal-case.md)
-* [Data Type Conversion](data-type-conversion.md)
+* [Data Type Conversion](data-type-conversion/README.md)
 * [If-Else dan Switch](if-else-dan-switch/README.md)
   * [If Else](if-else-dan-switch/if-else.md)
   * [Switch](if-else-dan-switch/switch.md)
