@@ -161,6 +161,7 @@
   * [Running Sub Test](go-unit-test/running-sub-test.md)
   * [Table Test](go-unit-test/table-test.md)
   * [Mocking](go-unit-test/mocking.md)
+* [Logging](logging.md)
 * [Middleware](middleware.md)
 * [API vs REST API](api-vs-rest-api.md)
 * [SQL](sql.md)
