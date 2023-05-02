@@ -44,7 +44,7 @@
 * [If-Else dan Switch](if-else-dan-switch/README.md)
   * [If Else](if-else-dan-switch/if-else.md)
   * [Switch](if-else-dan-switch/switch.md)
-  * [Exercise](if-else-dan-switch/exercise.md)
+  * [Exercise (If-Else dan Switch)](if-else-dan-switch/exercise-if-else-dan-switch.md)
 * [Operator in Go](operator-in-go/README.md)
   * [Aritmetic Operator](operator-in-go/aritmetic-operator.md)
   * [Assignment Operator](operator-in-go/assignment-operator.md)

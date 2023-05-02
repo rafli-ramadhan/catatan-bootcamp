@@ -4,17 +4,16 @@ description: If else digunakan untuk percabangan yang tidak butuh banyak case.
 
 # If Else
 
+## Contoh _code_
 
-
-````
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    name1 := "Rafli"
-    if name1 == "Rafli" {
+    name1 := "Umar"
+    if name1 == "Umar" {
         fmt.Printf("Hello %v \n", name1)
  	} else if name1 == "Umar" {
 		fmt.Println("Hello")
@@ -23,7 +22,7 @@ func main() {
 	}
 
 	// if else with variable temporary
-	if name2 := "Rafli"; name2 == "Rafli" {
+	if name2 := "Umar"; name2 == "Umar" {
         fmt.Printf("Hello %v", name2)
  	} else if name2 == "Umar" {
 		fmt.Println("Hello")
@@ -37,7 +36,10 @@ func main() {
 		fmt.Println("\nNama sudah benar")
 	}	
 }
+```
 
 ```
-````
-
+Hello Umar 
+Hello Umar
+Nama sudah benar
+```

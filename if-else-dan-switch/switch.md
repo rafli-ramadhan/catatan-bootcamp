@@ -2,7 +2,7 @@
 
 ## Switch with Single Case
 
-Value dalam switch bisa diberi () atau bisa juga tidak diberi ().
+Catatan : value dalam switch bisa diberi tanda (...) atau bisa juga tidak diberi tanda (...).
 
 ```go
 package main
@@ -34,8 +34,6 @@ func main() {
 ```
 
 ## Switch Case with fallthrough
-
-Value dalam switch bisa diberi () atau bisa juga tidak diberi ().
 
 ```go
 package main
@@ -104,7 +102,7 @@ Work Day
 
 ## Switch without Expression
 
-Bisa digunakan dengan relational operator.&#x20;
+Bisa digunakan dengan relational operator (>, <, >=, <=, ==, &&, atau !=).
 
 ```go
 package main
