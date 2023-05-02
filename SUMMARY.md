@@ -165,3 +165,5 @@
 * [Middleware](middleware.md)
 * [API vs REST API](api-vs-rest-api.md)
 * [SQL](sql.md)
+* [Redis](redis.md)
+* [Page 2](page-2.md)
