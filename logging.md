@@ -10,7 +10,7 @@ Jenis-jenis logging di Golang berdasarkan kepopulerannya di Github:
 2. [https://github.com/uber-go/zap](https://github.com/uber-go/zap)
 3. [https://github.com/rs/zerolog](https://github.com/rs/zerolog)
 
-Golang juga memiliki bawaan package log sendiri bernama "log". Perbedaan log dan fmt yaitu log dapat menampilkan waktu suatu kode dieksekusi. Perlu diperhatikan juga bahwa log digunakan untuk logging sementara fmt untuk formatting. Selain itu, jika dilihat dari code log(...),&#x20;
+Golang juga memiliki bawaan package log sendiri bernama "log". Perbedaan log dan fmt yaitu log dapat menampilkan waktu suatu kode dieksekusi. Perlu diperhatikan juga bahwa log digunakan untuk logging sementara fmt untuk formatting. Selain itu, jika dilihat dari code log(...) memang di program untuk dapat menghindari race condition.
 
 Reference :
 
