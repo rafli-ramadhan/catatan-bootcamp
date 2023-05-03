@@ -1,6 +1,8 @@
 # Golang Database Driver
 
-## Golang Database Package
+## Golang Database Driver
+
+<figure><img src=".gitbook/assets/cara kerja database.png" alt=""><figcaption></figcaption></figure>
 
 Golang memiliki beberapa driver untuk koneksi database, diantarnya :
 

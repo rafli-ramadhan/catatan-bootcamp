@@ -1,4 +1,4 @@
-# Database
+# Golang Native SQL
 
 ## Query Parameter
 
@@ -33,4 +33,29 @@ Untuk memastikan query yang di eksekusi berada dalam 1 koneksi yang sama
 
 ## Database Transaction
 
-Supaya SQL yang dikirim tidak langsung di commit ke database
+Database transaction Supaya SQL yang dikirim tidak langsung di commit ke database. Database transaction di awali dengan inisiasi berikut.
+
+```go
+trx, err := db.BeginTx(ctx, nil)
+if err != nil {
+	panic(err) // bisa diganti dengan fmt atau log
+}
+```
+
+Query dapat di commit dengan _code_ berikut.
+
+```go
+trx.Commit()
+```
+
+Namun, ada kalanya ingin dilakukan pengecekan untuk menghindari error. Jika error terjadi dapat di atasi dengan _code_ berikut.
+
+```go
+if err != nil {
+    trx.Rollbacck()
+}
+```
+
+## Contoh _code_ lengkap implementasi query, prepare statement dan database transaction
+
+[https://github.com/rafli-ramadhan/sales-go/tree/master/repository](https://github.com/rafli-ramadhan/sales-go/tree/master/repository)
