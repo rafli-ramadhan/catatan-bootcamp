@@ -148,7 +148,7 @@
   * [Context Background & TODO](go-context/context-background-and-todo.md)
   * [Context Parent and Child](go-context/context-parent-and-child.md)
   * [Context WithValue, WithDeadline, WithTimeout, WithCancel, Done](go-context/context-withvalue-withdeadline-withtimeout-withcancel-done.md)
-* [Golang Database](golang-database.md)
+* [Golang Database Driver](golang-database-driver.md)
 * [Go SQL](go-sql/README.md)
   * [Cara Kerja Database](go-sql/cara-kerja-database.md)
   * [Create Table and Alter Table](go-sql/create-table-and-alter-table.md)
