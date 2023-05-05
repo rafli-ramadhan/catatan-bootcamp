@@ -2,7 +2,7 @@
 
 Context bisa diterapkan parent dan chlid, 1 parent bisa punya banyak child, tapi 1 child hanya bisa punya 1 parent.
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (3).png>)
 
 Saat dilakukan pembatalan context A, maka semua child dan sub child dari context A akan ikut dibatalkan.
 
