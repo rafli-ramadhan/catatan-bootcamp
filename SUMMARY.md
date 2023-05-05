@@ -152,6 +152,7 @@
 * [Golang Native SQL](go-sql/database.md)
 * [Basic SQL (Create, Alter, Select, Insert)](go-sql/create-table-and-alter-table.md)
 * [Instalasi PostgreSQL dengan Docker](instalasi-postgresql-dengan-docker.md)
+* [Gorm](gorm.md)
 * [Go Unit Test](go-unit-test/README.md)
   * [Software Testing Intro](go-unit-test/software-testing-intro.md)
   * [t.Fail, t.FailNow, t.Error & t.Fatal, t.Skip](go-unit-test/t.fail-t.failnow-t.error-and-t.fatal-t.skip.md)
