@@ -1,6 +1,3 @@
----
-description: by Mochamad Rafli Ramadhan
----
+# 🚀 Contoh Code Golang berdasarkan Topik
 
-# 🚀 Golang Example Code By Topic
-
+Website atau repository ini menyajikan contoh _code_ golang berdasarkan topik bahasan.
