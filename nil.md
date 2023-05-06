@@ -25,14 +25,21 @@ func main() {
         fmt.Println(someInterface)
         fmt.Println("yes nil")
     }
+    
+    var somePointer *string
+    if somePointer == nil {
+        fmt.Println(somePointer)
+        fmt.Println("yes nil")
+    }
 }
-
 ```
 
 ```
 []
 yes nil
 map[]
+yes nil
+<nil>
 yes nil
 <nil>
 yes nil
