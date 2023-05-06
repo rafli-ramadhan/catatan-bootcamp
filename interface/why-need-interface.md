@@ -1,3 +1,0 @@
-# Why Need Interface ?
-
-{% embed url="https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang" %}

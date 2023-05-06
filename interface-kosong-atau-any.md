@@ -1,0 +1,109 @@
+# Interface Kosong atau Any
+
+Interface kosong dapat di inisiasi menggunakan `any` untuk Go version di atas 1.18. Untuk memperoleh nilai dari interface kosong dapat menggunakan _type assertion_ seperti contoh _code_ berikut.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var test any = "test"
+    // type assertion
+	str, ok := test.(string)
+	fmt.Println(ok)
+	fmt.Println(str)
+}
+```
+
+```
+true
+test
+```
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+    // type assertion
+    var name any = "member_01"
+    stringName := name.(string)
+    fmt.Println(stringName)
+
+    var number1 any = 2
+    var number2 any = 3
+    hasil := number1.(int64) + number2.(int64)
+    fmt.Println(hasil)
+
+    var user any = []string{"member_01", "member_02", "member_03"}
+    arrayUser := user.([]string)
+    for _, v := range arrayUser {
+        fmt.Println(v)
+    }
+}
+```
+
+```
+member_01
+5
+member_01
+member_02
+member_03
+```
+
+## Type Switch
+
+Type switch digunakan untuk memperoleh tipe data dari suatu nilai dalam interface kosong. Type switch memiliki format seperti di bawah ini. Banyaknya case dapat disesuaikan sesuai kebutuhan.
+
+```go
+switch v := i.(type) {
+case int:
+    // program
+case string:
+    // program
+case float64:
+    // program
+case bool:
+    // program
+case []string:
+    // program
+default:
+    // program
+}
+```
+
+Contoh _code_ seperti di bawah ini.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var user any = []string{"member_01", "member_02", "member_03"}
+    arr := user.([]string)
+
+    switch result := user.(type) {
+    case string:
+        fmt.Printf("String", result)
+    case int:
+        fmt.Printf("Integer", result)
+    case []string:
+        for _, v := range arr { // cannot range over user (variable of type any)
+            fmt.Print(v)
+        }
+    }
+}
+```
+
+```
+member_01
+member_02
+member_03
+```
+
+Reference : [https://go.dev/tour/methods/16#:\~:text=%EE%80%80Type%EE%80%81%20%EE%80%80switches%EE%80%81.%20A%20%EE%80%80type%20switch%EE%80%81%20is%20a%20construct,the%20value%20held%20by%20the%20given%20interface%20value.](https://go.dev/tour/methods/16)

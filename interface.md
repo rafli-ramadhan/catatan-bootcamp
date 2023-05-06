@@ -1,8 +1,6 @@
 # Interface
 
-\-> Kumpulan definisi method (hanya definisi saja) dengan nama tertentu\
-\-> Interface syaratnya harus method\
-\-> Method sayaratnya type declaration
+Interface merupakan suatu tipe data yang berisi kumpulan definisi method (hanya definisi saja) dengan nama tertentu. Untuk default value dari interface adalah nil. Interface syaratnya harus method dan method syaratnya harus ada kepemilikan. Contoh untuk 2 method Greeting _code_ di bawah ini merupakan method milik struct Account dan Customer. Method tersebut dapat ditampung dalam sebuah interface bernama CustomerInterface.
 
 ```go
 package main
@@ -29,7 +27,7 @@ func (c Customer) Greeting() string {
 	return "Welcome " + c.Name
 }
 
-// satu function yang menampung beberapa struc dengan method sama.
+// function untuk menggunakan interface dari method beberapa struct.
 func justCheck(customerInterface CustomerInterface) string {
     return customerInterface.Greeting()
 }
@@ -81,13 +79,7 @@ func main() {
 }
 ```
 
-```
-member_01
-5
-member_01
-member_02
-member_03
-```
+
 
 ```go
 package main
@@ -126,3 +118,9 @@ Hello Andi
 Hello Utsman
 Hello Utsman
 ```
+
+## Kegunaan Interface
+
+
+
+[https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang](https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang)

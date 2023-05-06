@@ -1,5 +1,45 @@
 # Nil
 
+Nil merupakan default value dari beberapa tipe data seperti slice, map, struct dan interface.&#x20;
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var someSlice []string
+    if someSlice == nil {
+        fmt.Println(someSlice)
+        fmt.Println("yes nil")
+    }
+    
+    var someMap map[string]string
+    if someMap == nil {
+        fmt.Println(someMap)
+        fmt.Println("yes nil")
+    }
+    
+    var someInterface any
+    if someInterface == nil {
+        fmt.Println(someInterface)
+        fmt.Println("yes nil")
+    }
+}
+
+```
+
+```
+[]
+yes nil
+map[]
+yes nil
+<nil>
+yes nil
+```
+
+Nil juga dapat digunakan sebagai return value dari suatu function seperti contoh _code_ di bawah ini.
+
 ```go
 package main
 
@@ -26,7 +66,9 @@ func main() {
 }
 ```
 
-
+```
+Data is empty
+```
 
 ```go
 package main

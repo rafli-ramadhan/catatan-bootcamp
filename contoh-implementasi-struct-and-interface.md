@@ -1,4 +1,6 @@
-# Struct and Interface Implementation Example
+# Contoh Implementasi Struct and Interface
+
+Berikut adalah contoh implementasi struct dan interface
 
 ```go
 package main
@@ -21,7 +23,7 @@ type B struct {
 }
 
 func (b *B) Print() {
-    fmt.Println("Berhasil")
+    fmt.Println("Berhasil 1")
 }
 
 type C struct {
@@ -29,15 +31,6 @@ type C struct {
 
 func (c *C) Print() {
     fmt.Print("Berhasil 2")
-}
-
-// implementasi
-func main() {
-    // anonymus function
-    repo1 := NewRepo1()
-    repo2 := NewRepo2()
-    handler := NewHandler(*repo1, *repo2)
-    handler.Test()
 }
 
 // NewRepo2 return memory address struct B
@@ -59,34 +52,18 @@ func NewHandler(input1 B, input2 C) *Handler {
         c: input2,
     }
 }
-```
 
-```
-2
-```
-
-Kodingan di atas memiliki output yang sama dengan kodingan di bawah ini
-
-```go
-package main
-
-import "fmt"
-
-type A struct{
-    a int
-}
-func (a A) Print() {
-    fmt.Println(a.a)
-}
-
+// implementasi
 func main() {
-    NewHandler(2).Print()
-}
-
-func NewHandler(input int) A {
-    return A{
-        a: input,
-    }
+    // anonymus function
+    repo1 := NewRepo1()
+    repo2 := NewRepo2()
+    handler := NewHandler(*repo1, *repo2)
+    handler.Test()
 }
 ```
 
+```
+Berhasil 1
+Berhasil 2
+```
