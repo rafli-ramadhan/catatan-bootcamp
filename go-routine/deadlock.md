@@ -63,10 +63,10 @@ import "fmt"
 
 func main() {
     ch := make(chan int)
-	// channel in (pengirim)
-	go func() {
-	    ch <- 1
-	}()
+    // channel in (pengirim)
+    go func() {
+	ch <- 1
+    }()
     // channel out (penerima)
     result := <- ch
     fmt.Println(result)
@@ -163,10 +163,10 @@ func main() {
 
     for i := 0; i < 10; i++ {
         // channel in (pengirim)
-		go func() {
+	go func() {
 	        value <- i
-		}()
-		//channel out (penerima)
+	}()
+	//channel out (penerima)
         f(value)
     }
     

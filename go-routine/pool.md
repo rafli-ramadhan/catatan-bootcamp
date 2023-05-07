@@ -1,18 +1,8 @@
 # Pool
 
-Pool -> implementasi design pattern bernama object pool pattern.&#x20;
+Pool merupakan implementasi design pattern bernama _object pool pattern_. Design pattern pool dapat digunakan untuk menyimpan data. Data dapat diambil dari pool dengan menggunakan Get(). Setelah selesai menggunakan datanya, bisa disimpan kembali ke pool menggunakan Put(). Implementasi pool di Golang ini sudah aman dari problem _race condition_.
 
-Design pattern Pool -> digunakan untuk menyimpan data.
-
-Untuk menggunakan datanya, kita bisa mengambil dari Pool.
-
-Setelah selesai menggunakan datanya, kita bisa menyimpan kembali ke Pool.
-
-Implementasi Pool di Go-Lang ini sudah aman dari problem race condition.
-
-```go
-var pool sync.Pool
-```
+## Contoh _code_
 
 ```go
 package main
@@ -51,3 +41,26 @@ func main() {
 0 10 9 8 7 6 5 4 3 2
 ```
 
+```go
+package main
+import (
+    "fmt"
+    "sync"
+)
+
+var pool sync.Pool
+func main() {
+    pool.Put(1)
+    pool.Put(2)
+    pool.Put(3)
+    fmt.Println(pool.Get())
+    fmt.Println(pool.Get())
+    fmt.Println(pool.Get())
+}
+```
+
+```
+1
+3
+2
+```

@@ -1,6 +1,6 @@
 # Nil
 
-Nil merupakan default value dari beberapa tipe data seperti slice, map, struct dan interface.&#x20;
+Nil merupakan default value dari beberapa tipe data seperti slice, map, pointer dan interface.&#x20;
 
 ```go
 package main
