@@ -1,10 +1,8 @@
 # Once
 
-Sync Once -> untuk memastikan sebuah function di eksekusi hanya sekali
+Once dapat digunakan untuk memastikan sebuah function di eksekusi hanya sekali.
 
-```go
-var once sync.Once
-```
+## Contoh _code_
 
 ```go
 package main
