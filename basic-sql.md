@@ -51,15 +51,35 @@ foregn key id_2 references table_B(id)
 
 ## Select
 
-Contoh mendapatkan data dari tabel pelanggan yang memiliki kolom id, name dan no\_telp :
+Asumsikan tabel pelanggan telah memiliki data sebagai berikut :
+
+<figure><img src=".gitbook/assets/table.png" alt=""><figcaption></figcaption></figure>
+
+Untuk mendapatkan data kolom id, name dan no\_telp dari tabel pelanggan dapat menggunakan query berikut :
 
 ```sql
 select id, name, no_telp from pelanggan
 ```
 
+## Select Distinct
+
+Untuk mendapatkan data-data yang tidak duplikat dari kolom name tabel pelanggan dapat menggunakan query berikut :
+
+```sql
+select distinct name from pelanggan;
+```
+
+Untuk mendapatkan data-data yang tidak duplikat dari kolom name dan no\_telp tabel pelanggan dapat menggunakan query berikut :
+
+```sql
+select distinct name, no_telp from pelanggan;
+```
+
+Perlu di ingat, jika misal di kolom name terdapat 20 data _distinct_ (data tidak duplikat) dan kolom no\_telp terdapat 30 data _distinct_. Maka jumlah data yang terpilih akan menjadi 30, menyesuaikan kolom dengan jumlah data _distinct_ terbanyak.&#x20;
+
 ## Insert
 
-Contoh insert data baru ke tabel pelanggan yang memiliki kolom id, name dan no\_telp :
+Untuk insert data baru ke tabel pelanggan dapat menggunakan query berikut :
 
 ```sql
 insert into pelanggan (name, no_telp) values ("andi", "088227867533")
@@ -67,15 +87,15 @@ insert into pelanggan (name, no_telp) values ("andi", "088227867533")
 
 ## Update
 
-Contoh untuk update data dari tabel contact kolom name dan no\_telp dengan id tertentu :
+Untuk update data dari tabel pelanggan dapat menggunakan query berikut :
 
 ```sql
-update contact SET name = "umar" , no_telp = "089932943287" where id = 1
+update pelanggan SET name = "umar" , no_telp = "089932943287" where id = 1
 ```
 
 ## Delete
 
-Contoh untuk menghapus data semua kolom dari tabel contact dengan id = 1
+Untuk menghapus data 1 baris dari tabel pelanggan dapat menggunakan query berikut :
 
 ```sql
 delete FROM contact where id = 1
@@ -83,7 +103,7 @@ delete FROM contact where id = 1
 
 ## Insert Query di Golang
 
-Ada kalanya suatu client dapat melakukan sql _injection_, yaitu dengan mengeksekusi query SQL yang tidak sesuai. Untuk menghindari SQL injection gunakan tanda "?" seperti berikut.
+Ada kalanya suatu client dapat melakukan _sql injection_, yaitu dengan mengeksekusi query SQL yang tidak sesuai dengan niat untuk membobol keamanan. Untuk menghindari SQL injection gunakan tanda "?" pada query seperti berikut.
 
 ```sql
 insert into comments (email, comment) value (?,?)
@@ -114,3 +134,5 @@ delete FROM contact where id = $1
 Reference :
 
 [https://www.w3schools.com/SQL](https://www.w3schools.com/SQL)
+
+[https://www.w3schools.com/Sql/trysql.asp?filename=trysql\_select\_no\_distinct](https://www.w3schools.com/Sql/trysql.asp?filename=trysql\_select\_no\_distinct)
