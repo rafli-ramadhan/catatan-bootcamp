@@ -1,14 +1,12 @@
 # Context Background & TODO
 
-Membuat context kosong, tidak pernah dibatalkan, tidak pernah time out dan tidak ada value apapun.
-
-Digunakan di main function atau di test atau untuk proses request.
+Context background digunakan untuk membuat context kosong yang tidak pernah dibatalkan, tidak pernah time out dan tidak ada value apapun.
 
 ```
 context.Background()
 ```
 
-Membuat context kosong mirip dengan context background. TODO digunakan saat belum jelas context apa yang ingin digunakan.
+Sementara context TODO digunakan untuk membuat context kosong mirip dengan context background, namun context TODO digunakan saat belum jelas context apa yang ingin digunakan.
 
 ```
 context.TODO()
