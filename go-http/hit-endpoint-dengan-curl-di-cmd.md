@@ -1,12 +1,12 @@
-# Hit Endpoint using Curl in CMD
+# Hit Endpoint dengan Curl di CMD
 
-## HTTP Get Method, Example :
+## HTTP Get Method:
 
 ```bash
 curl -X GET http://localhost:5000
 ```
 
-## HTTP Post Method, Example :
+## HTTP Post Method:
 
 <pre class="language-bash"><code class="lang-bash"><strong>curl -X POST -d "first_name=Umar&#x26;last_name=Bawazir&#x26;age=20" http://localhost:5000/post
 </strong>Hello Umar Bawazir. Iam 20 years old.

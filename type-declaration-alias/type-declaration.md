@@ -1,6 +1,6 @@
 # Type Declaration
 
-Type declaration digunakan untuk membuat variabel baru (alias) dari tipe data yang sudah ada (string, int, float, bool, array, slice, map, struct, interface atau function).
+Type declaration digunakan untuk membuat tipe data baru menggunakan tipe data yang sudah ada (string, int, float, bool, array, slice, map, struct, interface atau function).
 
 ## Contoh _code_
 

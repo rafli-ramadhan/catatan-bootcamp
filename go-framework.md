@@ -1,44 +1,24 @@
 # Go Framework
 
-## Cara Membuat Server
+## 1. Cara Membuat Server
 
+## 2. Routing
 
+## 3. Request dan Response
 
-## Routing
+## 4. Query Parameter dan Path Parameter
 
+## 5. Set Get Header
 
+## 6. Set Get Cookie
 
-## Request dan Response
+## 7. Redirect
 
+## 8. Form Post
 
+## 9. File Serve / Serve File
 
-## Query Parameter dan Path Parameter
+## 10. Upload Download
 
-
-
-## Set Get Header
-
-
-
-## Set Get Cookie
-
-
-
-## Redirect
-
-
-
-## Form Post
-
-
-
-## File Serve / Serve File
-
-
-
-## Upload Download
-
-
-
-## Middleware
+## 11. Middleware
 

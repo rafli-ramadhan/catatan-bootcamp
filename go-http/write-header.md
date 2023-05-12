@@ -1,6 +1,6 @@
-# Write Header in Response
+# Write Header
 
-Untuk menambahkan header di response.
+Untuk menambahkan header di response dapat menggunakan
 
 ```go
 write.Header().Add("Content-Type", "application/json")
@@ -18,20 +18,26 @@ import (
 
 func RequestHeader(write http.ResponseWriter, request *http.Request) {
 	request.Header.Add("Content-Type", "application/json")
+
 	write.Header().Add("Content-Type", "application/json")
+	write.Header().Add("Content-Type", "application/json")
+	write.Header().Add("X-Powered-By", "Phincon")
+	
 	request.Header.Get("Content-Type")
 }
 
 func ResponseHeader(write http.ResponseWriter, request *http.Request) {
-	write.Header().Add("Content-Type", "application/json")
-	write.Header().Add("X-Powered-By", "Phincon")
-}	
+}
+
+func NotFound(write http.ResponseWriter, request *http.Request) {
+	w.WriteHeader(404)
+}
 
 func main() {
 	// server
 	mux := http.NewServeMux()
 	mux.HandleFunc("/test", RequestHeader)
-	mux.HandleFunc("/test2", ResponseHeader)
+	mux.HandleFunc("/not-found", NotFound
 
 	// httptest
 	request := httptest.NewRequest("GET", "http://localhost:5000/test", nil)
@@ -43,17 +49,7 @@ func main() {
 
 	fmt.Println(response)
 	fmt.Println(response.Header.Get("Content-Type"))
-	fmt.Println(string(body))
-	
-	request2 := httptest.NewRequest("GET", "http://localhost:5000/test2", nil)
-	recorder2 := httptest.NewRecorder()
-	ResponseHeader(recorder2, request2)
-
-	response2 := recorder2.Result()
-	body2, _ := io.ReadAll(response2.Body)
-
-	fmt.Println(response2)
-	fmt.Println(response2.Header.Get("X-Powered-By"))
+	fmt.Println(response.Header.Get("X-Powered-By"))
 	fmt.Println(string(body2))
 }
 ```

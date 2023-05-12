@@ -6,22 +6,31 @@ description: Create Table, Alter Table, Select, Insert, Update, Delete dan SQL I
 
 ## Create Table
 
-Contoh SQL untuk membuat tabel baru bernama pelanggan dan comments :
+Contoh SQL untuk membuat tabel baru bernama pelanggan dan comments di MySQL:
 
 ```sql
 create table pelanggan (
-	id varchar(100) not null,
+	id int not null auto_increment,
 	name varchar(100) not null,
+	no_telp varchar(100) not null,
+	created_at datetime,
+	updated_at datetime,
+	deleted_at datetime,
 	primary key (id)
 )
 ```
 
+Sementara itu PostgreSQL memiliki SQL yang sedikit berbeda seperti di bawah ini :
+
 ```sql
-create table comments (
-	idcomment int not null auto_increment,
-	email varchar(100) not null,
-	comment varchar(100) not null,
-	primary key (idcomment)
+create table pelanggan (
+	id serial not null,
+	name varchar(100) not null,
+	pelanggan varchar(100) not null,
+	created_at timestamp,
+	updated_at timestamp,
+	deleted_at timestamp,
+	primary key (id)
 )
 ```
 

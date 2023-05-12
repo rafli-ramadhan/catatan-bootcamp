@@ -1,6 +1,6 @@
 # Exercise 1.3 : Random Worker (Go Routine + Channel + Context)
 
-Check name using worker (multiple go routine) in slice using go routine and context wait timeout.
+Cari nama Wina di slice bernama usernames menggunakan worker (beberapa go routine) dan context Wait Timeout dengan catatan yang bekerja tidak harus worker ke-1 terlebih dahulu.
 
 ```go
 package main

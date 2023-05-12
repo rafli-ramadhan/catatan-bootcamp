@@ -1,12 +1,6 @@
-# Request Post Form -> r.PostForm.Get()
+# Request Post Form
 
-Saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST.
-
-Jika menggunakan method GET -> semua data di form akan menjadi query parameter.
-
-Sedangkan jika menggunakan POST -> semua data di form akan dikirim via body HTTP request.
-
-ParseForm mengambil (parses) query mentah dari URL seperti dari CURL and melakukan update r.PostForm
+Saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST. Jika menggunakan method GET, semua data di form dapat menjadi query parameter. Sedangkan jika menggunakan POST, semua data di form akan dikirim via body HTTP request. Di Golang, submit data form dapat dilakukan dengan ParseForm yang mengambil (parses) query mentah dari URL seperti request dari CURL.
 
 ```go
 r.PostForm.Get()
@@ -41,6 +35,7 @@ func main() {
 	request := httptest.NewRequest(http.MethodPost, "localhost:5000/", requestBody)
 	request.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 	recorder := httptest.NewRecorder()
+	
 	FormPost(recorder, request)
 	response := recorder.Result()
 	body, _ := io.ReadAll(response.Body)

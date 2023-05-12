@@ -1,18 +1,6 @@
-# Request Query Parameter -> r.URL.Query.Get()
+# Request Query Parameter
 
-Query parameter -> data yang disimpan di URI
-
-Query parameter -> case sensitif -> huruf besar kecil berpengaruh
-
-```go
-r.URL.Query().Get()
-```
-
-```go
-r.URL.Query() // Output -> map[string][]string
-```
-
-URL -> [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)&#x20;
+Query parameter merupakan data yang disimpan dalam URL yang sifatnya case sensitif (huruf besar kecil berpengaruh). Contohnya seperti URL [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22) yang terdapat query parameter name dan age yang memiliki value andi dan 21.
 
 ```go
 package main

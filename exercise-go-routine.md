@@ -1,6 +1,6 @@
 # Exercise 1.1 : Go Routine + Context + Channel
 
-Check name in slice using go routine and context wait timeout.
+Cari nama Wina di slice bernama usernames menggunakan go routine dan context Wait Timeout.
 
 ```go
 package main

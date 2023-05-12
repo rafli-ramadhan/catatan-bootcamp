@@ -14,7 +14,7 @@ Setelah itu buat volume untuk menyimpan data. Untuk pengguna docker dekstop dapa
 
 <figure><img src=".gitbook/assets/postgres volume.png" alt=""><figcaption></figcaption></figure>
 
-Setelah itu set konfigurasi database dengan format di bawah ini. Untuk bagian some-postgres dan your\_password dapat di ubah sesuai keinginan.
+Setelah itu set konfigurasi database dengan format di bawah ini di CMD, bash atau _powershell_. Untuk bagian some-postgres dan your\_password dapat di ubah sesuai keinginan.
 
 ```
 docker run --name some-postgres -e POSTGRES_PASSWORD=your_password -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -d postgres
