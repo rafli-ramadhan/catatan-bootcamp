@@ -30,3 +30,65 @@ func main() {
 3
 2
 ```
+
+## Contoh _code_ Deklarasi Multi Variabel dan Constant
+
+Contoh _code_ untuk deklarasi multi variabel dan constant dapat dilihat di bawah ini.
+
+```go
+package main
+
+import "fmt"
+
+var (
+	num1 = 1
+	num2 = 2
+	num3 = 3
+)
+
+func main() {
+	var (
+		num4 = 1
+		num5 = 2
+		num6 = 3
+	)
+	num7, num8, num9 := 1,2,3
+
+    fmt.Println(num1)
+    fmt.Println(num2)
+    fmt.Println(num3)
+    fmt.Println(num4)
+    fmt.Println(num5)
+    fmt.Println(num6)
+    fmt.Println(num7)
+    fmt.Println(num8)
+    fmt.Println(num9)
+}
+```
+
+```go
+package main
+
+import "fmt"
+
+const (
+	num1 = 1
+	num2 = 2
+	num3 = 3
+)
+
+func main() {
+	const (
+		num4 = 1
+		num5 = 2
+		num6 = 3
+	)
+
+    fmt.Println(num1)
+    fmt.Println(num2)
+    fmt.Println(num3)
+    fmt.Println(num4)
+    fmt.Println(num5)
+    fmt.Println(num6)
+}
+```
