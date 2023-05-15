@@ -24,3 +24,23 @@ func main() {
 it is an empty string
 test
 ```
+
+Di golang string disimpan dalam bentul slice dengan tipe data byte. Untuk menampilkan setiap nilai byte pada 1 karakter di dalam string dapat menggunakan _code_ berikut.
+
+```go
+package main
+
+import "fmt"
+
+var sample string = "please"
+
+func main() {
+    for i := 0; i < len(sample); i++ {
+        fmt.Printf("%x ", sample[i])
+    }
+}
+```
+
+```
+70 6c 65 61 73 65 
+```
