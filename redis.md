@@ -20,3 +20,6 @@ docker pull redis
 
 [https://github.com/redis/go-redis](https://github.com/redis/go-redis)
 
+## Contoh penggunaan redis pada CMD
+
+![](<.gitbook/assets/image (4).png>)

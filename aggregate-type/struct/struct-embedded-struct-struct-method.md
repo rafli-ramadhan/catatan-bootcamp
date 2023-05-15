@@ -1,6 +1,6 @@
 # Struct
 
-Struct merupakan tipe data aggregate dalam Golang yang dapat dideklarasikan sebagai berikut :
+Struct adalah kumpulan definisi variabel (atau property) dan atau fungsi (atau method), yang dibungkus sebagai tipe data baru dengan nama tertentu. Struct dalam Golang yang dapat dideklarasikan sebagai berikut :
 
 ```go
 type User struct{
@@ -193,3 +193,6 @@ func main() {
 true
 ```
 
+Reference :
+
+[https://dasarpemrogramangolang.novalagung.com/A-struct.html#:\~:text=Struct%20Go%20tidak%20memiliki%20class%20yang%20ada%20di,tertentu.%20Property%20dalam%20struct%2C%20tipe%20datanya%20bisa%20bervariasi.](https://dasarpemrogramangolang.novalagung.com/A-struct.html)

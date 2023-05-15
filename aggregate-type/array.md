@@ -32,6 +32,55 @@ Test1 Test2 Test3
 [12 13 14]
 ```
 
+## Contoh _code_ array dengan tipe data interface kosong
+
+```go
+package main
+
+import "fmt"
+
+var i1 any = 2
+var i2 any = 2
+var i3 any = 2
+var i4 any = 2
+var i5 any = 2
+
+var a [10]interface{} = [10]interface{}{i1, i2, i3, i4, i5}
+
+func main() {
+    fmt.Println(a)
+}
+
+```
+
+```
+[2 2 2 2 2 <nil> <nil> <nil> <nil> <nil>]
+```
+
+## Contoh _code_ array dengan tipe data pointer
+
+```go
+package main
+
+import "fmt"
+
+var num1 int = 2
+var num2 *int = &num1
+var num3 *int = &num1
+var num4 *int = &num1
+
+var a [10]*int = [10]*int{num2, num3, num4}
+
+func main() {
+    fmt.Println(a)
+}
+
+```
+
+```
+[0xbbb340 0xbbb340 0xbbb340 <nil> <nil> <nil> <nil> <nil> <nil> <nil>]
+```
+
 ## Informasi tambahan
 
 Suatu array misalkan arr1 disimpan dengan _memory address_ yang berbeda dari value-value di dalam array tersebut. Sebagai contoh _code_ di bawah ini, array arr1 disimpan pada _memory address_ 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.

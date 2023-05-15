@@ -1,6 +1,6 @@
 # Map
 
-Map di Golang memiliki pola seperti array atau slice yang menyimpan beberapa data dengan tipe data yang sama, tapi key value-nya bisa di custom. Sebelum digunakan, map perlu di inisiasi sebagai berikut.
+Map di Golang memiliki pola seperti array atau slice yang menyimpan beberapa data dengan tipe data yang sama dengan key value yang bisa di custom. Sebelum digunakan, map perlu di inisiasi sebagai berikut.
 
 ```go
 var example map[string]int = map[string]int{}
@@ -70,4 +70,60 @@ Nama saya Fajar mempunyai hobi Diving
 Nama saya Dawam mempunyai hobi Diving dan Scating
 Nama saya Rizky mempunyai hobi Golf
 Nama saya Mega mempunyai hobi Golf dan Scating
+```
+
+## Contoh _code_ map string interface
+
+Map string interface bisa digunakan untuk menampung key dengan tipe data string dan value dengan tipe data apapun. Map jenis ini sangat berguna untuk membuat REST API.
+
+```go
+package main
+import "fmt"
+
+func main() {
+    var someMap map[string]interface{}
+    
+    someMap = map[string]interface{}{
+        "username"  : "test",
+        "age"       : 20,
+    }
+    
+    fmt.Println(someMap)
+}
+```
+
+```
+map[age:20 username:test]
+```
+
+## Contoh _code_ map string dengan value map string interface
+
+Map juga bisa diisi dengan value yang juga merupakan map seperti _code_ di bawah ini.
+
+```go
+package main
+import "fmt"
+
+func main() {
+    var someMap map[string]map[string]interface{}
+    var someSubMap map[string]interface{} = map[string]interface{}{
+        "username"  : "dana",
+        "age"       : 24,
+    }
+
+    someMap = map[string]map[string]interface{}{
+        "map1"  : someSubMap,
+        "map2"  : someSubMap,
+    }
+    
+    fmt.Println(someMap["map1"])
+    fmt.Println(someMap["map2"])
+    fmt.Println(someMap["map1"]["username"])
+}
+```
+
+```
+map[age:24 username:dana]
+map[age:24 username:dana]
+dana
 ```

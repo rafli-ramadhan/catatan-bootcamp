@@ -1,6 +1,6 @@
 # Make Slice
 
-Make digunakan untuk membuat suatu slice. Fungsi make memiliki 3 input parameter yaitu data type, length dan capacity, dimana capacity harus lebih dari length (capacity > length).
+Make digunakan untuk membuat suatu slice. Fungsi make memiliki 3 input parameter yaitu data type, length dan capacity, dimana capacity harus lebih dari length (capacity > length). Capacity ibaratkan beberapa kotak untuk menyimpan suatu nilai, sementara length dapat diartikan berapa kotak yang dapat diisi suatu nilai.
 
 ## Contoh _code_
 
