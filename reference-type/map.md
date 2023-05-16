@@ -74,7 +74,7 @@ Nama saya Mega mempunyai hobi Golf dan Scating
 
 ## Contoh _code_ map string interface
 
-Map string interface bisa digunakan untuk menampung key dengan tipe data string dan value dengan tipe data apapun. Map jenis ini sangat berguna untuk membuat REST API.
+Map string interface bisa digunakan untuk menampung key dengan tipe data string dan value dengan tipe data apapun. Map jenis ini sangat berguna untuk encoding dan decoding JSON pada saat membuat REST API.
 
 ```go
 package main
@@ -126,4 +126,128 @@ func main() {
 map[age:24 username:dana]
 map[age:24 username:dana]
 dana
+```
+
+## Contoh _code_ map dengan key dan value interface
+
+Dari _code_ dibawah ini, key dari map bisa berupa semua tipe data primitif (numeric, string, boolean), tipe data aggregate (array dan struct), dan tipe data reference khusus function dan channel.
+
+```go
+package main
+import "fmt"
+
+func test() int {
+	return 1
+}
+
+func main() {
+	var someChan = make(chan int)
+	type user struct {
+		name string
+		age  int
+	}
+	// someSubMap := map[string]int{
+	// 	"a": 1,
+	// 	"b": 2,
+	// }
+    	someMap := map[interface{}]interface{}{
+		1			: true,
+        	"username"		: "member_01",
+        	false			: 2,
+		0.9			: []int{1,2,3,4,5},
+		user{"umar",2}		: user{"utsman", 1},
+		[3]int{1, 2, 3}		: "array",
+		// panic: runtime error: hash of unhashable type []int
+		// []int{1,2,3}		: "slice",
+		// panic: runtime error: hash of unhashable type map[string]int
+		// someSubMap		: "submap",
+		test()			: "function",
+		someChan		: "channel",
+    }
+    
+    fmt.Println(someMap[user{"umar",2}])
+    fmt.Println(someMap[[3]int{1, 2, 3}])
+	fmt.Println(someMap[test()])
+	fmt.Println(someMap[someChan])
+}
+```
+
+```
+{utsman 1}
+array
+function
+channel
+```
+
+## Add, Update dan Delete Value di Map
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    m := map[int]interface{}{
+		1: "member_01",
+		2: "member_02",
+	}
+	// add value by key
+	m[3] = "member_003"
+    
+	// update value by key
+	_, exist := m[3]
+	if exist {
+		m[3] = "member_03"
+	}
+
+	fmt.Println(m)
+	
+	delete(m, 3)
+	fmt.Println(m)
+}
+```
+
+```
+map[1:member_01 2:member_02 3:member_03]
+map[1:member_01 2:member_02]
+```
+
+## Add, Update dan Delete Value di Map dengan key berupa Struct
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	type user struct {
+		name string
+		age  int
+	}
+	user1 := user{name: "member_01", age: 1}
+	user2 := user{name: "member_02", age: 2}
+	m := map[user]interface{}{
+		user1: "member_01",
+		user2: "member_02",
+	}
+	// add value by key
+	m[user{name: "member_03", age: 3}] = "member_003"
+
+	// update value by key
+	_, exist := m[user{name: "member_03", age: 3}]
+	if exist {
+		m[user{"member_03", 3}] = "member_03"
+	}
+
+	fmt.Println(m)
+
+	delete(m, user{"member_03", 3})
+	fmt.Println(m)
+}
+
+```
+
+```
+map[{member_01 1}:member_01 {member_02 2}:member_02 {member_03 3}:member_03]
+map[{member_01 1}:member_01 {member_02 2}:member_02]
 ```

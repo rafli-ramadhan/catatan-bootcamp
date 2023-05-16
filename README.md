@@ -1,3 +1,3 @@
-# 🚀 Contoh Code Golang berdasarkan Topik
+# 🚀 Dokumentasi Bootcamp (PT Phincon)
 
-Website atau repository ini menyajikan contoh _code_ golang berdasarkan topik bahasan.
+Website atau repository ini menyajikan dokumentasi dari bootcamp di PT Phincon.

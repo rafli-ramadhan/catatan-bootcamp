@@ -1,6 +1,6 @@
 # Function vs Procedure
 
-Bedanya function dan procedure adalah function mengembalikkan suatu nilai, sementara procedure tidak.
+Perbedaan function dan procedure adalah function mengembalikan suatu nilai, sementara procedure tidak. Prosedur hanya mengeksekusi bari kode saja.
 
 ## Contoh _code_
 
@@ -15,7 +15,7 @@ func main() {
 	Introduction("Adi", "programmer", 1, 23)
 }
 
-func Introduction(name string, job string, experience, age int) {
+func Introduction(name, job string, experience, age int) {
 	fmt.Printf(`
 	    Hello, Iam %s,
 		I was an %s,

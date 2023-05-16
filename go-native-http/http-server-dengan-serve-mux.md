@@ -1,8 +1,6 @@
-# HTTP Server using ServeMux in Go
+# HTTP Server dengan Serve Mux
 
-ServeMux -> harus diubah jadi -> NewServeMux -> karena parameter di struct serve mux private.
-
-HandlerFunc -> syaratnya harus ada response dan request.
+HTTP server juga bisa dibuat dengan menggunakan serve mux. Untuk menggunakan serve mux perlu keyword NewServeMux. New di awal keyword tersebut untuk mengembalikan struct serve mux yang sifatnya masih private (tidak bisa diakses di luar package) di dalam package net/http.
 
 ```go
 package main

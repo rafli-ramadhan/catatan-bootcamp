@@ -1,4 +1,6 @@
-# HTTP Server in Go
+# HTTP Server
+
+Berikut _code_ untuk membuat HTTP server dengan native golang (tanpa framework).
 
 ```go
 package main
@@ -14,8 +16,8 @@ func main() {
 		fmt.Fprintf(write, "Server running")
 	}
 
-	server := http.Server{            // -> type data -> struct 
-		Addr:   "localhost:5000", // -> string
+	server := http.Server{
+		Addr:   "localhost:5000",
 		Handler: handler,
 	}
 
