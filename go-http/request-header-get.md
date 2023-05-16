@@ -1,4 +1,4 @@
-# Request Header Get -> request.Header.Get()
+# Request Header Get
 
 Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request.
 

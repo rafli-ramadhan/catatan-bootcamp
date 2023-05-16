@@ -1,4 +1,4 @@
-# Request Header Add -> request.Header.Add()
+# Request Header Add
 
 Untuk menambahkan request header baru
 
