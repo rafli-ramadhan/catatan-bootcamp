@@ -1,4 +1,8 @@
-# Primitive or Basic Variable
+---
+coverY: 0
+---
+
+# Primitive or Basic Data Type
 
 Tipe data basic : number (int, float), string dan boolean
 

@@ -1,6 +1,8 @@
-# Encode Struct to JSON
+# Encode (Go Oject -> JSON)
 
-Struct -> JSON
+Encode merupakan cara untuk mengubah object dalam Golang menjadi JSON string. Object tersebut dapat berupa map\[string]interface atau struct.
+
+## Contoh _code_ encode dari struct menjadi JSON string
 
 ```go
 package main
@@ -35,3 +37,6 @@ func main() {
 ```
 [{"Name":"andi","Age":21},{"Name":"andre","Age":20}]
 ```
+
+
+

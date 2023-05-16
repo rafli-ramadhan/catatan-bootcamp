@@ -1,6 +1,6 @@
 # Unmarshal vs Marshal
 
-Umarshal (Decoding) dan Marshal (Encoding) -> bisa untuk Int, String, Bool, Slice, Struct dan Map String Interface.
+Di golang untuk mengubah suatu tipe data golang ke JSON dapat menggunakan fungsi Marshal, sementara untuk mengubah JSON ke suatu tipe data golang dapat menggunakan fungsi Unmarshal. Keduanya bisa digunakan untuk mengubah nilai dengan tipe data int, float?, string, bool, slice, struct, map dan interface ? menjadi JSON dan sebaliknya.
 
 ```
 func Unmarshal(data []byte, v interface{}) error
@@ -10,7 +10,7 @@ func Unmarshal(data []byte, v interface{}) error
 func Marshal(v interface{}) ([]byte, error)
 ```
 
-## Marshal (...-> JSON) & Unmarshal (JSON -> ...) Int
+## Contoh _code_ marshal (Int-> JSON) & unmarshal (JSON -> Int)
 
 ```go
 package main
@@ -58,7 +58,7 @@ func main() {
 123
 ```
 
-## Marshal (...-> JSON) & Unmarshal (JSON -> ...) String
+## Contoh _code_ marshal (String-> JSON) & unmarshal (JSON -> String)
 
 ```go
 package main
@@ -106,7 +106,7 @@ func main() {
 test
 ```
 
-## Marshal (...-> JSON) & Unmarshal (JSON -> ...) Bool
+## Contoh _code_ marshal (boolean-> JSON) & unmarshal (JSON -> boolean)
 
 ```go
 package main
@@ -123,7 +123,7 @@ func main() {
 ```
 
 ```
-true // -> JSON
+true
 ```
 
 ```go
@@ -154,7 +154,7 @@ func main() {
 true
 ```
 
-## Marshal (...-> JSON) & Unmarshal (JSON -> ...) Slice
+## Contoh _code_ marshal (slice -> JSON) & unmarshal (JSON -> slice)
 
 ```go
 package main
