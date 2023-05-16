@@ -17,11 +17,11 @@ func main() {
 	r.Run(":5000")
 }
 
-func PostForm(c *gin.Context) {
-	username := c.PostForm("username")
-	password := c.PostForm("password")
+func PostForm(ctx *gin.Context) {
+	username := ctx.PostForm("username")
+	password := ctx.PostForm("password")
 
-	c.JSON(200, gin.H{
+	ctx.JSON(200, gin.H{
 		"status":	http.StatusOK,
 		"data":		map[string]interface{}{
 			"username": username,
