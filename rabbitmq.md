@@ -14,6 +14,6 @@ coverY: 0
 * Fitur utama yang ditawarkan RabbitMQ yakni jaminan pengiriman pesan yang mana apabila consumer gagal dalam proses penerimaan pesan, pesan tidak akan hilang. Pesan yang gagal diproses oleh consumer akan di-queue ulang.
 * Message broker menggunakan model publish-subsribe di mana publisher mengirim pesan ke topic atau channel, sedangkan subscriber menerima pesan dari topic atau channel. Message broker pada dasarnya bekerja sebagai mediator untuk memastikan bahwa pesan disampaikan ke subscriber yang tepat.
 
-<figure><img src="../.gitbook/assets/r.png" alt=""><figcaption><p><a href="https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png">https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png</a></p></figcaption></figure>
+<figure><img src=".gitbook/assets/r.png" alt=""><figcaption><p><a href="https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png">https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png</a></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/1 (1).png" alt=""><figcaption><p>Contoh software message broker</p></figcaption></figure>
+<figure><img src=".gitbook/assets/1 (1).png" alt=""><figcaption><p>Contoh software message broker</p></figcaption></figure>

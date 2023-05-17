@@ -62,7 +62,7 @@ foregn key id_2 references table_B(id)
 
 Asumsikan tabel pelanggan telah memiliki data sebagai berikut :
 
-<figure><img src="../.gitbook/assets/table.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/table.png" alt=""><figcaption></figcaption></figure>
 
 Untuk mendapatkan data kolom id, name dan no\_telp dari tabel pelanggan dapat menggunakan query berikut :
 
