@@ -180,5 +180,6 @@
   * [Setting RabbitMQ](golang-dan-rabbitmq/setting-rabbitmq.md)
   * [Setting QoS](golang-dan-rabbitmq/setting-qos.md)
   * [Publisher, Exchange dan Consumer](golang-dan-rabbitmq/publisher-exchange-dan-consumer.md)
-  * [Informasi Tambahan](golang-dan-rabbitmq/informasi-tambahan.md)
+  * [Routing RabbitMQ](golang-dan-rabbitmq/routing-rabbitmq.md)
+  * [Routing Key](golang-dan-rabbitmq/routing-key.md)
 * [Sonar Qube dan Sonar Scanner](sonar-qube-dan-sonar-scanner.md)

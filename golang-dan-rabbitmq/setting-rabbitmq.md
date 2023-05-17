@@ -1,5 +1,20 @@
 # Setting RabbitMQ
 
+## Declare
+
+RabbitMQ akan menghapus queue dan pesan saat berhenti atau crash. Hal tersebut dapat dihindari dengan mengaktifkan message durability pada bagian QueueDeclare di sender.go atau publisher.go menjadi `true`. Dengan begitu pesan dan queue pada RabbitMQ akan dapat bertahan saat RabbitMQ di restart.
+
+```go
+        q, err := ch.QueueDeclare(
+		"hello", // name
+		false,   // durable
+		false,   // delete when unused
+		false,   // exclusive
+		false,   // no-wait
+		nil,     // arguments
+	)
+```
+
 ## Auto Delete
 
 Auto delete merupakan setting dari RabbitMQ yang memungkinkan queue yang tidak terpakai akan langsung di delete. Setting auto delete bisa dilakukan dari sisi publisher atau consumer pada code QueueDeclare.
