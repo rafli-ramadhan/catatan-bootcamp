@@ -12,7 +12,7 @@ docker pull postgres
 
 Setelah itu buat volume untuk menyimpan data. Untuk pengguna docker dekstop dapat meng-klik tab volume. Lalu buat volume baru, misal dengan nama postgres-volume.
 
-<figure><img src=".gitbook/assets/postgres volume.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/postgres volume.png" alt=""><figcaption></figcaption></figure>
 
 Setelah itu set konfigurasi database dengan format di bawah ini di CMD, bash atau _powershell_. Untuk bagian some-postgres dan your\_password dapat di ubah sesuai keinginan.
 

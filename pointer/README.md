@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Pointer
 
 Variabel membuat memory address\

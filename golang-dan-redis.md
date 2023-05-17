@@ -2,7 +2,7 @@
 description: https://redis.io/
 ---
 
-# Redis
+# Golang dan Redis
 
 Redis bisa digunakan untuk caching dan message broker. Cache digunakan untuk menyimpan informasi yang sifatnya sementara.
 
@@ -22,4 +22,4 @@ docker pull redis
 
 ## Contoh penggunaan redis pada CMD
 
-![](<.gitbook/assets/image (4).png>)
+![](<.gitbook/assets/image (4) (1).png>)
