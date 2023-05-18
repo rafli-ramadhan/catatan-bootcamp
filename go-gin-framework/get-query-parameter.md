@@ -1,6 +1,6 @@
 # Get Query Parameter
 
-Untuk get query parameter caranya mirip dengan get request JSON menggunakan method ShouldBin().
+Untuk get query parameter caranya mirip dengan get request JSON menggunakan method ShouldBin() seperti _code_ di bawah ini.
 
 ```go
 package main
