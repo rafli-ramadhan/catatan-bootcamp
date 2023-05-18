@@ -16,4 +16,4 @@ coverY: 0
 
 <figure><img src=".gitbook/assets/r.png" alt=""><figcaption><p><a href="https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png">https://miro.medium.com/max/1302/0*p05ch77ERQOpj2GN.png</a></p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/1 (1).png" alt=""><figcaption><p>Contoh software message broker</p></figcaption></figure>
+<figure><img src=".gitbook/assets/1 (1) (1).png" alt=""><figcaption><p>Contoh software message broker</p></figcaption></figure>
