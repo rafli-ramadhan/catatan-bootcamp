@@ -1,6 +1,6 @@
 # Get Path Parameter
 
-Untuk get path parameter di Gin bisa menggunakan method Param() seperti _code_ di bawah ini.
+Untuk get path parameter di Gin bisa menggunakan method Param() seperti _code_ dibawah ini.
 
 ```go
 package main
@@ -29,4 +29,4 @@ func Get(ctx *gin.Context) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/1 (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (6).png" alt=""><figcaption></figcaption></figure>
