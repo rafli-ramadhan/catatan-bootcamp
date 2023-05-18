@@ -71,3 +71,69 @@ func LoggingTime() gin.HandlerFunc {
 <figure><img src="../.gitbook/assets/post 2.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/post.png" alt=""><figcaption></figcaption></figure>
+
+Middleware juga bisa di set untuk 1 route tertentu seperti _code_ di bawah ini.
+
+```go
+package main
+
+import (
+	"log"
+	"net/http"
+	"time"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.Use(Logging())
+	r1 := r.Group("/api1")
+	r2 := r.Group("/api2")
+
+	r1.GET("/welcome", ErrorMiddleware(), Welcome)
+	r1.POST("/welcome", ErrorMiddleware(), Welcome)
+	r2.GET("/welcome", LoggingTime(), Welcome)
+	r2.POST("/welcome", LoggingTime(), Welcome)
+
+	r.Run(":5000")
+}
+
+func Welcome(ctx *gin.Context) {
+	log.Println("Welcome")
+}
+
+func ErrorMiddleware() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		if ctx.GetHeader("Content-Type") != "" {
+			ctx.Redirect(http.StatusMovedPermanently, "https://www.bing.com/")
+		} else {
+			ctx.Redirect(http.StatusMovedPermanently, "http://www.google.com/")
+		}
+		defer func() {
+			err := recover()
+			if err != nil {
+				log.Println(err.(error))
+			}
+		}()
+	}
+}
+
+func Logging() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		status := ctx.Writer.Status()
+		log.Println("middleware before", ctx.Request.Method, status)
+		ctx.Next()
+		log.Println("middleware after", ctx.Request.Method, status)
+	}
+}
+
+func LoggingTime() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		start := time.Now()
+		log.Println("start from", start)
+		ctx.Next()
+		log.Println("end at", time.Since(start).Seconds())
+	}
+}
+```
