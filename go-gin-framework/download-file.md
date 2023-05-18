@@ -32,3 +32,7 @@ func Download(ctx *gin.Context) {
 ```
 
 <figure><img src="../.gitbook/assets/download (1).png" alt=""><figcaption></figcaption></figure>
+
+Reference :
+
+{% embed url="https://www.geeksforgeeks.org/http-headers-content-disposition/" %}
