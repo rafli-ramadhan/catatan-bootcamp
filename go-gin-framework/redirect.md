@@ -27,3 +27,7 @@ func Redirect(ctx *gin.Context) {
 ```
 
 <figure><img src="../.gitbook/assets/1 (4).png" alt=""><figcaption></figcaption></figure>
+
+Reference :
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" %}
