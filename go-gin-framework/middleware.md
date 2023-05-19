@@ -137,3 +137,43 @@ func LoggingTime() gin.HandlerFunc {
 	}
 }
 ```
+
+Di Gin juga memungkinkan untuk membuat middleware sebelum dan setelah suatu handler. Sebagai contoh handler welcome memiliki 2 middleware yang dijalankan sebelum dan sesudah handler tersebut dijalankan.
+
+```go
+package main
+
+import (
+	"log"
+
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+
+	r.GET("/welcome", mid1, mid2, welcome, mid3, mid4)
+	r.Run(":5000")
+}
+
+func mid1(ctx *gin.Context) {
+	log.Println("mid1")
+}
+
+func mid2(ctx *gin.Context) {
+	log.Println("mid2")
+}
+
+func welcome(ctx *gin.Context) {
+	ctx.Writer.Write([]byte("success"))
+	// ctx.Abort() -> menghentikan handler sampai disini
+}
+
+func mid3(ctx *gin.Context) {
+	log.Println("mid3")
+}
+
+func mid4(ctx *gin.Context) {
+	log.Println("mid4")
+}
+```
