@@ -1,4 +1,4 @@
-# Hit Endpoint dengan Curl di CMD
+# Hit Endpoint dengan Curl di Terminal
 
 ## HTTP Get Method:
 
@@ -12,7 +12,7 @@ curl -X GET http://localhost:5000
 </strong>Hello Umar Bawazir. Iam 20 years old.
 </code></pre>
 
-## Example Code
+## Contoh _code_
 
 ```go
 package main
@@ -61,7 +61,7 @@ func main() {
 }
 ```
 
-Run go run . in CMD 2 then open CMD 1 to do request.
+Jalankan dengan go run main.go, kemudian buka terminal (CMD/bash/powershell) dan coba _copy command_ berikut.
 
 ## HTTP Get Method
 
@@ -75,7 +75,7 @@ Success
 CMD 2 (Response)
 
 ```bash
-D:\go-server>go run .
+D:\go-server>go run main.go
 Success
 ```
 
@@ -91,7 +91,7 @@ Hello Utsman,last_name=Bey,age=20  and I am  years old
 CMD 1 (Response)
 
 ```
-D:\go-server>go run .
+D:\go-server>go run main.go
 Hello Utsman,last_name=Bey,age=20  and I am  years old
 ```
 

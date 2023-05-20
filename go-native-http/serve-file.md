@@ -1,4 +1,4 @@
-# File Server
+# Serve File
 
 Kegunaan file server adalah untuk menampilkan suatu file yang ada dalam satu direktori yang sama dengan aplikasi.
 
@@ -48,4 +48,4 @@ func main() {
 
 Struktur file dalam direktori ./file, ./file/html dan ./file/txt.
 
-<figure><img src="../.gitbook/assets/folder file serve.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/folder file serve (1).png" alt=""><figcaption></figcaption></figure>
