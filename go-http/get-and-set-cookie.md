@@ -1,6 +1,6 @@
 # Get dan Set Cookie
 
-Cookie merupakan data yang dibuat di server dan dikirimkan ke web browser dan sengaja agar disimpan di web browser. Penerapan semisal untuk menyimpan data user saat login.
+Cookie merupakan data yang dibuat di server dan dikirimkan ke web browser dan sengaja agar disimpan di sisi client. Penerapan semisal untuk menyimpan data user saat login, sehingga user tidak perlu login lagi setelah saat durasi login berakhir.
 
 <pre class="language-go"><code class="lang-go">package main
 

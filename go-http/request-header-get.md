@@ -1,6 +1,6 @@
 # Get dan Set Header
 
-Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request. Header mirip seperti query parameter yang isinya berupa map\[string]\[]string. Berbeda dengan query parameter yang case sensitive (huruf besar kecil berpengaruh), header tidaklah case sensitive.
+Header merupakan suatu informasi tambahan terkait request yang dikirim oleh client atau response dari server. Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request. Header mirip seperti query parameter yang isinya berupa map\[string]\[]string. Berbeda dengan query parameter yang case sensitive (huruf besar kecil berpengaruh), header tidaklah case sensitive.
 
 ```go
 package main

@@ -1,6 +1,6 @@
-# Request Query Parameter
+# Get Query Parameter
 
-Query parameter merupakan data yang disimpan dalam URL yang sifatnya case sensitif (huruf besar kecil berpengaruh). Contohnya seperti URL [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22) yang terdapat query parameter name dan age yang memiliki value andi dan 21.
+Query parameter merupakan data yang disimpan dalam URL yang sifatnya case sensitif (huruf besar kecil berpengaruh). Contohnya seperti URL [http://localhost:5000/?name=andi\&age=21](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22) yang terdapat query parameter name dan age yang memiliki value andi dan 21. Untuk memperoleh query parameter di Golang dapat menggunakan method URL.Query().Get() seperti contoh _code_ di bawah ini.
 
 ```go
 package main
@@ -14,21 +14,11 @@ func main() {
 	mux := http.NewServeMux()
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
-		fmt.Printf("Server running")
-
 		name := request.URL.Query().Get("name")
-		if name != "" {
-			fmt.Fprintf(write, "Name : %s\n", name)
-		} else {
-			fmt.Fprintf(write, "Data in name query parameter is not exist\n")
-		}
+		fmt.Fprintf(write, "Name : %s\n", name)
 
 		age := request.URL.Query().Get("age")
-		if age != "" {
-			fmt.Fprintf(write, "Age : %s\n", age)
-		} else {
-			fmt.Fprintf(write, "Data in age query parameter is not exist\n")
-		}
+		fmt.Fprintf(write, "Age : %s\n", age)
 	}
 	mux.HandleFunc("/", handlerMain)
 
@@ -44,14 +34,16 @@ func main() {
 }
 ```
 
-Output di web browser:
+Output di web browser saat akses URL [http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22):
 
 ```
 Name : andi
 Age : 21
 ```
 
-URL -> [http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22)
+## Query Parameter lebih dari 1 Data untuk Query yang sama
+
+Contoh URL yang digunakan adalah [http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22](http://localhost:5000/?name=andi\&age=21\&name=nuh\&age=22). Dimana terdapat 2 data untuk query yang sama.
 
 ```go
 package main
@@ -65,8 +57,6 @@ func main() {
 	mux := http.NewServeMux()
 
 	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, request *http.Request) {
-		fmt.Println("Server running")
-
 		urlValues := request.URL.Query()
 		fmt.Fprintf(write, "Data 1 : %s\n", urlValues["name"])
 		fmt.Fprintf(write, "Data 2 : %s\n", urlValues["age"])

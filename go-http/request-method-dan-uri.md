@@ -4,7 +4,7 @@ Request merupakan informasi yang dikirim oleh client beberapa jenis request terd
 
 ## Request Method dan URI
 
-Request ini digunakan untuk memperoleh method dan URL yang dikirim oleh client. Berikut adalah contoh _code_ untuk memperoleh request method dan URI dengan r.Method dan r.URI.
+Request ini digunakan untuk memperoleh method dan URL yang dikirim oleh client. Berikut adalah contoh _code_ untuk memperoleh request method dan URI.
 
 ```go
 package main
@@ -17,7 +17,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	// request -> data type -> struct
+	// request -> data type: struct
 	var handlerMain http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Server running")
 		fmt.Fprintf(w, "Server running")
@@ -37,6 +37,3 @@ func main() {
 	}
 }
 ```
-
-
-
