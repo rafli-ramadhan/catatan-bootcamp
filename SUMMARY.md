@@ -143,7 +143,7 @@
   * [Request Post Form](go-http/request-post-form.md)
   * [Hit Endpoint dengan Curl di CMD](go-http/hit-endpoint-dengan-curl-di-cmd.md)
   * [Response Code](go-http/response-code.md)
-  * [Get dan Set Header](go-native-http/get-dan-set-header.md)
+  * [Get dan Set Header](go-http/request-header-get.md)
   * [Get dan Set Cookie](go-http/get-and-set-cookie.md)
   * [File Server](go-http/file-server.md)
 * [Go Gin Framework](go-gin-framework/README.md)
