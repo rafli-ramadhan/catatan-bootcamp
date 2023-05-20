@@ -144,6 +144,7 @@
   * [Get Path Parameter](go-native-http/get-path-parameter.md)
   * [Get dan Set Header](go-http/request-header-get.md)
   * [Get dan Set Cookie](go-http/get-and-set-cookie.md)
+  * [Redirect](go-native-http/redirect.md)
   * [Serve File](go-http/file-server.md)
   * [Upload File](go-native-http/upload-file.md)
   * [Download File](go-native-http/download-file.md)

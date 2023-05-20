@@ -1,6 +1,6 @@
 # Get Path Parameter
 
-Path parameter merupakan data yang disisipkan dalam suatu URL. Path parameter sifatnya tidak bisa kosong atau harus di isi. Contoh url berikut localhost:5000/test/Dana/21 memiliki path parameter yaitu dana dan 21. Untuk memperoleh path parameter dengan http native bisa menggunakan package strings seperti _code_ di bawah ini.
+Path parameter merupakan data yang disisipkan dalam suatu URL. Path parameter sifatnya tidak bisa kosong seperti query parameter. Contoh URL berikut localhost:5000/test/Dana/21 memiliki path parameter yaitu dana dan 21. Untuk memperoleh path parameter dengan http native bisa menggunakan package strings seperti _code_ di bawah ini.
 
 ```go
 package main

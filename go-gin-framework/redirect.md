@@ -1,10 +1,10 @@
 # Redirect
 
-Untuk redirect di Gin bisa menggunakan method Redirect() seperti _code_ di bawah ini. Untuk http status yang digunakan bisa pada redirect bisa berupa
+Untuk redirect di Gin bisa menggunakan method Redirect() seperti _code_ di bawah ini. Untuk http status yang digunakan pada redirect bisa berupa:
 
-* http.StatusMovedPermanently(201) -> resource yang di request telah dipindahkan ke url yang baru.
+* http.StatusMovedPermanently(301) -> resource yang di request telah dipindahkan ke url yang baru.
 * http.StatusTemporaryRedirect(307) -> resource untuk sementara dipindahkan ke url lain.
-* http.StatusPermanentRedirect(308) -> resource telah dipindahkan ke url lain.
+* http.StatusPermanentRedirect(308) -> resource telah dipindahkan permanen ke url lain.
 
 ```go
 package main
