@@ -29,4 +29,4 @@ func Get(ctx *gin.Context) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/1 (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
