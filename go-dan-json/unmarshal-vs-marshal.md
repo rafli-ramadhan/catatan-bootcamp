@@ -10,7 +10,7 @@ func Unmarshal(data []byte, v interface{}) error
 func Marshal(v interface{}) ([]byte, error)
 ```
 
-## Contoh _code_ marshal (Int-> JSON) & unmarshal (JSON -> Int)
+## Contoh _code_ marshal (int-> JSON) & unmarshal (JSON -> int)
 
 ```go
 package main
@@ -58,7 +58,7 @@ func main() {
 123
 ```
 
-## Contoh _code_ marshal (String-> JSON) & unmarshal (JSON -> String)
+## Contoh _code_ marshal (string-> JSON) & unmarshal (JSON -> string)
 
 ```go
 package main

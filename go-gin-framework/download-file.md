@@ -1,6 +1,6 @@
 # Download File
 
-Untuk download file otomatis saat hit suatu endpoint, bisa menggunakan ctx.Header("content-disposition", ...) dan ctx.File() untuk menampilkan file saat endpoint di hit di browser. Tanpa header tersebut, file hanya akan ditampilkan saja dan tidak terdownload. Content-disposition adalah tipe header untuk menunjukkan bagaimana response diproses. Content-disposition di set attachment yang akan membuat browser mendowload file otomatis. Contoh _code_ seperti di bawah ini.
+Untuk download file otomatis saat hit suatu endpoint, bisa menggunakan ctx.Header("content-disposition", ...) dan ctx.File() untuk menampilkan file saat endpoint di hit di browser. Tanpa header tersebut, file hanya akan ditampilkan saja dan tidak terdownload. Content-disposition adalah tipe header untuk menunjukkan bagaimana response diproses. Content-disposition di set attachment yang akan membuat browser men-dowload file otomatis. Contoh _code_ seperti di bawah ini.
 
 ```go
 package main

@@ -13,7 +13,7 @@ description: https://www.rabbitmq.com/tutorials/tutorial-three-go.html
 * Pada _code_ di consumer terdapat prefetch yang ada pada bagian QoS. Prefetch adalah sebuah aturan RabbitMQ untuk memastkan bahwa setiap pesan dikirimkan pada service yang sudah menyelesaikan tasknya
 * Binding -> relasi antara queue dan exchange
 
-<figure><img src="../.gitbook/assets/1 (2) (1) (1).png" alt=""><figcaption><p><a href="https://www.rabbitmq.com/img/tutorials/bindings.png">https://www.rabbitmq.com/img/tutorials/bindings.png</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (2) (1) (1) (1).png" alt=""><figcaption><p><a href="https://www.rabbitmq.com/img/tutorials/bindings.png">https://www.rabbitmq.com/img/tutorials/bindings.png</a></p></figcaption></figure>
 
 ## Tipe-tipe exchange
 

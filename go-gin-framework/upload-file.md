@@ -86,4 +86,4 @@ func Upload(ctx *gin.Context) {
 
 ```
 
-<figure><img src="../.gitbook/assets/1 (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1 (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
