@@ -47,7 +47,7 @@ func (m *Middleware) Use(middlewares ...MiddlewareFunc) {
 func (m *Middleware) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	handler := m.Handler
 
-	// handler = middleware1(w, r, middleware2(w, r, middleware3(w, r, mux)))
+	// handler = Middleware3(w, r, Middleware2(w, r, Middleware1(w, r, mux)))
 	for _, middleware := range m.Middlewares {
 		handler = middleware(w, r, handler)
 	}

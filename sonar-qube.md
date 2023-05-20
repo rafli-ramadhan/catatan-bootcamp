@@ -28,7 +28,7 @@ sonar.test.exclusions=**main.go, **/helper/*,**/docs/**, **/mocks/**
 sonar.go.coverage.reportPaths=reports/result.out
 ```
 
-Buat folder reports dan jalankan _command_ berikut untuk memperoleh file result.out.
+2. Buat folder reports dan jalankan _command_ berikut untuk memperoleh file result.out.
 
 ```bash
 go test ./... -v -coverpkg=./... -coverprofile=reports/result.out

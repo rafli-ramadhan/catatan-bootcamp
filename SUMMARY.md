@@ -138,7 +138,7 @@
   * [HTTP Server dengan Serve Mux](go-http/http-server-using-servemux-in-go.md)
   * [HTTP Stateless](go-http/http-stateless.md)
   * [HTTP Test](go-http/http-test.md)
-  * [Request Method dan URI](go-http/request-method-dan-uri.md)
+  * [Routing](go-native-http/routing.md)
   * [Konsep Middleware](go-native-http/konsep-middleware.md)
   * [Middleware](go-native-http/middleware.md)
   * [Get Query Parameter](go-native-http/get-query-parameter.md)

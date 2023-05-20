@@ -33,7 +33,7 @@ go run consumer/consumer.go
 
 <figure><img src="../.gitbook/assets/terminal.png" alt=""><figcaption><p>Menjalankan publisher dan consumer di 3 terminal yang berbeda</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/p.png" alt=""><figcaption><p>Terminal publisher</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/p (1).png" alt=""><figcaption><p>Terminal publisher</p></figcaption></figure>
 
 * Selanjutnya baru jalankan publisher.go (publisher / sender) dengan command di bawah ini di terminal ke-3.
 
