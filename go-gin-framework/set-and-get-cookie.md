@@ -1,4 +1,4 @@
-# Set and Get Cookie
+# Get dan Set Cookie
 
 Untuk get cookie dari request di Gin dapat menggunakan method Cookie(), sementara untuk set cookie di response dapat menggunakan method SetCookie().
 

@@ -1,6 +1,6 @@
 # Get dan Set Header
 
-Untuk request header di Gin bisa menggunakan method GetHeader() dan untuk set header baru di response bisa menggunakan method Header(). Contohnya seperti _code_ dibawah ini.
+Untuk menangkap request header yang dikirim oleh client, kita bisa mengambilnya di Request. Header mirip seperti query parameter yang isinya berupa map\[string]\[]string. Berbeda dengan query parameter yang case sensitive (huruf besar kecil berpengaruh), header tidaklah case sensitive.
 
 ```go
 package main
@@ -38,7 +38,6 @@ func main() {
 		panic(err)
 	}
 }
-
 ```
 
-<figure><img src="../.gitbook/assets/1 (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/header.png" alt=""><figcaption></figcaption></figure>

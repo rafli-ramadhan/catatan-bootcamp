@@ -2,13 +2,12 @@
 
 Cookie merupakan data yang dibuat di server dan dikirimkan ke web browser dan sengaja agar disimpan di web browser. Penerapan semisal untuk menyimpan data user saat login.
 
-```go
-package main
+<pre class="language-go"><code class="lang-go">package main
 
 import (
 	"fmt"
-	"net/http"
-)
+<strong>	"net/http"
+</strong>)
 
 func main() {
 	mux := http.NewServeMux()
@@ -38,6 +37,6 @@ func main() {
 		panic(err)
 	}
 }
-```
+</code></pre>
 
 <figure><img src="../.gitbook/assets/cookie.png" alt=""><figcaption></figcaption></figure>
