@@ -11,7 +11,7 @@ func main() {
   // case print value primitive variable
   var num1 int = 2
   var num2 *int
-  num2 = & num1
+  num2 = &num1
   fmt.Println(num2)  // -> print memory address
   fmt.Println(*num2) // -> print value
  
