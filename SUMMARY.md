@@ -186,4 +186,4 @@
   * [Publisher, Exchange dan Consumer](golang-dan-rabbitmq/publisher-exchange-dan-consumer.md)
   * [Routing RabbitMQ](golang-dan-rabbitmq/routing-rabbitmq.md)
   * [Routing Key](golang-dan-rabbitmq/routing-key.md)
-* [Sonar Qube](sonar-qube.md)
+* [Sonar Scanner](sonar-scanner.md)
