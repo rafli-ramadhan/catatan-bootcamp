@@ -1,6 +1,6 @@
 # HTTP Test
 
-HTTP Test -> NewRequest() & NewRecorder() -> untuk tes response dari suatu URL tanpa harus membuat server.
+HTTP Test digunakan untuk tes response dari suatu URL tanpa harus membuat server atau untuk memperoleh response dari suatu service endpoint.
 
 ```go
 package main
