@@ -57,33 +57,6 @@ Bot : Hi Andi
 ```go
 package main
 
-import (
-	"fmt"
-)
-
-func main() {
-    var name any = "member_01"
-    stringName := name.(string)
-    fmt.Println(stringName)
-
-    var number1 any = 2
-    var number2 any = 3
-    hasil := number1.(int) + number2.(int)
-    fmt.Println(hasil)
-
-    var user any = []string{"member_01", "member_02", "member_03"}
-    arrayUser := user.([]string)
-    for _, v := range arrayUser {
-        fmt.Println(v)
-    }
-}
-```
-
-
-
-```go
-package main
-
 import(
 	"fmt"
 )
@@ -121,6 +94,92 @@ Hello Utsman
 
 ## Kegunaan Interface
 
+Semisal ada go module bernama "go-rest-api". Didalamnya terdapat 2 file yaitu repo.go dan handler.go. Di dalam file repository.go dirinci pada _code_ di bawah ini. Pada file tersebut juga terdapat interface yaitu Repositorier.
+
+```go
+package repository
+
+type repo struct {}
+
+func NewRepository() *repo {
+	return &repo{}
+}
+
+type Repositorier interface {
+	CheckUserByName(username string) (isExist bool, err error) {}
+	Create(username string, password string) (err error) {}
+}
+
+func (r *random) CheckUserByName(username string) (isExist bool, err error) {}
+
+func (r *random) Create(username string, password string) (err error) {}
+```
+
+Di file yang berbeda semisal handler.go membutuhkan method GetNameById dan Create dari package repository.
+
+```go
+package handler
+
+import (
+	"go-rest-api/repository"
+)
+
+type handler struct {
+	repo repository.Repositorier
+}
+
+func NewHandler(repo repository.Repositorier) *handler {
+	return &handler{
+		repo: repo,
+	}
+}
+
+func (h *handler) Example(username, password string) (err error) {
+	exist := r.repo.CheckUserByName(id)
+	// lanjutan code
+	err := r.repo.Create(username, password)
+	// lanjutan code
+}
+```
+
+Semisal ingin membuat unit test dari handler seperti _code_ dibawah ini. Repository yang di inputkan pada NewHandler perlu dibuat mocking nya, karena unit testing hanya berfungsi untuk test 1 package saja.
+
+```go
+package product
+
+import (
+	"testing"
+	"sales-go/mocks/repository"
+)
+
+func TestExample(t *testing.T) {
+	repoMock :=
+	handler := NewHandler(repoMock)
+	err := handler.Example("member_01", "Test123")
+	// lanjutan code
+}
+```
+
+```go
+package random
+
+import (
+	"github.com/stretchr/testify/mock"
+)
+
+type RepoMock struct {
+	mock.Mock
+}
+
+func NewRandom() *RepoMock {
+	return &RepoMock {}
+}
 
 
-[https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang](https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang)
+func (r *random) CheckUserByName(username string) (isExist bool, err error) {}
+func (r *random) Create(username string, password string) (err error) {}
+```
+
+Referensi:
+
+{% embed url="https://stackoverflow.com/questions/39092925/why-are-interfaces-needed-in-golang" %}
