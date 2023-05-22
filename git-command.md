@@ -25,6 +25,10 @@ git push -u origin main
 
 Command -u pada git push -u origin main digunakan untuk set upstream remote dan branch yaitu origin dan main. Selanjutnya jika command git pull dan git push di jalankan, maka akan otomatis melakukan pull dan push pada remote dan branch yang di set di awal yaitu origin dan main.
 
+<figure><img src=".gitbook/assets/git (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
 Referensi:
 
 {% embed url="https://stackoverflow.com/questions/5561295/what-does-git-push-u-mean" %}
