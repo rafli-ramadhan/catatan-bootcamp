@@ -1,6 +1,6 @@
-# Encode (Go Oject -> JSON)
+# Marshal (Go Object -> JSON)
 
-Encode merupakan cara untuk mengubah object dalam Golang menjadi JSON string. Object tersebut dapat berupa map\[string]interface atau struct.
+Marshal merupakan cara untuk mengubah object dalam Golang menjadi JSON string. Object tersebut dapat berupa map\[string]interface atau struct.
 
 ## Contoh _code_ encode dari struct menjadi JSON string
 

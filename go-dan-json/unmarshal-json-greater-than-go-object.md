@@ -1,6 +1,6 @@
-# Decode (JSON -> Go Object)
+# Unmarshal (JSON -> Go Object)
 
-Decode merupakan cara untuk mengubah JSON string menjadi golang object berupa map\[string]interface atau struct.
+Unmarsal merupakan cara untuk mengubah JSON string menjadi golang object berupa map\[string]interface atau struct.
 
 ## Contoh _code_ decode dari JSON string menjadi struct
 
