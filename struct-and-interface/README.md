@@ -12,15 +12,17 @@ type CustomerInterface interface {
 }
 
 type Account struct {
-    Name string
+	Name     string
+	Password string
 }
 
 type Customer struct {
-	Name string
+	Name      string
+	AccountID int
 }
 
-func (a Account) Greeting() string{
-    return "Hi " + a.Name
+func (a Account) Greeting() string {
+	return "Hi " + a.Name
 }
 
 func (c Customer) Greeting() string {
@@ -28,30 +30,30 @@ func (c Customer) Greeting() string {
 }
 
 // function untuk menggunakan interface dari method beberapa struct.
-func justCheck(customerInterface CustomerInterface) string {
-    return customerInterface.Greeting()
+func NewUser(customerInterface CustomerInterface) string {
+	return customerInterface.Greeting()
 }
 
 func main() {
-	customer1 := Customer{
-		Name: "Firman",
-	}
-	fmt.Println(customer1.Greeting())
-    fmt.Println("Bot : " + justCheck(customer1))
-
+	// variabel yang memiliki method yang sama dengan CustomerInterface
 	account1 := Account{
-		Name: "Andi",
+		Name:     "Dana",
+		Password: "Test123",
 	}
-	fmt.Println(account1.Greeting())
-    fmt.Println("Bot : " + justCheck(account1))
+	customer1 := Customer{
+		Name:      "Firman",
+		AccountID: 1,
+	}
+
+	fmt.Println(NewUser(customer1))
+	fmt.Println(NewUser(account1))
 }
+
 ```
 
 ```
 Welcome Firman
-Bot : Welcome Firman
-Hi Andi
-Bot : Hi Andi
+Hi Dana
 ```
 
 ```go
