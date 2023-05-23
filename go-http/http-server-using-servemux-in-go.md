@@ -13,23 +13,22 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	var handlerMain http.HandlerFunc = func(write http.ResponseWriter, result *http.Request) {
-		fmt.Println("Server running")
-		fmt.Fprintf(write, "Server running")
+	var handler1 http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Test Main")
 	}
-	var handlerTest http.HandlerFunc = func(write http.ResponseWriter, result *http.Request) {
-		fmt.Println("Server running")
-		fmt.Fprintf(write, "Test")
+	var handler2 http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Test")
 	}
 
-	mux.HandleFunc("/main", handlerMain)
-	mux.HandleFunc("/test", handlerTest)
+	mux.HandleFunc("/main", handler1)
+	mux.HandleFunc("/test", handler2)
 
 	server := http.Server{
 		Addr:   "localhost:5000",
 		Handler: mux,
 	}
 
+	fmt.Println("Server running")
 	err := server.ListenAndServe()
 	if err != nil{
 		panic(err.Error())

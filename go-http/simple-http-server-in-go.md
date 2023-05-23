@@ -11,9 +11,8 @@ import (
 )
 
 func main() {
-	var handler http.HandlerFunc = func(write http.ResponseWriter, result *http.Request) {
-		fmt.Println("Server running")
-		fmt.Fprintf(write, "Server running")
+	var handler http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Server running")
 	}
 
 	server := http.Server{
@@ -21,6 +20,7 @@ func main() {
 		Handler: handler,
 	}
 
+	fmt.Println("Server running")
 	err := server.ListenAndServe()
 	if err != nil{
 		panic(err.Error())
