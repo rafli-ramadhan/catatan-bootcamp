@@ -106,7 +106,6 @@
   * [Buffered Channel](go-routine/buffered-channel.md)
   * [Select Channel](go-routine/select-channel.md)
   * [Deadlock - All goroutines are asleep](go-routine/deadlock.md)
-  * [Page 1](go-routine/page-1.md)
   * [Race Condition](go-routine/race-condition.md)
   * [Mutex (Mutual Exclusion)](go-routine/mutex-lock-and-unlock.md)
   * [RW Mutex vs Mutex](go-routine/rw-mutex-vs-mutex.md)
