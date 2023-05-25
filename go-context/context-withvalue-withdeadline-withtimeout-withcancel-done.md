@@ -25,17 +25,18 @@ import(
 )
 
 func main() {
-    value := map[string]string{
-        "1": "one",
-        "2": "two",
+    value := map[string]interface{}{
+        "1":        "member_01",
+        "2":        "member_02",
+        "isActive": true,
     }
     background := context.Background()
-    child := context.WithValue(background, "value", value)
+    child := context.WithValue(background, "key-1", value)
     todo := context.TODO()
 
     fmt.Println(background)
     fmt.Println(child)
-    fmt.Println(child.Value("value"))
+    fmt.Println(child.Value("key-1"))
     fmt.Println(todo)
 }
 ```

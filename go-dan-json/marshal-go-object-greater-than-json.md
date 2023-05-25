@@ -2,7 +2,7 @@
 
 Marshal merupakan cara untuk mengubah object dalam Golang menjadi JSON string. Object tersebut dapat berupa map\[string]interface atau struct.
 
-## Contoh _code_ encode dari struct menjadi JSON string
+## Contoh _code_ marshal dari struct menjadi JSON object
 
 ```go
 package main
@@ -20,17 +20,17 @@ type User struct {
 func main() {
     users := []User{
         {"andi", 21}, 
-        {"andre", 20}
+        {"andre", 20},
     }
-    // struct -> json
-    var jsonData, err = json.Marshal(users)
+    
+    var bytes, err = json.Marshal(users)
     if err != nil {
         fmt.Println(err.Error())
         return
     }
     
-    var jsonString = string(jsonData)
-    fmt.Println(jsonString)
+    var jsonObject = string(bytes)
+    fmt.Println(jsonObject)
 }
 ```
 
@@ -38,5 +38,35 @@ func main() {
 [{"Name":"andi","Age":21},{"Name":"andre","Age":20}]
 ```
 
+## Contoh _code_ marshal dari map menjadi JSON object
 
+```go
+package main
 
+import (
+    "encoding/json"
+    "fmt"
+)
+
+func main() {
+    users := map[string]interface{}{
+        "name":     "andi", 
+        "age":      21, 
+        "":         "empty",
+        "test_nil": nil,
+    }
+
+    var bytes, err = json.Marshal(users)
+    if err != nil {
+        fmt.Println(err.Error())
+        return
+    }
+    
+    var jsonObject = string(bytes)
+    fmt.Println(jsonObject)
+}
+```
+
+```
+{"":"empty","age":21,"name":"andi","test_nil":null}
+```

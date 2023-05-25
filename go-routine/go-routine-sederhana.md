@@ -1,6 +1,6 @@
-# Simple Go Routine
+# Go Routine Sederhana
 
-## Go Routine with Time Sleep
+## Go Routine dengan Time Sleep
 
 ```go
 package main
@@ -34,7 +34,7 @@ func main() {
         fmt.Println("test 5", time.Since(duration))
     }()
     
-    fmt.Println("end", time.Since(duration))
+    fmt.Println("sleep 2 second", time.Since(duration))
     time.Sleep(2*time.Second)
     fmt.Println("end", time.Since(duration))
 }
@@ -42,13 +42,13 @@ func main() {
 
 ```
 start
-end 20.658µs
-test 5 63.831µs
-test 1 82.573µs
-test 2 93.142µs
-test 3 106.828µs
-test 4 116.795µs
-end 2.001232027s
+sleep 2 second 32.806µs
+test 5 68.975µs
+test 1 97.493µs
+test 2 108.316µs
+test 3 117.996µs
+test 4 125.836µs
+end 2.000692238s
 ```
 
 ```go
@@ -64,7 +64,7 @@ func main() {
 
     go func() {
         fmt.Println("test 1")
-	}()
+    }()
     
     go func() {
         fmt.Println("test 2")

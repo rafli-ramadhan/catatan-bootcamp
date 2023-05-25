@@ -39,7 +39,10 @@ type Customer struct {
 func main() {
     customer := Customer{}
 
-    reader, _ := os.Open("customer.json")
+    reader, err := os.Open("customer.json")
+    if err != nil {
+        panic(err)
+    }
     decoder := json.NewDecoder(reader)
     decoder.Decode(&customer)
     fmt.Println(customer)
