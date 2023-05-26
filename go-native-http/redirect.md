@@ -33,3 +33,5 @@ func main() {
 }
 
 ```
+
+<figure><img src="../.gitbook/assets/redirect.png" alt=""><figcaption></figcaption></figure>

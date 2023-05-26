@@ -40,3 +40,5 @@ func main() {
 </code></pre>
 
 <figure><img src="../.gitbook/assets/cookie.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/cookie header.png" alt=""><figcaption></figcaption></figure>

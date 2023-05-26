@@ -1,10 +1,61 @@
-# Request Post Form
+# Request Form
 
 Saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST. Jika menggunakan method GET, semua data di form dapat menjadi query parameter. Sedangkan jika menggunakan POST, semua data di form akan dikirim via body HTTP request. Di Golang, submit data form dapat dilakukan dengan ParseForm yang mengambil (parses) query mentah dari URL seperti request dari CURL.
 
 ```go
 r.PostForm.Get()
 ```
+
+## Contoh _code_ request form
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+)
+
+func main() {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/welcome", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == "POST" {
+			if err := r.ParseForm(); err != nil {
+				panic(err)
+			}
+
+			username := r.PostForm.Get("username")
+			password := r.PostForm.Get("password")
+			
+			res := map[string]interface{}{
+				"username": username,
+				"password": password,
+			}
+			jsonByte, err := json.Marshal(res)
+			if err != nil {
+				w.WriteHeader(http.StatusInternalServerError)
+			}
+			w.Write(jsonByte)
+		}
+	})
+
+	server := http.Server{
+		Addr:    "localhost:5000",
+		Handler: mux,
+	}
+
+	fmt.Println("Server running on", server.Addr)
+	err := server.ListenAndServe()
+	if err != nil {
+		panic(err)
+	}
+}
+```
+
+<figure><img src="../.gitbook/assets/Request JSON Struct (2).png" alt=""><figcaption></figcaption></figure>
+
+## Contoh _code_ request form dengan http test
 
 ```go
 package main
