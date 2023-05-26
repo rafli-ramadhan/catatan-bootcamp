@@ -1,6 +1,8 @@
 # Relational Operator
 
-Relational operator -> Operasi untuk membadingkan dua buah data untuk menentukan true atau false. ->  >, <, >=, <=, == && !=
+Relational operator merupakan operasi untuk membadingkan dua buah data untuk menentukan true atau false.Operator ini menggunakan tanda ->  >, <, >=, <=, ==, &&, !=.
+
+## Contoh _code_ membandingkan data string,  integer dan float
 
 ```go
 package main
@@ -52,6 +54,68 @@ func main() {
 false
 false
 true
+false
+true
+```
+
+## Contoh 2 operator relational untuk membandingkan tipe data string
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var str1 string = "Test1"
+	var str2 string = "Testb"
+	var str3 string = "test1"
+
+	fmt.Println(str1 == str2) // false
+	fmt.Println(str1 == str3) // false
+	fmt.Println(str1 != str3) // true
+
+	fmt.Println(str1 < str2)  // true
+	fmt.Println(str1 < str3)  // true
+	fmt.Println(str1 <= str2) // true
+	fmt.Println(str1 <= str3) // true
+}
+```
+
+```
+false
+false
+true
+true
+true
+true
+true
+```
+
+## Contoh 3 operator relational untuk membandingkan tipe data boolean
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var bool1 bool = true
+	var bool2 bool = false
+	fmt.Println(bool1 == bool2)    // true
+	fmt.Println(bool1 && bool2)	   // true
+	fmt.Println(bool1 != bool2)    // false
+
+	// fmt.Println(bool1 < bool2)
+	// fmt.Println(bool1 <= bool2)
+}
+```
+
+```
+false
 false
 true
 ```

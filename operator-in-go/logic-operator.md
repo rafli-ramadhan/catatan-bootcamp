@@ -1,6 +1,32 @@
 # Logic Operator
 
-Logical -> And, Or, Not/Negasi -> &&, ||, !
+Logical merupakan operator untuk membandingkan 2 tipe data boolean. Operator ini memiliki operasi and, or, not/negasi yang masing-masing disimbolkan dengan &&, || dan tanda !.
+
+## Contoh _code_ penerapan operator logic pada tipe data string
+
+```go
+package main
+
+import (
+	"fmt"
+)
+func main() {
+	var str1 string = "Test1"
+	var str2 string = "Testb"
+	var str3 string = "test1"
+	fmt.Println(str1 == str2 && str1 != str3) 	// (0*1) : false
+	fmt.Println(str1 == str2 || str1 != str3)   // (0+1) : true
+	fmt.Println(!(str1 == str2))				// true
+}
+```
+
+```
+false
+true
+true
+```
+
+## Contoh _code_ penerapan operator logic pada tipe data boolean
 
 ```go
 package main
@@ -10,21 +36,19 @@ import (
 )
 
 func main() {
-   var left bool = false
-   var right bool = true
+   var bool1 bool = false
+   var bool2 bool = true
 
-   var leftAndRight bool = left && right
-   var leftOrRight bool = left || right
-   var leftReserve bool = !left
-   
-   fmt.Printf("left && right \t(%t)\n", leftAndRight)
-   fmt.Printf("left || right \t(%t)\n", leftOrRight)
-   fmt.Printf("!left \t\t(%t)\n", leftReserve)
+   fmt.Println(bool1 && bool2)
+   fmt.Println(bool1 || bool2)
+   fmt.Println(!bool1)
+   fmt.Println(!bool2)
 }
 ```
 
 ```
-left && right 	(false)
-left || right 	(true)
-!left 		(true)
+false
+true
+true
+false
 ```

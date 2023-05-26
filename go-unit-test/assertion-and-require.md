@@ -41,21 +41,20 @@ import (
 )
 
 func TestSayHi(t *testing.T) {
-	// sub test
+	expectedResult := "Hello Andi"
 	t.Run("Test-1", func(t *testing.T) {
 		result := SayHi("Amar")
-		assert.Equal(t, "Hello Andi", result)
+		assert.Equal(t, expectedResult, result)
 	})
 	t.Run("Test-2", func(t *testing.T) {
 		result := SayHi("Andi")
-		assert.Equal(t, "Hello Andi", result)
+		assert.Equal(t, expectedResult, result)
 	})
 	t.Run("Test-3", func(t *testing.T) {
 		result := SayHi("Umar")
-		assert.Equal(t, "Hello Andi", result)
+		assert.Equal(t, expectedResult, result)
 	})
 }
-
 ```
 
 ```
@@ -112,17 +111,18 @@ import (
 )
 
 func TestSayHi(t *testing.T) {
+	expectedResult := "Hello Andi"
 	t.Run("Test-1", func(t *testing.T) {
 		result := SayHi("Amar")
-		require.Equal(t, "Hello Andi", result, "Input Not Andi")
+		require.Equal(t, expectedResult, result, "Input Not Andi")
 	})
 	t.Run("Test-2", func(t *testing.T) {
 		result := SayHi("Andi")
-		require.Equal(t, "Hello Andi", result, "Input Andi")
+		require.Equal(t, expectedResult, result, "Input Andi")
 	})
 	t.Run("Test-3", func(t *testing.T) {
-		result := SayHi("Umar")
-		require.Equal(t, "Hello Andi", result, "Input Not Andi")
+		result := SayHi("Dawam")
+		require.Equal(t, expectedResult, result, "Input Not Andi")
 	})
 }
 ```
