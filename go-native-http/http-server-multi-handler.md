@@ -1,4 +1,4 @@
-# Handler
+# HTTP Server Multi Handler
 
 Handler merupakan program yang berguna untuk menerima request dari client dan memberikan response ke client. Dalam package http mux terdapat 2 jenis handler yaitu http.Handle() dan http.HandleFunc(). HTTP **handle** menerima input handler dengan tipe **Handler**. Sementara HTTP **handleFunc** menerima input handler dengan tipe **HandlerFunc**.
 
@@ -21,38 +21,6 @@ type HandlerFunc func(ResponseWriter, *Request)
 func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 	f(w, r)
 }
-
-```
-
-Pola _code_ di atas mirip dengan _code_ dibawah ini.
-
-```go
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	// deklarasi variabel b dengan tipe A
-	var b A
-	b = func(i1 int, i2 int) {
-		fmt.Println(i1 + i2)
-	}
-	// panggil method Test
-	b.Test(2, 2)
-}
-
-type A func(int, int)
-
-func (a A) Test(i1 int, i2 int) {
-	a(i1, i2)
-}
-
-```
-
-```
-4
 ```
 
 ## Contoh handler dengan http handle
@@ -78,12 +46,18 @@ type WorldHandler struct{}
 func (h *WorldHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "World!")
 }
+
 func main() {
     hello := HelloHandler{}
     world := WorldHandler{}
+
     http.Handle("/hello", &hello)
     http.Handle("/world", &world)
-    http.ListenAndServe(":8080", nil)
+
+    err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		panic(err)
+	}
 }
 ```
 
@@ -99,19 +73,25 @@ import (
     "net/http"
 )
 
-// handler
-func hello(w http.ResponseWriter, r *http.Request) {
+func Hello(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Hello!")
 }
 
-func world(w http.ResponseWriter, r *http.Request) {
+func World(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "World!")
 }
 
 func main() {
+    var hello http.HandlerFunc = Hello
+    var world http.HandlerFunc = World
+
     http.HandleFunc("/hello", hello)
     http.HandleFunc("/world", world)
-    http.ListenAndServe(":8080", nil)
+
+    err := http.ListenAndServe(":5000", nil)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 

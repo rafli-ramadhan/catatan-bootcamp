@@ -12,19 +12,20 @@ import (
 	"net/http"
 )
 
-type handler1 struct{}
-	
-func (h handler1) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Test Handler")
+type HelloHandler struct{}
+
+func (h *HelloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello!")
 }
 
 func main() {
+	handler := &HelloHandler
 	server := http.Server{
 		Addr:   "localhost:5000",
-		Handler: handler1{},
+		Handler: handler,
 	}
 
-	fmt.Println("Server running")
+	fmt.Printf("Server running on %s", server.Addr)
 	err := server.ListenAndServe()
 	if err != nil{
 		panic(err.Error())
@@ -42,25 +43,24 @@ import (
 	"net/http"
 )
 
+var HelloHandler http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello!")
+}
+	
 func main() {
-	var handler http.HandlerFunc = func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Server running")
-	}
-
+    	handler := &HelloHandler
 	server := http.Server{
 		Addr:   "localhost:5000",
 		Handler: handler,
 	}
 
-	fmt.Println("Server running")
+	fmt.Printf("Server running on %s", server.Addr)
 	err := server.ListenAndServe()
 	if err != nil{
 		panic(err.Error())
 	}
 }
 ```
-
-
 
 Open localhost:5000
 
