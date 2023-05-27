@@ -137,6 +137,7 @@
   * [HTTP Server](go-http/simple-http-server-in-go.md)
   * [HTTP Server Multi Handler](go-native-http/http-server-multi-handler.md)
   * [HTTP Server dengan Serve Mux](go-http/http-server-using-servemux-in-go.md)
+  * [HTTP Response Writer](go-native-http/http-response-writer.md)
   * [HTTP Test](go-http/http-test.md)
   * [Routing](go-http/request-method-dan-uri.md)
   * [Konsep Middleware](go-native-http/konsep-middleware.md)
