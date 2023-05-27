@@ -22,3 +22,33 @@ func welcome(ctx *gin.Context) {
 ```
 
 <figure><img src="../.gitbook/assets/1 (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+```go
+package main
+
+import (
+	"net/http"
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	r.GET("/", GetHandler)
+	r.POST("/", GetHandler)
+	r.PATCH("/", GetHandler)
+	r.DELETE("/", GetHandler)
+	r.Run(":5000")
+}
+
+func GetHandler(ctx *gin.Context) {
+	if ctx.Request.Method == http.MethodGet {
+		ctx.Writer.Write([]byte("test get"))
+	} else if ctx.Request.Method == http.MethodPost {
+		ctx.Writer.Write([]byte("test post"))
+	} else if ctx.Request.Method == http.MethodPatch {
+		ctx.Writer.Write([]byte("test patch"))
+	} else if ctx.Request.Method == http.MethodDelete {
+		ctx.Writer.Write([]byte("test delete"))
+	}
+}
+```

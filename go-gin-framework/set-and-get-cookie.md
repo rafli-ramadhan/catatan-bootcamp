@@ -28,6 +28,7 @@ func TestCookie(ctx *gin.Context) {
 
 	// set cookie in response (name string, value string, maxAge int, path string, domain string, secure bool, httpOnly bool)
 	ctx.SetCookie("gin_cookie", "test", 3600, "/", "localhost", false, true)
+	ctx.SetCookie("gin_cookie", "test2", 3600, "/", "localhost", false, true)
 	
 	// get cookie from response
 	resCookie := ctx.Writer.Header().Get("set-cookie")
@@ -39,4 +40,4 @@ func TestCookie(ctx *gin.Context) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/1 (3) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/response 2 (1).png" alt=""><figcaption></figcaption></figure>

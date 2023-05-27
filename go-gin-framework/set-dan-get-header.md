@@ -9,15 +9,18 @@ import (
 	"net/http"
 	"github.com/gin-gonic/gin"
 )
+
 func main() {
 	r := gin.Default()
 	r.GET("/", TestHeader)
 	r.Run(":5000")
 }
+
 func TestHeader(ctx *gin.Context) {
 	// Get header dari request
 	testHeader := ctx.GetHeader("Content-Type")
 	// Set new header in response
+	ctx.Header("Content-Type", "application/xml")
 	ctx.Header("Content-Type", "application/json")
 	ctx.Header("Test", "test")
 	// Get header from response
