@@ -25,6 +25,9 @@ func main() {
      
     fmt.Println(s_rune)
     fmt.Println(s_byte)
+    
+    fmt.Println(string(s_byte))
+    fmt.Println(string(s_rune))
 }
 ```
 
@@ -33,6 +36,36 @@ func main() {
 [71 195 150 76 65 78 71 32 80 82 79 71 82 65 77 77 73 78 71 32 103 111 108 97 110 103 32 112 114 111 103 114 97 109 109 105 110 103]
 ```
 
-Reference :
+```go
+package main
 
-[https://golangdocs.com/rune-in-golang](https://golangdocs.com/rune-in-golang)
+import "fmt"
+
+func main() {
+    str := "Hello, 世界"
+    for i, r := range str {
+        fmt.Printf("index=%d, character=%#U\n", i, r)
+    }
+}
+
+```
+
+```
+index=0, character=U+0048 'H'
+index=1, character=U+0065 'e'
+index=2, character=U+006C 'l'
+index=3, character=U+006C 'l'
+index=4, character=U+006F 'o'
+index=5, character=U+002C ','
+index=6, character=U+0020 ' '
+index=7, character=U+4E16 '世'
+index=10, character=U+754C '界'
+```
+
+
+
+Reference :&#x20;
+
+{% embed url="https://go.dev/blog/strings" %}
+
+{% embed url="https://golangdocs.com/rune-in-golang" %}

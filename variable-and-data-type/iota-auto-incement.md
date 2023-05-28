@@ -69,5 +69,32 @@ func main() {
 1
 ```
 
+```go
+package main
 
+import (
+	"fmt"
+)
 
+func main() {
+	const (
+		num1 = 2+5i + iota*2
+		num2
+		num3
+	)
+	fmt.Println(num1, num2, num3)
+	
+	
+	const (
+		num4 = 2+3i + iota*3
+		num5
+		num6
+	)
+	fmt.Println(num4, num5, num6)
+}
+```
+
+```
+(2+5i) (4+5i) (6+5i)
+(2+3i) (5+3i) (8+3i)
+```

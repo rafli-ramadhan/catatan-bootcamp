@@ -23,6 +23,50 @@ test
 
 ```go
 package main
+import "fmt"
+
+func main() {
+	var test any = func(a, b int) int {
+		return a+b
+	} 
+	// type assertion
+	someFunc, ok := test.(func(a, b int) int)
+	fmt.Println(ok)
+	fmt.Println(someFunc(2,3))
+}
+```
+
+```
+true
+5
+```
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	ch := make(chan int)
+	// type assertion
+	go func() {
+		var result interface{} =<- ch
+		fmt.Println(result)
+	}()
+	ch<-1
+	time.Sleep(1 * time.Second)
+}
+```
+
+```
+1
+```
+
+```go
+package main
 
 import (
 	"fmt"

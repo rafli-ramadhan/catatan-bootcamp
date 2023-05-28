@@ -19,10 +19,15 @@ func main() {
 	type IsValid bool
 	var isValid IsValid = true
 	fmt.Println(isValid)
+
+	type exp complex128
+	var num exp = 2 + 5i
+	fmt.Println(num)
 }
 ```
 
 ```
 43284234928347293
 true
+(2+5i)
 ```
