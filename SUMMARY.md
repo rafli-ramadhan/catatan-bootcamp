@@ -4,7 +4,7 @@
 * [Command di Golang](running-go.md)
 * [Static Type of Go](static-type-of-go.md)
 * [Variable and Constant](variable-and-constant/README.md)
-  * [Variable vs Constant](variable-and-constant/variable-vs-constant.md)
+  * [Variable daI Constant](variable-and-constant/variable-dai-constant.md)
   * [Var vs Operator :=](variable-and-constant/var-vs-operator.md)
   * [Iota (Auto incement)](variable-and-data-type/iota-auto-incement.md)
 * [Primitive or Basic Data Type](primitive-or-basic-data-type/README.md)
