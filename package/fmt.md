@@ -160,6 +160,11 @@ func main() {
 	}()
 	fmt.Printf("some channel       : %v\n", <-ch)
 	fmt.Printf("for boolean        : %t\n", false)
+	// function
+	someFunc := func(a, b int) int{
+		return a + b
+	}
+	fmt.Printf("some func		   : %v\n", someFunc(2,3))
 	// switch index
 	fmt.Printf("switch index       : %[2]d %[1]d\n", 11, 22)
 	fmt.Printf("switch index       : %[3]s %[2]d %[1]d\n", 11, 22, "some_string")
@@ -183,9 +188,152 @@ some slice         : [1 2 3]
 some struct        : {Username:member_01 Password:Test123}
 some channel       : 1
 for boolean        : false
+some func                  : 5
 switch index       : 22 11
 switch index       : some_string 22 11
 switch index       : true some_string 22 11
+```
+
+## Contoh _code_ penggunaan Sprintln
+
+```go
+package main
+
+import "fmt"
+
+func main() {					
+	fmt.Println(fmt.Sprintln("Hello"))
+	fmt.Println(fmt.Sprintln("for integer        :", 123))
+	fmt.Println(fmt.Sprintln("for scientific notation :", 3 + 5i))
+	fmt.Println(fmt.Sprintln("for float          :", 1.234))
+	fmt.Println(fmt.Sprintln("float rounding     :", 12.3456))
+	fmt.Println(fmt.Sprintln("string example     :", "member 01"))
+	fmt.Println(fmt.Sprintln("boolean example    :", false))
+	var someInterface interface{} = 123
+	fmt.Println(fmt.Sprintln("for pointer    	:", &someInterface))
+	fmt.Println(fmt.Sprintln("some interface     :", someInterface))
+	fmt.Println(fmt.Sprintln("some array         :", [3]int{1,2,3}))
+	fmt.Println(fmt.Sprintln("some slice         :", []int{1,2,3}))
+	fmt.Println(fmt.Sprintln("some map           :", map[string]interface{}{
+		"username": "member_01",
+		"password": "Test123",
+	}))
+	// struct
+	type User struct {
+		Username string
+		Password string
+	}
+	user := User{"member_01", "Test123"}
+	fmt.Println(fmt.Sprintln("some struct        :", user))
+	// channel
+	var ch = make(chan int)
+	go func() {
+		ch<-1
+	}()
+	fmt.Println(fmt.Sprintln("some channel       :", <-ch))
+	// function
+	someFunc := func (a, b int) int {
+		return a + b
+	}
+	fmt.Println(fmt.Sprintln("some func          :", someFunc(2, 3)))
+}
+```
+
+```
+Hello
+
+for integer        : 123
+
+for scientific notation : (3+5i)
+
+for float          : 1.234
+
+float rounding     : 12.3456
+
+string example     : member 01
+
+boolean example    : false
+
+for pointer     : 0xc000088040
+
+some interface     : 123
+
+some array         : [1 2 3]
+
+some slice         : [1 2 3]
+
+some map           : map[password:Test123 username:member_01]
+
+some struct        : {member_01 Test123}
+
+some channel       : 1
+
+some func          : 5
+
+```
+
+## Contoh _code_ penggunaan Sprintf
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println(fmt.Sprintf("for binary value   : %b ", 10))
+	fmt.Println(fmt.Sprintf("for integer        : %d", 123))
+	fmt.Println(fmt.Sprintf("for scientific notation : %e ", 3 + 5i))
+	fmt.Println(fmt.Sprintf("for float          : %f ", 1.234))
+	fmt.Println(fmt.Sprintf("float rounding     : %.2f", 12.3456))
+	fmt.Println(fmt.Sprintf("string example     : %s", "member 01"))
+	var someInterface interface{} = 123
+	fmt.Println(fmt.Sprintf("type data of %s is : %T", "member_01", "member_01"))
+	fmt.Println(fmt.Sprintf("type data of %d is : %T", someInterface, someInterface))
+	fmt.Println(fmt.Sprintf("for pointer    	   : %p", &someInterface))
+	fmt.Println(fmt.Sprintf("some interface     : %v", someInterface))
+	fmt.Println(fmt.Sprintf("some array         : %v", [3]int{1,2,3}))
+	fmt.Println(fmt.Sprintf("some slice         : %v", []int{1,2,3}))
+	// struct
+	type User struct {
+		Username string
+		Password string
+	}
+	user := User{"member_01", "Test123"}
+	fmt.Println(fmt.Sprintf("some struct        : %+v", user))
+	// channel
+	var ch = make(chan int)
+	go func() {
+		ch<-1
+	}()
+	fmt.Println(fmt.Sprintf("some channel       : %v", <-ch))
+	fmt.Println(fmt.Sprintf("for boolean        : %t", false))
+	// function
+	someFunc := func(a, b int) int{
+		return a + b
+	}
+	fmt.Println(fmt.Sprintf("some func		   : %v", someFunc(2,3)))
+}
+```
+
+```
+for binary value   : 1010 
+for integer        : 123
+for scientific notation : (3.000000e+00+5.000000e+00i)
+for float          : 1.234000
+float rounding     : 12.35
+string example     : member 01
+type data of member_01 is : string
+type data of 123 is : int
+for pointer        : 0xc000088290
+some interface     : 123
+some array         : [1 2 3]
+some slice         : [1 2 3]
+some struct        : {Username:member_01 Password:Test123}
+some channel       : 1
+for boolean        : false
+some func                  : 5
 ```
 
 ## Printf vs Sprintf
