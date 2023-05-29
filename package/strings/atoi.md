@@ -22,5 +22,5 @@ func main() {
 		fmt.Printf("%v \n", s)
 		fmt.Printf("%T \n", s)
 	}
-}Gg
+}
 ```

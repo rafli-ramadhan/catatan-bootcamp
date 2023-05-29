@@ -49,3 +49,30 @@ func sayHi(name string) (string, string) {
 ```
 Hi Dawam nice to meet you.
 ```
+
+## Contoh _code_ 3
+
+```go
+package main
+
+import "fmt"
+
+func RectangleFormula(p, l int) (area int, parameter int) {
+	return p * l, 2 * (p + l)
+}
+
+func main() {
+	a, p := RectangleFormula(20, 30)
+	fmt.Println("Area	  :", a)
+	fmt.Println("Parameter:", p)
+}
+```
+
+```
+Area      : 600
+Parameter: 100
+```
+
+Reference:
+
+{% embed url="https://www.golangprograms.com/go-language/functions.html" %}

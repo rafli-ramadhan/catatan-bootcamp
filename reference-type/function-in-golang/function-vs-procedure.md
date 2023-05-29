@@ -2,7 +2,24 @@
 
 Perbedaan function dan procedure adalah function mengembalikan suatu nilai, sementara procedure tidak. Prosedur hanya mengeksekusi bari kode saja.
 
-## Contoh _code_
+## Contoh _code_ function
+
+```go
+package main
+
+import "fmt"
+
+func add(x int, y int) int {
+    return x + y
+}
+
+func main() {
+    fmt.Println(add(42, 13))
+}
+
+```
+
+## Contoh _code_ prosedur
 
 ```go
 package main
@@ -31,3 +48,7 @@ Hello, Iam Adi,
 		I have 1 experience
 		and I am 23 old.
 ```
+
+Reference:
+
+{% embed url="https://www.golangprograms.com/go-language/functions.html" %}
