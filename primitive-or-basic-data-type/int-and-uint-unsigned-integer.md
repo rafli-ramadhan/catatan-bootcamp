@@ -32,3 +32,19 @@ zero value
 -5
 18446744073709551611
 ```
+
+## Int vs Int32 atau Int64
+
+Int dan Int32 atau Int64 bukan tipe data yang sama. Tipe data int bergantung pada memori dari komputer yang digunakan. Tipe data int64 dapat dipilih jika memori bukan masalah utama dalam pengembangan aplikasi.
+
+Untuk nilai maksimal dari int64 adalah 2 pangkat 63 - 1.
+
+```
+0111111111111111111111111111111111111111111111111111111111111111
+```
+
+Reference:
+
+{% embed url="https://yourbasic.org/golang/int-vs-int64/" %}
+
+{% embed url="https://stackoverflow.com/questions/6003492/how-big-can-a-64bit-signed-integer-be" %}
