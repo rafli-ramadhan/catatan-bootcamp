@@ -182,7 +182,7 @@
   * [Instalasi Package RabbitMQ di Golang](golang-dan-rabbitmq/instalasi-package-rabbitmq-di-golang.md)
   * [Publisher dan Consumer](golang-dan-rabbitmq/publisher-dan-consumer.md)
   * [Publisher dan Multi Consumer](golang-dan-rabbitmq/publisher-dan-multi-consumer.md)
-  * [Setting RabbitMQ](golang-dan-rabbitmq/setting-rabbitmq.md)
+  * [Setting RabbitMQ (Durable, Auto Delete dan Ack)](golang-dan-rabbitmq/setting-rabbitmq-durable-auto-delete-dan-ack.md)
   * [Setting QoS](golang-dan-rabbitmq/setting-qos.md)
   * [Publisher, Exchange dan Consumer](golang-dan-rabbitmq/publisher-exchange-dan-consumer.md)
   * [Routing RabbitMQ](golang-dan-rabbitmq/routing-rabbitmq.md)
