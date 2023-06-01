@@ -128,12 +128,13 @@ map[age:24 username:dana]
 dana
 ```
 
-## Contoh _code_ map dengan key dan value interface
+## Contoh _code_ map dengan key dan value beragam tipe data
 
 Dari _code_ dibawah ini, key dari map bisa berupa semua tipe data primitif (numeric, string, boolean), tipe data aggregate (array dan struct), dan tipe data reference khusus function dan channel.
 
 ```go
 package main
+
 import "fmt"
 
 func test() int {
@@ -150,31 +151,36 @@ func main() {
 	// 	"a": 1,
 	// 	"b": 2,
 	// }
-    	someMap := map[interface{}]interface{}{
-		1			: true,
-        	"username"		: "member_01",
-        	false			: 2,
-		0.9			: []int{1,2,3,4,5},
-		user{"umar",2}		: user{"utsman", 1},
-		[3]int{1, 2, 3}		: "array",
+	someMap := map[interface{}]interface{}{
+		1:               true,
+		"username":      "member_01",
+		false:           2,
+		0.9:             []int{1, 2, 3, 4, 5},
+		0.9+5i:			"test complex",
+		user{"umar", 2}: user{"utsman", 1},
+		[3]int{1, 2, 3}: "array",
 		// panic: runtime error: hash of unhashable type []int
 		// []int{1,2,3}		: "slice",
 		// panic: runtime error: hash of unhashable type map[string]int
 		// someSubMap		: "submap",
-		test()			: "function",
-		someChan		: "channel",
-    }
-    
-    fmt.Println(someMap[user{"umar",2}])
-    fmt.Println(someMap[[3]int{1, 2, 3}])
+
+		test():   "function",
+		someChan: "channel",
+	}
+
+	fmt.Println(someMap[user{"umar", 2}])
+	fmt.Println(someMap[[3]int{1, 2, 3}])
+	fmt.Println(someMap[0.9+5i])
 	fmt.Println(someMap[test()])
 	fmt.Println(someMap[someChan])
 }
+
 ```
 
 ```
 {utsman 1}
 array
+test complex
 function
 channel
 ```

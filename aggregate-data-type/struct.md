@@ -37,6 +37,32 @@ func main() {
 { 0 false}
 ```
 
+## Inline Struct
+
+```go
+package main
+
+import "fmt"
+
+var Person1 = struct {
+	Name string
+	Role string
+
+	password string
+}{
+	Name: "member_01",
+	Role: "user",
+
+	password: "secret",
+}
+
+func main() {
+	fmt.Println(Person1.Name, "the", Person1.Role)
+	fmt.Println("Password is", Person1.password)
+}
+
+```
+
 ## Embedded Struct
 
 Struct yang dideklarasikan dalam suatu struct. Contohnya untuk struct User di bawah ini terdapat parameter Address dan WorkAddress yang juga merupakan struct.
@@ -193,6 +219,8 @@ func main() {
 true
 ```
 
-Reference :
+Reference:
 
-[https://dasarpemrogramangolang.novalagung.com/A-struct.html#:\~:text=Struct%20Go%20tidak%20memiliki%20class%20yang%20ada%20di,tertentu.%20Property%20dalam%20struct%2C%20tipe%20datanya%20bisa%20bervariasi.](https://dasarpemrogramangolang.novalagung.com/A-struct.html)
+{% embed url="https://www.digitalocean.com/community/tutorials/defining-structs-in-go" %}
+
+{% embed url="https://dasarpemrogramangolang.novalagung.com/A-struct.html" %}

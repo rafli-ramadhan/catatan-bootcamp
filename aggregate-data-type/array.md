@@ -81,6 +81,20 @@ func main() {
 [0xbbb340 0xbbb340 0xbbb340 <nil> <nil> <nil> <nil> <nil> <nil> <nil>]
 ```
 
+## Jumlah value dan Kapasitas dari Array
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	arr := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(len(arr))
+	fmt.Println(cap(arr))
+}
+```
+
 ## Informasi tambahan
 
 Suatu array misalkan arr1 disimpan dengan _memory address_ yang berbeda dari value-value di dalam array tersebut. Sebagai contoh _code_ di bawah ini, array arr1 disimpan pada _memory address_ 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.
