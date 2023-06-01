@@ -31,3 +31,40 @@ func main() {
 true
 (2+5i)
 ```
+
+## Type Alias dan Type Definition
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+// type alias or alias declaration
+type str1 = string
+// type definition
+// bisa untuk menampung method
+type str2 string
+
+func main() {
+    var username1 str1 = "member_01"
+    var username2 str2 = "member_02"
+    fmt.Printf("type of username1 is %T\n", username1)
+    fmt.Printf("type of username2 is %T\n", username2)
+	// passing variable
+	var user1 string = username1
+	var user2 string = username1
+	fmt.Println(user1)
+	fmt.Println(user2)
+}
+```
+
+```
+type of username1 is string
+type of username2 is main.str2
+```
+
+Reference:
+
+{% embed url="https://stackoverflow.com/questions/61247864/what-is-the-difference-between-type-alias-and-type-definition-in-go" %}

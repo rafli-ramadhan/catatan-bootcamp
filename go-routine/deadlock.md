@@ -181,4 +181,49 @@ Start
 End
 ```
 
+## Program #3 deadlock jika channel tidak di close
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    ch := make(chan int)
+
+    go func() {
+        for i := 0; i < 5; i++ {
+			// channel in
+            ch <- i
+        }
+		// channel must be close
+		// if not will be deadlock
+        close(ch)
+    }()
+
+// channel out
+    for v := range ch {
+        fmt.Println(v)
+    }
+}
+
+```
+
+```
+0
+1
+2
+3
+4
+5
+```
+
+
+
 <figure><img src="https://divan.dev/demos/gifs/hello.gif" alt=""><figcaption><p>Source: <a href="https://divan.dev/posts/go_concurrency_visualize/">https://divan.dev/posts/go_concurrency_visualize/</a></p></figcaption></figure>
+
+Reference:
+
+{% embed url="https://golangbot.com/channels/" %}

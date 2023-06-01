@@ -1,6 +1,6 @@
 # EqualFold
 
-Case insensitive
+EqualFold digunakan untuk membandingkan 2 string. EqualFold sifatnya case insensitive.
 
 ```go
 package main
