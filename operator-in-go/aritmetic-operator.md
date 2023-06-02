@@ -10,39 +10,50 @@ import (
 )
 
 func main() {
-	var a = 2
-	var b = 3
-	var value = a + b*2/1%2
-	fmt.Println(value)
-
-	value++
-	fmt.Println(value)
-
-	fmt.Println("2"+"2")
-	fmt.Println(2+2)
-	fmt.Println(9/4)
-
-	var c float64 = 9
-	var d float64 = 4
-	var result float64
-	result = c/d
-
-	fmt.Println(result)
-	
-	var result2 = 9.0/4.0
-	fmt.Println(result2)
-
-	fmt.Println(9%2)
+    // integer
+    var num1, num2 int = 10, 12
+	fmt.Println(num1 + num2*2/5%2)
+	num1++
+    fmt.Println(num1)
+	num2--
+    fmt.Println(num1)
+    // float
+    var f1, f2 float64 = 10.5, 10.5
+	fmt.Println(f1 + f2*2/5)
+	f1++
+	fmt.Println(f1)
+	f2--
+	fmt.Println(f2)
+    // complex
+	var cmplx1, cmplx2 complex128 = 2 + 6i, 3 + 6i
+	fmt.Println(cmplx1 + cmplx2*2/5)
+	cmplx1++
+	fmt.Println(cmplx1)
+	cmplx2++
+	fmt.Println(cmplx2)
+    // string
+    var str1, str2 = "10", "10"
+	fmt.Println(str1 + str2)
 }
+
 ```
 
 ```
-2
-3
-22
-4
-2
-2.25
-2.25
-1
+10
+11
+11
+14.7
+(3.2+8.4i)
+1010
+PS D:\bootcamp-go\go-example> go run main.go
+10
+11
+11
+14.7
+11.5
+9.5
+(3.2+8.4i)
+(3+6i)
+(4+6i)
+1010
 ```

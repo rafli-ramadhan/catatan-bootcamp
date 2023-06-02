@@ -135,6 +135,7 @@
   * [SQL Relation](sql-relation.md)
   * [Golang Database Driver](golang-database-driver.md)
   * [Golang Native SQL](go-sql/database.md)
+  * [Close Database](golang-dan-database/close-database.md)
   * [Gorm](gorm.md)
   * [API vs REST API vs RESTfull API](api-vs-rest-api-vs-restfull-api.md)
 * [Go Native HTTP](go-http/README.md)

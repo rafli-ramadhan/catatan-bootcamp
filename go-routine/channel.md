@@ -110,3 +110,11 @@ Start
 100 101 102 103 104 105 106 107 108 109 
 End
 ```
+
+## Channel perlu di close
+
+Channel perlu di close untuk mengindikasikan tidak ada data yang dikirim lagi ke channel
+
+Reference:
+
+{% embed url="https://www.scaler.com/topics/golang/closing-the-channel-in-golang/" %}

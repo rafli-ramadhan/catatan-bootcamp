@@ -119,3 +119,45 @@ false
 false
 true
 ```
+
+## Contoh 4 relational operator untuk membandingkan data array, map, slice dan function
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	// array
+	var a1 = [3]int{1, 2, 3}
+	var a2 = [3]int{1, 2, 3}
+	fmt.Println(a1 == a2) // true
+	// map can only be compared to nil
+	var m1 = map[string]int{
+		"member1": 123,
+	}
+	fmt.Println(m1 == nil) // false
+	// slice can only be compared to nil
+	var s1 = []int{1, 2, 3}
+	fmt.Println(s1 == nil) // false
+	// func can only be compared to nil
+	var f1 = func() {
+		fmt.Println("test1")
+	}
+	fmt.Println(f1 == nil) // false
+	// channel
+	var ch chan string
+	fmt.Println(ch == nil) // true
+}
+
+```
+
+```
+true
+false
+false
+false
+true
+```
