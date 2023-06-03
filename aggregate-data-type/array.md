@@ -127,3 +127,27 @@ func main() {
 0xc00000e088
 0xc00000e088
 ```
+
+## Add, Update dan Delete di Array
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var arr = [5]int{1, 2, 3, 4}
+	// add
+	arr[4] = 5
+	// update
+	arr[4] = -5
+	fmt.Println(arr)
+}
+
+```
+
+```
+[1 2 3 4 -5]
+```
