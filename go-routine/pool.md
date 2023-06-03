@@ -64,3 +64,79 @@ func main() {
 3
 2
 ```
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+var pool = sync.Pool{
+	New: func() interface{} {
+		return &Person{}
+	},
+}
+
+func main() {
+	person := pool.Get().(*Person)
+	person.Name = "John"
+	person.Age = 30
+	fmt.Println(*person)
+
+	pool.Put(person)
+
+	person = pool.Get().(*Person)
+	fmt.Println(*person)
+}
+
+```
+
+```
+{John 30}
+{John 30}
+```
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+var pool = sync.Pool{
+	New: func() interface{} {
+		return Person{}
+	},
+}
+
+func main() {
+	person := pool.Get().(Person)
+	person.Name = "John"
+	person.Age = 30
+	fmt.Println(person)
+
+	pool.Put(person)
+
+	person = pool.Get().(Person)
+	fmt.Println(person)
+}
+
+```
+
+```
+{John 30}
+{John 30}
+```

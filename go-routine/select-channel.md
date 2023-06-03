@@ -6,6 +6,36 @@ Penerapan select pada channel.
 package main
 
 import (
+	"fmt"
+)
+
+func g(ch chan int, num int) {
+	ch <- num
+}
+
+func main() {
+	ch1 := make(chan int)
+	ch2 := make(chan int)
+
+	go g(ch1, 5)
+	go g(ch2, 3)
+
+	select {
+	case <-ch1:
+		fmt.Println("Test1")
+	case <-ch2:
+		fmt.Println("Test2")
+	default:
+		fmt.Println("The default case!")
+	}
+}
+
+```
+
+```go
+package main
+
+import (
     "errors"
     "fmt"
     "sync"
