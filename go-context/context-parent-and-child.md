@@ -33,31 +33,33 @@ import (
 )
 
 func main() {
-	ctx_A := context.Background()
-	ctx_B := context.WithValue(ctx_A, "keyB", "member_01")
-	ctx_C := context.WithValue(ctx_A, "keyC", "member_02")
-	ctx_D := context.WithValue(ctx_B, "keyD", "member_03")
+	ctxA := context.Background()
+	// clild A
+	ctxB := context.WithValue(ctxA, "keyB", "member_01")
+	ctxC := context.WithValue(ctxA, "keyC", "member_02")
 
-	fmt.Println(ctx_B.Value("keyB"))
-	fmt.Println(ctx_C.Value("keyC"))
+	fmt.Println(ctxB.Value("keyB")) // member_01
+	fmt.Println(ctxB.Value("keyC")) // nil
 
-	fmt.Println(ctx_B.Value("keyC"))
-	fmt.Println(ctx_C.Value("keyB"))
-
-	fmt.Println(ctx_D.Value("keyD"))
-	fmt.Println(ctx_D.Value("keyB"))
-	fmt.Println(ctx_B.Value("keyD"))
+	fmt.Println(ctxC.Value("keyC")) // member_02
+	fmt.Println(ctxC.Value("keyB")) // nil
+	// child B
+	ctxD := context.WithValue(ctxB, "keyD", "member_03")
+	fmt.Println(ctxD.Value("keyB")) // member_01
+	fmt.Println(ctxD.Value("keyC")) // nil, karena bukan parent-nya
+	fmt.Println(ctxD.Value("keyD")) // member_03
 }
+
 ```
 
 ```
 member_01
+<nil>
 member_02
 <nil>
-<nil>
-member_03
 member_01
 <nil>
+member_03
 ```
 
 ```go

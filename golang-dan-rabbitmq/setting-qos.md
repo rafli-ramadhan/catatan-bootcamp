@@ -11,9 +11,7 @@ Setting QoS dapat dilihat pada link berikut [https://github.com/rabbitmq/rabbitm
 	failOnError(err, "Failed to set QoS")
 ```
 
-time millisecond\*20
-
-Setting QoS dan&#x20;
+## Setting QoS dan Auto Ack&#x20;
 
 * QOS true ^ auto-act true -> round robin
 * QOS true ^ auto-act false -> tidak round robin
