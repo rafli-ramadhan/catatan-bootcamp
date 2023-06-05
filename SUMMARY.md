@@ -116,6 +116,7 @@
   * [RW Mutex vs Mutex](go-routine/rw-mutex-vs-mutex.md)
   * [Once](go-routine/sync-once.md)
   * [Pool](go-routine/pool.md)
+  * [Atomic](go-routine/atomic.md)
   * [Go Max Procs](go-routine/go-max-procs.md)
   * [Exit](go-routine/exit.md)
 * [Go Context](go-context.md)

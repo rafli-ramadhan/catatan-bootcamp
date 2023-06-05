@@ -14,7 +14,7 @@ Setting QoS dapat dilihat pada link berikut [https://github.com/rabbitmq/rabbitm
 ## Setting QoS dan Auto Ack&#x20;
 
 * QOS true ^ auto-act true -> round robin
-* QOS true ^ auto-act false -> tidak round robin
+* QOS true ^ **auto-act false** -> tidak round robin
 * QOS false ^ auto-act true -> round robin
 * QOS false ^ auto-act false -> round robin
 

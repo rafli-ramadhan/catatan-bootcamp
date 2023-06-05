@@ -74,7 +74,13 @@ import (
 )
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello!")
+	if r.Method == http.MethodGet {
+		name := r.URL.Query().Get("name")
+		fmt.Fprintf(w, "Hello! : %s", name)
+	} else if r.Method == http.MethodPost {
+		name := r.URL.Query().Get("name")
+		fmt.Fprintf(w, "Post Hello! : %s", name)
+	}
 }
 
 func World(w http.ResponseWriter, r *http.Request) {
