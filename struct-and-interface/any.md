@@ -99,6 +99,34 @@ member_02
 member_03
 ```
 
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var errors any = fmt.Errorf("some error")
+	res := errors.(error)
+	fmt.Println(res)
+
+	// this code will give an panic
+	var errors2 any = nil
+	res2 := errors2.(error)
+	fmt.Println(res2)
+}
+```
+
+```
+panic: interface conversion: interface is nil, not error
+
+goroutine 1 [running]:
+main.main()
+	/tmp/sandbox3945396184/prog.go:13 +0x99
+Program exited.
+```
+
 ## Type Switch
 
 Type switch digunakan untuk memperoleh tipe data dari suatu nilai dalam interface kosong. Type switch memiliki format seperti di bawah ini. Banyaknya case dapat disesuaikan sesuai kebutuhan.
