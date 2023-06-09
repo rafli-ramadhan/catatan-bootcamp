@@ -2,7 +2,7 @@
 coverY: 0
 ---
 
-# Primitive or Basic Data Type
+# Tipe Data Primitif
 
 Tipe data basic : number (int, float), string dan boolean
 

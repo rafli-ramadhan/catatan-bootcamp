@@ -2,7 +2,7 @@
 
 Type declaration digunakan untuk membuat tipe data baru menggunakan tipe data yang sudah ada (string, int, float, bool, array, slice, map, struct, interface atau function).
 
-## Contoh _code_
+## Contoh code
 
 ```go
 package main
@@ -33,6 +33,8 @@ true
 ```
 
 ## Type Alias dan Type Definition
+
+Type alias digunakan untuk memberikan alias pada tipe data yang sudah ada, sementara type definition digunakan untuk membuat tipe data baru dari tipe data yang sudah ada. Contohnya seperti code dibawah ini.
 
 ```go
 package main

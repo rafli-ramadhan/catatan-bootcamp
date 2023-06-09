@@ -1,4 +1,4 @@
-# Function Input from CLI
+# Input Function dari CLI
 
 Untuk memperoleh input dari CLI (_Command Line Interface_) seperti dari CMD atau Bash di Golang dapat menggunakan fmt.Scanln.
 
