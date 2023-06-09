@@ -1,8 +1,6 @@
----
-description: If else digunakan untuk percabangan yang tidak butuh banyak case.
----
-
 # If Else
+
+If else  merupakan salah satu bentuk percabangan di golang.
 
 ## Contoh _code_
 

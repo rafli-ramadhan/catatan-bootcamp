@@ -1,8 +1,10 @@
 # Switch
 
-## Switch with Single Case
+Switch merupakan salah satu bentuk percabangan di golang. Switch memiliki sekitar 5 bentuk seperti yang tertera dibawah ini.
 
-Catatan : value dalam switch bisa diberi tanda (...) atau bisa juga tidak diberi tanda (...).
+## 1. Switch dengan Single Case Value
+
+Switch jenis ini hanya memiliki satu value untuk setiap case. Nama variabel setelah switch bisa diberi atau tidak diberi kurung (...).
 
 ```go
 package main
@@ -33,7 +35,9 @@ func main() {
 2
 ```
 
-## Switch Case with fallthrough
+## 2. Switch Case dengan fallthrough
+
+Statement fallthrough digunakan untuk menampilkan case yang terpenuhi value-nya dan case setelahnya.
 
 ```go
 package main
@@ -78,7 +82,9 @@ Saturday
 Invalid day
 ```
 
-## Switch with Multiple Case
+## 3. Switch dengan Multiple Case
+
+Switch jenis ini memiliki beberapa value untuk setiap case-nya.
 
 ```go
 package main
@@ -100,9 +106,9 @@ func main() {
 Work Day
 ```
 
-## Switch without Expression
+## 4. Switch tanpa Expression
 
-Bisa digunakan dengan relational operator (>, <, >=, <=, ==, &&, atau !=).
+Switch jenis ini bisa digunakan dengan relational operator (>, <, >=, <=, ==, &&, atau !=).
 
 ```go
 package main
@@ -166,7 +172,9 @@ func main() {
 It's February
 ```
 
-## Go Switch Optional Statement
+## 5. Switch dengan Optional Statement
+
+Deklarasi variabel pada switch jenis ini terletak setelah statement switch.
 
 ```go
 package main
@@ -224,3 +232,62 @@ func main() {
 ```
 It's February
 ```
+
+## 6. Type Switch
+
+Type switch digunakan untuk memperoleh tipe data dari suatu nilai dalam interface kosong. Type switch memiliki format seperti di bawah ini. Banyaknya case dapat disesuaikan sesuai kebutuhan.
+
+```go
+switch v := i.(type) {
+case int:
+    // program
+case string:
+    // program
+case float64:
+    // program
+case bool:
+    // program
+case []string:
+    // program
+default:
+    // program
+}
+```
+
+### Contoh code
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var user any = []string{"member_01", "member_02", "member_03"}
+    arr := user.([]string)
+
+    switch result := user.(type) {
+    case string:
+        fmt.Printf("String", result)
+    case int:
+        fmt.Printf("Integer", result)
+    case []string:
+        for _, v := range arr { // cannot range over user (variable of type any)
+            fmt.Print(v)
+        }
+    }
+}
+```
+
+```
+member_01
+member_02
+member_03
+```
+
+Reference:
+
+{% embed url="https://www.programiz.com/golang/switch" %}
+
+{% embed url="https://www.digitalocean.com/community/tutorials/how-to-write-switch-statements-in-go" %}
+
+{% embed url="https://go.dev/tour/methods/16" %}

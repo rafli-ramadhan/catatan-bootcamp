@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Nil
 
 Nil merupakan default value dari beberapa tipe data seperti slice, map, pointer dan interface.&#x20;

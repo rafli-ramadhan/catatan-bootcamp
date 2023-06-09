@@ -1,8 +1,10 @@
 # Pointer (Pass By Reference)
 
-Kelebihan pointer -> memungkinkan penggunaan memory address seminimal mungkin -> suatu variabel bisa di inisiasi dengan value variabel lain, tanpa membuat memory address baru -> disebut reference -> variabel 1 dan variabel 2 punya value yang sama dan memory address yang sama.
+Kelebihan pointer yaitu memungkinkan penggunaan memory address seminimal mungkin. Suatu variabel bisa di inisiasi dengan value variabel lain, tanpa membuat memory address baru. Disebut reference karena variabel 1 dan variabel 2 punya value yang sama dan memory address yang sama.
 
-Kekurangan pointer -> jika nilai variabel yang me-reference variabel lain diubah, variabel lain tersebut juga akan berubah.
+Kekurangan dari pointer yaitu jika value variabel yang me-reference variabel lain diubah, value dari variabel yang di reference juga akan berubah.
+
+## Contoh code
 
 ```go
 package main
@@ -43,56 +45,4 @@ Value of pointer: 11
 
 Address of num: 0xc0000ba000
 Value of num: 2
-```
-
-## Pointer dengan Struct
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-	type User struct {
-		Name string
-		Age  int
-	}
-	var userA = User{
-		Name: "member_01",
-		Age:  21,
-	}
-	var data = &userA
-	*data = User{"member_02", 22}
-	fmt.Println(userA)
-}
-```
-
-```
-{member_02 22}
-```
-
-## Pointer dengan Map
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-	var someMap = map[string]int{
-		"test1": 1,
-		"test2": 2,
-	}
-	var data = &someMap
-	fmt.Println(*data)
-	*data = map[string]int{
-		"test": 2,
-	}
-	fmt.Println(someMap)
-}	
-```
-
-```
-map[test1:1 test2:2]
-map[test:2]
 ```

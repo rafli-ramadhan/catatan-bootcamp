@@ -1,12 +1,19 @@
-# Exercise (If-Else dan Switch)
+# Exercise
 
-1. Buatlah program menggunakan keyword if untuk mengevaluasi variable score dengan ketentuan: • Jika nilai score lebih atau sama dengan 90 • - Isi variabel result dengan nilai: 'Selamat! Anda mendapatkan nilai A.' • Jika nilai score ada di antara 80 hingga 89 • - Isi variabel result dengan nilai: 'Anda mendapatkan nilai B.' • Jika nilai score ada di antara 70 hingga 79 • - Isi variabel result dengan nilai: 'Anda mendapatkan nilai C.' • Jika nilai score ada di antara 60 hingga 69: • - Isi variabel result dengan nilai: 'Anda mendapatkan nilai D.' • Jika nilai score di bawah 60: • - Isi variabel result dengan nilai: 'Anda mendapatkan nilai E.'
+1. Buatlah program menggunakan keyword if else untuk mengevaluasi variable score dan menampilkan output dengan variabel result dengan ketentuan:&#x20;
+
+* Jika nilai score lebih atau sama dengan 90. Isi variabel result dengan nilai: 'Selamat! Anda mendapatkan nilai A'.
+* Jika nilai score ada di antara 80 hingga 89. Isi variabel result dengan nilai: 'Anda mendapatkan nilai B.'&#x20;
+* Jika nilai score ada di antara 70 hingga 79. Isi variabel result dengan nilai: 'Anda mendapatkan nilai C.'
+* Jika nilai score ada di antara 60 hingga 69. Isi variabel result dengan nilai: 'Anda mendapatkan nilai D.'
+* Jika nilai score di bawah 60. Isi variabel result dengan nilai: 'Anda mendapatkan nilai E.'
+
 2. Buatlah program terdapat price, qty dan total, total didapat dari perkalian price dan qty dimana jika terdapat discount maka total berkurang 10%
 3. Buatlah program menghitung jumlah string huruf vocal pada kata “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”
 4. Buatlah program yang menghitung factorial 30
 5. Buatlah program dimana mencari bilangan itu ganjil atau genap berdasarkan angka terbilang 1 sampai 10, contoh: satu, dua, tiga
 
-## Answer
+## Jawaban
 
 ```go
 package main

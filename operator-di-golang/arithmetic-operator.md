@@ -1,6 +1,10 @@
-# Aritmetic Operator
+# Arithmetic Operator
 
-Aritmetic operator -> +, -, \*, /, %, ++, --
+Arithmetic operator merupakan simbol operasi matematika yang bisa diterapkan di golang menggunakan tanda +, -, \*, /, %, ++ (+ 1) dan -- (- 1).
+
+## Contoh code assignment operator pada integer, float, complex dan string
+
+Seluruh arithmetic operator dapat digunakan untuk integer. Untuk float tidak bisa menggunakan operator %. Untuk complex juga tidak bisa menggunakan operator %. Untuk string hanya bisa menggunakan operator + saja.  Sementara untuk boolean tidak bisa digunakan semuanya.
 
 ```go
 package main

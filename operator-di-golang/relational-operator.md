@@ -1,8 +1,8 @@
 # Relational Operator
 
-Relational operator merupakan operasi untuk membadingkan dua buah data untuk menentukan true atau false.Operator ini menggunakan tanda ->  >, <, >=, <=, ==, &&, !=.
+Relational operator merupakan operasi untuk membadingkan dua buah data untuk menentukan true atau false. Operator ini menggunakan tanda ->  >, <, >=, <=, ==, &&, !=.
 
-## Contoh _code_ membandingkan data string,  integer dan float
+## Contoh code operator relational untuk membandingkan string,  integer dan float
 
 ```go
 package main
@@ -58,7 +58,7 @@ false
 true
 ```
 
-## Contoh 2 operator relational untuk membandingkan tipe data string
+## Contoh code operator relational untuk membandingkan tipe data string
 
 ```go
 package main
@@ -93,7 +93,7 @@ true
 true
 ```
 
-## Contoh 3 operator relational untuk membandingkan tipe data boolean
+## Contoh code operator relational untuk membandingkan tipe data boolean
 
 ```go
 package main
@@ -120,7 +120,7 @@ false
 true
 ```
 
-## Contoh 4 relational operator untuk membandingkan data array, map, slice dan function
+## Contoh code operator relational untuk membandingkan data array, map, slice dan function
 
 ```go
 package main

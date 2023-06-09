@@ -1,6 +1,10 @@
 # Assignment Operator
 
-Assignment operator -> menetapkan nilai -> =,+=, -=, \*=, /= and %=
+Assignment operator merupakan operasi untuk memberikkan nilai baru ke suatu variabel dengan tanda = atau dengan tanda +=, -=, \*=, /= and %= yang fungsi-nya mirip operator arithmetic.
+
+## Contoh code assignment operator pada integer, float, complex dan string
+
+Seluruh assignment operator dapat digunakan untuk integer. Untuk float tidak bisa menggunakan operator %=. Untuk complex juga tidak bisa menggunakan operator %=. Untuk string hanya bisa menggunakan operator =+ saja. Sementara untuk boolean tidak bisa digunakan semuanya.
 
 ```go
 package main

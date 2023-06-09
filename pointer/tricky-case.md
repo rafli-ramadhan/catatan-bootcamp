@@ -1,6 +1,8 @@
 # Tricky Case
 
-Saat akses data variabel pointer di struct tidak pakai \*, sementara di variabel primitif pakai \*.
+Saat akses value dari variabel pointer di struct tidak menggunakan operator \*, sementara di variabel primitif menggunakan operator \*.
+
+## Contoh code
 
 ```go
 package main

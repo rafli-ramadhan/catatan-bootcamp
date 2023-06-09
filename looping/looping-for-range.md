@@ -1,6 +1,42 @@
 # Looping for range
 
-## Looping for range pada array
+Looping for range digunakan untuk mengulangi urutan pada value dengan tipe data string, array, slice, map dan channel.
+
+## Contoh code looping for range pada string
+
+Looping di string di Golang menghasilkan value dengan tipe data rune bukan byte.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	str := "Hello, world!"
+	for i, c := range str {
+		fmt.Printf("str[%d] = %c type %T\n", i, c, c)
+	}
+}
+
+```
+
+```go
+str[0] = H type int32
+str[1] = e type int32
+str[2] = l type int32
+str[3] = l type int32
+str[4] = o type int32
+str[5] = , type int32
+str[6] =   type int32
+str[7] = w type int32
+str[8] = o type int32
+str[9] = r type int32
+str[10] = l type int32
+str[11] = d type int32
+str[12] = ! type int32
+```
+
+## Contoh code looping for range pada array
 
 ```go
 package main
@@ -26,7 +62,7 @@ value[5] = 11
 value[6] = 13
 ```
 
-## Looping for range pada slice
+## Contoh code looping for range pada slice
 
 ```go
 package main
@@ -52,7 +88,7 @@ value[5] = 11
 value[6] = 13
 ```
 
-## Looping for range pada map
+## Contoh code looping for range pada map
 
 ```go
 package main
@@ -78,7 +114,7 @@ value[member_02] = dawam
 value[member_03] = yusran
 ```
 
-## Looping for range pada channel
+## Contoh code looping for range pada channel
 
 ```go
 package main

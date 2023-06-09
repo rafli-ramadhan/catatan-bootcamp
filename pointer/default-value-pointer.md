@@ -1,6 +1,8 @@
-# Nil Pointer
+# Default Value Pointer
 
-Saat suatu pointer di inisiasi tapi tidak di deklarasikan valuenya, maka valuenya adalah nil.
+Saat suatu pointer di inisiasi tapi tidak di deklarasikan value-nya, maka value-nya adalah nil.
+
+## Contoh code
 
 ```go
 package main

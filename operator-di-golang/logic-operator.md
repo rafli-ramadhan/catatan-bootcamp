@@ -1,8 +1,8 @@
 # Logic Operator
 
-Logical merupakan operator untuk membandingkan 2 tipe data boolean. Operator ini memiliki operasi and, or, not/negasi yang masing-masing disimbolkan dengan &&, || dan tanda !.
+Logical merupakan operator untuk membandingkan 2 tipe data boolean. Operator ini memiliki operasi AND, OR, NOT/negasi yang masing-masing menggunakan tanda &&, || dan tanda !.
 
-## Contoh _code_ penerapan operator logic pada tipe data string
+## Contoh code operator logic pada string
 
 ```go
 package main
@@ -26,7 +26,7 @@ true
 true
 ```
 
-## Contoh _code_ penerapan operator logic pada tipe data boolean
+## Contoh code operator logic pada boolean
 
 ```go
 package main

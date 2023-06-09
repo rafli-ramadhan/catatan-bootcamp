@@ -1,6 +1,10 @@
 # Blank Identifier (Variable Underscore)
 
-Gunakan (\_) untuk variabel yang tidak ingin digunakan.
+Variabel underscore (\_) digunakan untuk menampung suatu value yang tidak ingin digunakan.
+
+## Contoh code 1
+
+Variabel underscore bisa digunakan untuk menampung value dari return output suatu function yang tidak digunakan seperti contoh di bawah ini.
 
 ```go
 package main
@@ -28,7 +32,7 @@ func main() {
 0
 ```
 
-## Contoh _code_ penggunaan variabel underscore \_
+## Contoh code 2
 
 ```go
 package main

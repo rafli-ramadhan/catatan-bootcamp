@@ -2,7 +2,7 @@
 
 Looping merupakan cara untuk mengulangi urutan data dari suatu string, array, map dan string.&#x20;
 
-## Contoh _code_ looping sederhana
+## Contoh code looping sederhana
 
 ```go
 package main
@@ -63,41 +63,9 @@ func main() {
 10
 ```
 
-## Contoh _code_ looping string
+## Contoh code looping for dengan operator assignment
 
-Looping di string di Golang menghasilkan value dengan tipe data rune bukan byte.
-
-```go
-package main
-
-import "fmt"
-
-func main() {
-	str := "Hello, world!"
-	for i, c := range str {
-		fmt.Printf("str[%d] = %c type %T\n", i, c, c)
-	}
-}
-
-```
-
-```go
-str[0] = H type int32
-str[1] = e type int32
-str[2] = l type int32
-str[3] = l type int32
-str[4] = o type int32
-str[5] = , type int32
-str[6] =   type int32
-str[7] = w type int32
-str[8] = o type int32
-str[9] = r type int32
-str[10] = l type int32
-str[11] = d type int32
-str[12] = ! type int32
-```
-
-## Contoh looping for dengan operator update +=
+Operator assignment seperti +=, -=, \*=, /= atau %= dapat digunakan untuk meng-update value dari integer yang diinisiasi di awal.
 
 ```go
 package main

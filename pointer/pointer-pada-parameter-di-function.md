@@ -1,4 +1,8 @@
-# Pointer in Function
+# Pointer pada Parameter di Function
+
+Tipe data berbasis pointer dapat digunakan sebagai parameter di sebuah function.
+
+## Contoh code
 
 ```go
 package main
@@ -6,12 +10,6 @@ package main
 import (
     "fmt"
 )
-
-type Address struct{
-    City     string
-    Province string
-    Country  string
-}
 
 func main() {
     name1 := "member_1"

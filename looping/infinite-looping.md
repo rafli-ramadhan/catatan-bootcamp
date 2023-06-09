@@ -1,6 +1,8 @@
 # Infinite Looping
 
-## Contoh _code_ infinite looping
+Infinite looping digunakan untuk mengulangi suatu baris program sampai kondisi break terpenuhi.
+
+## Contoh code infinite looping
 
 ```go
 package main
@@ -23,7 +25,9 @@ func main() {
 Test-3 Test-4 Test-5 Test-6 Test-7 Test-8 Test-9 Test-10 
 ```
 
-## Contoh _code_ break nested looping dengan 1 kali break
+## Contoh code break nested looping dengan 1 kali break
+
+Untuk kasus nested looping, break dapat di tulis sekali seperti contoh berikut.
 
 ```go
 package main
