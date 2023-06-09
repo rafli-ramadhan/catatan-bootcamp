@@ -1,6 +1,6 @@
 # Map
 
-Map di Golang memiliki pola seperti array atau slice yang menyimpan beberapa data dengan tipe data yang sama dengan key value yang bisa di custom. Sebelum digunakan, map perlu di inisiasi sebagai berikut.
+Map di Golang memiliki pola seperti array atau slice yang menyimpan beberapa data dengan tipe data yang sama dengan pasangan key dan value. Sebelum digunakan, map perlu di inisiasi sebagai berikut.
 
 ```go
 var example map[string]int = map[string]int{}
@@ -12,67 +12,7 @@ atau bisa menggunakan fungsi make() sebagai berikut.
 var example map[string]int = make(map[string]int)
 ```
 
-## Contoh _code_
-
-1. Buatlah map dengan key nama orang dan valuenya macam-macam hobi maksimal 3, dengan ketentuan berikut:&#x20;
-
-a. Buat map dengan function make&#x20;
-
-b. Isi map dengan 10 data&#x20;
-
-c. Cetak dengan fungsi printf. Ex: “nama saya umar mempunya hobi gaming, hiking, dan fishing”
-
-```go
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-    type hobbies []string
-    
-    var users map[string]hobbies = make(map[string]hobbies)
-    users["Adni"]   = []string{"Golf"}
-    users["Faras"]  = []string{"Basketball", "Diving", "Gold"}
-    users["Dawam"]  = []string{"Diving", "Scating"}
-    users["Rizky"]  = []string{"Golf"}
-    users["Alfi"]   = []string{"Basketball", "Diving", "Gold"}
-    users["Jason"]  = []string{"Diving"}
-    users["Mega"]   = []string{"Golf", "Scating"}
-    users["Albert"] = []string{"Basketball", "Diving", "Gold"}
-    users["Fajar"]  = []string{"Diving"}
-    users["Dito"]   = []string{"Golf"}
-    
-    for i := range users {
-        var hobi string
-        if len(users[i]) == 1 {
-            hobi = fmt.Sprintf("%s", users[i][0])
-        } else if len(users[i]) == 2 {
-            hobi = fmt.Sprintf("%s dan %s", users[i][0], users[i][1])
-        } else if len(users[i]) == 3 {
-            hobi = fmt.Sprintf("%s, %s, dan %s", users[i][0], users[i][1], users[i][2])
-        }
-    
-        fmt.Printf("\nNama saya %s mempunyai hobi %s", i, hobi)
-    }
-}
-```
-
-```
-Nama saya Jason mempunyai hobi Diving
-Nama saya Albert mempunyai hobi Basketball, Diving, dan Gold
-Nama saya Dito mempunyai hobi Golf
-Nama saya Adni mempunyai hobi Golf
-Nama saya Faras mempunyai hobi Basketball, Diving, dan Gold
-Nama saya Alfi mempunyai hobi Basketball, Diving, dan Gold
-Nama saya Fajar mempunyai hobi Diving
-Nama saya Dawam mempunyai hobi Diving dan Scating
-Nama saya Rizky mempunyai hobi Golf
-Nama saya Mega mempunyai hobi Golf dan Scating
-```
-
-## Contoh _code_ map string interface
+## Contoh code map string interface
 
 Map string interface bisa digunakan untuk menampung key dengan tipe data string dan value dengan tipe data apapun. Map jenis ini sangat berguna untuk encoding dan decoding JSON pada saat membuat REST API.
 
@@ -96,7 +36,7 @@ func main() {
 map[age:20 username:test]
 ```
 
-## Contoh _code_ map string dengan value map string interface
+## Contoh code map string dengan value map string interface
 
 Map juga bisa diisi dengan value yang juga merupakan map seperti _code_ di bawah ini.
 
@@ -128,9 +68,9 @@ map[age:24 username:dana]
 dana
 ```
 
-## Contoh _code_ map dengan key dan value beragam tipe data
+## Contoh code map dengan key dan value beragam tipe data
 
-Dari _code_ dibawah ini, key dari map bisa berupa semua tipe data primitif (numeric, string, boolean), tipe data aggregate (array dan struct), dan tipe data reference khusus function dan channel.
+Dari code dibawah ini, key dari map bisa berupa tipe data primitif (numeric, string, boolean), tipe data aggregate (array dan struct), dan tipe data reference khusus function dan channel. Key tidak bisa bertipe data map atau slice. Sementara value dari key bisa tipe data apapun termasuk map dan slice.
 
 ```go
 package main
@@ -185,7 +125,7 @@ function
 channel
 ```
 
-## Add, Update dan Delete Value di Map
+## Add, Update dan Delete Value di Map Int Interface
 
 ```go
 package main
@@ -218,7 +158,7 @@ map[1:member_01 2:member_02 3:member_03]
 map[1:member_01 2:member_02]
 ```
 
-## Add, Update dan Delete Value di Map dengan key berupa Struct
+## Add, Update dan Delete Value di Map Struct Interface
 
 ```go
 package main
@@ -256,4 +196,66 @@ func main() {
 ```
 map[{member_01 1}:member_01 {member_02 2}:member_02 {member_03 3}:member_03]
 map[{member_01 1}:member_01 {member_02 2}:member_02]
+```
+
+## Challenge
+
+1. Buatlah map dengan key nama orang dan valuenya macam-macam hobi maksimal 3, dengan ketentuan berikut:&#x20;
+
+a. Buat map dengan function make&#x20;
+
+b. Isi map dengan 10 data&#x20;
+
+c. Cetak dengan fungsi printf. Contoh: “nama saya umar mempunya hobi gaming, hiking, dan fishing”
+
+### Jawaban
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+    type hobbies []string
+    
+    var users map[string]hobbies = make(map[string]hobbies)
+    users["Adni"]   = []string{"Golf"}
+    users["Faras"]  = []string{"Basketball", "Diving", "Gold"}
+    users["Dawam"]  = []string{"Diving", "Scating"}
+    users["Rizky"]  = []string{"Golf"}
+    users["Alfi"]   = []string{"Basketball", "Diving", "Gold"}
+    users["Jason"]  = []string{"Diving"}
+    users["Mega"]   = []string{"Golf", "Scating"}
+    users["Albert"] = []string{"Basketball", "Diving", "Gold"}
+    users["Fajar"]  = []string{"Diving"}
+    users["Dito"]   = []string{"Golf"}
+    
+    for i := range users {
+        var hobi string
+        if len(users[i]) == 1 {
+            hobi = fmt.Sprintf("%s", users[i][0])
+        } else if len(users[i]) == 2 {
+            hobi = fmt.Sprintf("%s dan %s", users[i][0], users[i][1])
+        } else if len(users[i]) == 3 {
+            hobi = fmt.Sprintf("%s, %s, dan %s", users[i][0], users[i][1], users[i][2])
+        }
+    
+        fmt.Printf("\nNama saya %s mempunyai hobi %s", i, hobi)
+    }
+}
+```
+
+```
+Nama saya Jason mempunyai hobi Diving
+Nama saya Albert mempunyai hobi Basketball, Diving, dan Gold
+Nama saya Dito mempunyai hobi Golf
+Nama saya Adni mempunyai hobi Golf
+Nama saya Faras mempunyai hobi Basketball, Diving, dan Gold
+Nama saya Alfi mempunyai hobi Basketball, Diving, dan Gold
+Nama saya Fajar mempunyai hobi Diving
+Nama saya Dawam mempunyai hobi Diving dan Scating
+Nama saya Rizky mempunyai hobi Golf
+Nama saya Mega mempunyai hobi Golf dan Scating
 ```

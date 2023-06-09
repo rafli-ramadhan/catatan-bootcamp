@@ -1,10 +1,10 @@
-# Float
+# Float dan Complex
 
-Tipe data numerik desimal di Golang bisa disimpan dalam tipe data float. Default value dari tipe data float adalah 0. Sementara untuk tipe desimal dengan bilangan imaginer dapat disimpan dengan tipe data complex.
+Tipe data numerik desimal di Golang bisa disimpan dalam tipe data float. Default value dari tipe data float adalah 0. Sementara untuk tipe desimal dengan bilangan imaginer dapat disimpan dengan tipe data complex. Nilai minimun dan maksimum dari tipe data float tertera pada tabel dibawah ini. Untuk nilai minim dan maksimum tipe data complex mengikuti tipe data float.
 
-<figure><img src="../.gitbook/assets/float and complex.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/float and complex.png" alt=""><figcaption><p>Sumber gambar : dokumen bootcamp PT Phincon</p></figcaption></figure>
 
-## Contoh _code_ 1
+## Contoh code 1
 
 ```go
 package main
@@ -36,7 +36,7 @@ func main() {
 (1.2+1i)
 ```
 
-## Contoh _code_ 2
+## Contoh code 2
 
 ```go
 package main

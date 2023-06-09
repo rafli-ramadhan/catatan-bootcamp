@@ -1,6 +1,6 @@
 # Variable daI Constant
 
-Variabel dan constant di golang sama-sama dapat di inisiasi suatu value dengan tipe data tertentu. Bedanya, nilai dari suatu constant tidak bisa diubah saat sudah di inisiasi suatu value.
+Variabel dan constant di golang sama-sama dapat di inisiasi suatu value dengan tipe data tertentu. Perbedaannya nilai dari suatu constant tidak bisa diubah saat sudah di inisiasi suatu value.
 
 ## Contoh _code_
 
@@ -35,7 +35,7 @@ func main() {
 2
 ```
 
-## Contoh _code_ Deklarasi Multi Variabel dan Constant
+## Contoh _code_ deklarasi multi variabel dan constant
 
 Contoh _code_ untuk deklarasi multi variabel dan constant dapat dilihat di bawah ini.
 
@@ -114,6 +114,8 @@ func main() {
 ```
 
 ## Format penamaan variabel di Golang
+
+Penamaan variabel di golang tidak boleh diawali dengan simbol seperti @, #, angka serta syntax golang seperti for, type, string dan lainnya.
 
 ```go
 package main

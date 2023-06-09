@@ -2,7 +2,7 @@
 
 Array merupakan jenis tipe data aggregate di Golang yang mampu menampung beberapa value dengan tipe data yang sama dengan jumlah (length) tertentu. Kekurangan dari array adalah hanya bisa di isi value sesuai dengan length yang telah di deklarasikan. Untuk default value dari suatu array akan bergantung pada tipe data yang digunakan.
 
-## Contoh _code_
+## Contoh code array dengan tipe data string
 
 ```go
 package main
@@ -32,7 +32,7 @@ Test1 Test2 Test3
 [12 13 14]
 ```
 
-## Contoh _code_ array dengan tipe data interface kosong
+## Contoh code array dengan tipe data interface kosong
 
 ```go
 package main
@@ -57,7 +57,7 @@ func main() {
 [2 2 2 2 2 <nil> <nil> <nil> <nil> <nil>]
 ```
 
-## Contoh _code_ array dengan tipe data pointer
+## Contoh code array dengan tipe data pointer
 
 ```go
 package main
@@ -83,6 +83,8 @@ func main() {
 
 ## Jumlah value dan Kapasitas dari Array
 
+Kapasitas merupakan tempat untuk menampung value, sementara length adalah berapa banyak kapasitas yang sudah diisi nilai. Kapasitas dari array akan selalu sama dengan jumlah value yang ada di dalam array.
+
 ```go
 package main
 
@@ -95,9 +97,14 @@ func main() {
 }
 ```
 
+```
+5
+5
+```
+
 ## Informasi tambahan
 
-Suatu array misalkan arr1 disimpan dengan _memory address_ yang berbeda dari value-value di dalam array tersebut. Sebagai contoh _code_ di bawah ini, array arr1 disimpan pada _memory address_ 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.
+Suatu array misalkan arr1 akan disimpan dengan memory address yang berbeda dari value-value di dalam array tersebut. Sebagai contoh code di bawah ini, array arr1 disimpan pada memory address 0xc000014280, sementara value dalam array arr1 yaitu 1, 2, 3, dst disimpan dalam memory address 0xc00000e088.
 
 ```go
 package main
@@ -128,7 +135,9 @@ func main() {
 0xc00000e088
 ```
 
-## Add, Update dan Delete di Array
+## Add, Update dan Delete Value di Array
+
+Untuk delete value tidak bisa dilakukan di array dan hanya bisa mengganti value dari index yang ingin di delete dengan default value dari tipe data yang digunakan
 
 ```go
 package main
@@ -144,10 +153,13 @@ func main() {
 	// update
 	arr[4] = -5
 	fmt.Println(arr)
+	// detele (default value integer = 0)
+	arr[4] = 0
+	fmt.Println(arr)
 }
-
 ```
 
 ```
 [1 2 3 4 -5]
+[1 2 3 4 0]
 ```

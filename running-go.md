@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Command di Golang
 
 ## Inisiasi Go Module
@@ -8,7 +12,20 @@ Inisiasi go module :
 go mod init nama_project
 ```
 
-Buat file main.go, kemudian lakukan running
+Buat file main.go dengan package main seperti contoh di bawah ini, kemudian lakukan running dengan command running go module. Sebagai catatan function main harus selalu berada di package main.
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello World")
+}
+
+```
 
 ## Running Go Module
 
@@ -22,27 +39,35 @@ atau
 go run .
 ```
 
-atau bisa menggunakan go build lalu start main.
+Perbedaan go run . akan mencari function main di package main di folder tempat command di atas dijalankan.
+
+## Build Go Module
 
 ```
 go build main.go
 ```
 
+Go build akan menghasilkan file berekstensi .exe yang bisa dijalankan dengan command berikut.
+
 ```
-start main
+start nama_file_exe
 ```
 
 ## Download Module
 
 ```
-go mod download && go mod tidy
+go mod tidy
 ```
 
 Kegunaan `go mod tidy` :
 
-* Untuk memastikan modul yang ada di go.mod sesuai dengan souce code.
-* Untuk menambahkan modul yang dibutuhkan tapi belum ada di package.
+* Untuk memastikan modul yang ada di go.mod sesuai dengan yang dibutuhkan di semua file dalam modul.
+* Untuk menambahkan modul yang dibutuhkan tapi belum ada di go.mod.
 
-## Go Get vs Go Mod Download
+## Go Get vs Go Install
 
-[https://stackoverflow.com/questions/66356034/what-is-the-difference-between-go-get-command-and-go-mod-download-command](https://stackoverflow.com/questions/66356034/what-is-the-difference-between-go-get-command-and-go-mod-download-command)
+Go get dan go install sama-sama digunakan untuk mengunduh suatu module dari github. Informasi detail dapat diakses di link berikut [https://go.dev/ref/mod#go-install](https://go.dev/ref/mod#go-install).
+
+Reference:
+
+{% embed url="https://stackoverflow.com/questions/66356034/what-is-the-difference-between-go-get-command-and-go-mod-download-command" %}

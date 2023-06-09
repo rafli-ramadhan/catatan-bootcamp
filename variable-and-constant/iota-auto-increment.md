@@ -2,11 +2,11 @@
 description: by Mochamad Rafli Ramadhan
 ---
 
-# Iota (Auto incement)
+# Iota (Auto Increment)
 
-Iota digunakan untuk menginisiasi beberapa constant yang membutuhkan value auto increment dengan tipe integer atau float.
+Iota digunakan untuk menginisiasi beberapa constant dengan tipe data integer, float atau complex yang membutuhkan value auto increment.
 
-## Contoh _code_
+## Contoh code deklarasi iota dengan integer
 
 ```go
 package main
@@ -68,6 +68,8 @@ func main() {
 1
 1
 ```
+
+## Contoh code deklarasi constant iota dengan complex
 
 ```go
 package main

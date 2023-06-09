@@ -1,8 +1,8 @@
 # String
 
-Default value dari tipe data string adalah string kosong atau "".
+Tipe data string digunakan untuk menyimpan value berupa karakter. Default value dari tipe data string adalah karakter kosong atau "".
 
-## Contoh _code_
+## Contoh code
 
 ```go
 package main
@@ -24,6 +24,8 @@ func main() {
 it is an empty string
 test
 ```
+
+## String dan Byte
 
 Di golang string disimpan dalam bentul slice dengan tipe data byte. Untuk menampilkan setiap nilai byte pada 1 karakter di dalam string dapat menggunakan _code_ berikut.
 

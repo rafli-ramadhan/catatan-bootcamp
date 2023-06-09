@@ -1,8 +1,8 @@
 # Boolean
 
-Default value dari tipe data boolean adalah False.
+Tipe data boolean digunakan untuk menampung value dengan nilai true atau false. Default value dari tipe data boolean adalah False.
 
-## Contoh _code_
+## Contoh code
 
 ```go
 package main

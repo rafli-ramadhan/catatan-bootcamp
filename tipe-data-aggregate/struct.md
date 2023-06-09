@@ -1,6 +1,6 @@
 # Struct
 
-Struct adalah kumpulan definisi variabel (atau property) dan atau fungsi (atau method), yang dibungkus sebagai tipe data baru dengan nama tertentu. Struct dalam Golang yang dapat dideklarasikan sebagai berikut :
+Struct adalah kumpulan definisi variabel (atau property) dan atau fungsi (atau method), yang dibungkus sebagai tipe data baru dengan nama tertentu. Struct dalam Golang yang dapat dideklarasikan sebagai berikut.
 
 ```go
 type User struct{
@@ -12,7 +12,7 @@ type User struct{
 
 ## Default Value
 
-Default value dari suatu struct akan mengikuti default value dari tipe data setiap parameternya.
+Default value dari suatu struct akan mengikuti default value dari tipe data setiap property-nya.
 
 ```go
 package main
@@ -37,7 +37,9 @@ func main() {
 { 0 false}
 ```
 
-## Inline Struct
+## Deklarasi struct inline
+
+Untuk membuat struct bisa seperti kodingan di atas atau dengan inline struct seperti contoh berikut.
 
 ```go
 package main
@@ -65,7 +67,7 @@ func main() {
 
 ## Embedded Struct
 
-Struct yang dideklarasikan dalam suatu struct. Contohnya untuk struct User di bawah ini terdapat parameter Address dan WorkAddress yang juga merupakan struct.
+Embedded struct merupakan struct yang digunakan sebagai property suatu struct. Contohnya untuk struct User di bawah ini terdapat parameter Address dan WorkAddress yang juga merupakan  struct.
 
 ```go
 type User struct {
@@ -107,9 +109,9 @@ func (user User) Greeting() {
 }
 ```
 
-## Contoh _code_
+## Contoh code
 
-Berikut adalah contoh _code_ implementasi dari embedded struct dan method.
+Berikut adalah contoh code implementasi dari embedded struct dan method.
 
 ```go
 package main
