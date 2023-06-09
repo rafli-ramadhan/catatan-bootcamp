@@ -1,7 +1,6 @@
 # Access Modifier (Public or Private)
 
-Menentukan access modifier cukup dengan nama function atau variabel.\
-Nama variabel atau function besar -> bisa diakses di package lain
+Access modifier digunakan untuk memperbolehkan suatu variabel atau function diakses di package lain. Untuk bisa diakses di package lain, nama variabel atau function perlu diawali huruf kapital.
 
 ```go
 package main

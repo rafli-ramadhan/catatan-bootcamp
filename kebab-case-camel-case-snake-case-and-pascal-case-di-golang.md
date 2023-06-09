@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # Kebab Case, Camel Case, Snake Case & Pascal Case di Golang
 
 * **Kebab case** biasa digunakan pada penamaan file seperti di bawah ini yang dapat dikenali dengan tanda "-" sebagai pemisah antar kata.

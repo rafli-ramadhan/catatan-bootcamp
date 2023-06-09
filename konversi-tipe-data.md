@@ -1,8 +1,14 @@
-# Data Type Conversion
+---
+coverY: 0
+---
 
-## Contoh _code_ konversi integer ke float
+# Konversi Tipe Data
 
-Int di ubah menjadi float bisa, karena di tipe data float terdapat integer (contoh = 1, 2, 3, dsb).
+Konversi tipe data digunakan untuk mengubah value dengan tipe data tertentu ke tipe data yang lain.
+
+## Contoh code konversi integer ke float
+
+Value dengan tipe data integer bisa diubah menjadi float, karena di tipe data float terdapat integer.
 
 ```go
 package main
@@ -24,9 +30,9 @@ func main() {
 float64
 ```
 
-## Contoh _code_ konversi float ke integer
+## Contoh code konversi float ke integer
 
-Float di konversi menjadi Int tidak bisa, karena di tipe data integer tidak terdapat data desimal.
+Value dengan tipe data float dapat dikonversi menjadi integer dan akan dibulatkan ke bawah.
 
 ```go
 package main
@@ -36,18 +42,21 @@ import (
 )
 
 func main() {
-	var num1 float64 = 2.0
-	var num2 float64 = int(num1)
+	var num1 float64 = 2.9
+	var num2 int = int(num1)
 	fmt.Println(num2)
 	fmt.Printf("%T", num2)
 }
 ```
 
 ```
-cannot use int(num1) (value of type int) as type float64 in variable declaration
+2
+int
 ```
 
-## Contoh _code_ konversi boolean ke string
+## Contoh code konversi boolean ke string
+
+Boolean tidak dapat dikonversi menjadi string
 
 ```go
 package main
@@ -66,7 +75,9 @@ func main() {
 cannot convert isFalse (variable of type bool) to type string
 ```
 
-## Contoh _code_ konversi string menjadi rune dan byte
+## Contoh code konversi string menjadi rune dan byte
+
+Konversi string menjadi byte akan menghasilkan angka yang mewakili karakter ASCII, sementara konversi menjadi rune akan menghasilkan angka yang mewakili karakter Unicode.
 
 ```go
 package main
@@ -93,4 +104,4 @@ func main() {
 
 Reference :
 
-[https://golangdocs.com/rune-in-golang](https://golangdocs.com/rune-in-golang)
+{% embed url="https://golangdocs.com/rune-in-golang" %}
