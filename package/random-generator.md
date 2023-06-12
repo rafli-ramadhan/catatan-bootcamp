@@ -1,4 +1,16 @@
-# Random String Generator
+---
+coverY: 0
+---
+
+# Random Generator
+
+## Random Name Generator
+
+Untuk men-generate nama secara random, dapat menggunakan package di link berikut [https://github.com/goombaio/namegenerator](https://github.com/goombaio/namegenerator).
+
+## Random String Generator
+
+Berikut adalah contoh code untuk generate string secara random.
 
 ```go
 package main

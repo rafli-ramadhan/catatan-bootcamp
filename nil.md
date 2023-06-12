@@ -49,7 +49,7 @@ yes nil
 yes nil
 ```
 
-Nil juga dapat digunakan sebagai return value dari suatu function seperti contoh _code_ di bawah ini.
+Nil juga dapat digunakan sebagai return value dari suatu function seperti contoh code di bawah ini.
 
 ```go
 package main

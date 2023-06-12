@@ -1,6 +1,12 @@
+---
+description: Package "math/rand"
+---
+
 # Rand
 
-Random Integer
+## Fungsi Seed
+
+Contoh code penggunaan fungsi Seed
 
 ```go
 package main

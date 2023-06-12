@@ -1,16 +1,21 @@
+---
+description: Package "fmt"
+---
+
 # Fmt
 
-fmt.Println -> bisa untuk print tipe data int, float, bool, string, arr, map, slice dan struct.
+Beberapa jenis fungsi di package Fmt diantaranya:
 
-fmt.Printf -> hanya untuk print formatting string
+1. **fmt.Print** digunakan untuk menampilkan tipe data apapun di terminal.
+2. **fmt.Println** digunakan untuk menampilkan tipe data apapun di terminal dengan akhiran new line.
+3. **fmt.Printf** digunakan untuk menggabungkan beberapa tipe data apapun ke string utama dan menampilkannya di terminal.
+4. **fmt.Sprint** digunakan untuk membuat variabel string dengan cara mirip dengan fmt.Print
+5. **fmt.Sprintln** digunakan untuk membuat variabel string dengan cara mirip dengan fmt.Println, namun diakhiri dengan spasi dan new line.
+6. **fmt.Sprintf** digunakan untuk membuat variabel string dengan cara mirip dengan fmt.Printf
+7. **fmt.FPrintf** atau fmt.Fprintln digunakan untuk menampilkan tipe data apapun yang telah dikonversi menjadi slice byte ke sisi client (semisal web browser).
+8. **fmt.Scanln** digunakan untuk memperoleh input dari terminal, tapi input tidak boleh dipisahkan oleh spasi.
 
-fmt.Sprintf -> untuk membuat variabel string dengan variabel dinamis
-
-fmt.FPrintf atau fmt.Fprintln -> untuk menampilkan value ke sisi client
-
-fmt.Scanln -> untuk memperoleh input dari sisi server -> tapi input tidak boleh dipisahkan oleh spasi.
-
-## Contoh _code_ penggunaan print
+## Contoh code penggunaan Print
 
 ```go
 package main
@@ -60,7 +65,7 @@ Hellofor integer        :123for scientific notation :(3+5i)for float          :1
         :0xc000040260some interface     :123some array         :[1 2 3]some slice         :[1 2 3]some map           :map[password:Test123 username:member_01]some struct        :{member_01 Test123}some channel       :1some func          :5
 ```
 
-## Contoh _code_ penggunaan println
+## Contoh code penggunaan Println
 
 ```go
 package main
@@ -123,7 +128,7 @@ some channel       :  1
 some func          :  5
 ```
 
-## Contoh _code_ penggunaan printf
+## Contoh code penggunaan Printf
 
 ```go
 package main
@@ -194,7 +199,7 @@ switch index       : some_string 22 11
 switch index       : true some_string 22 11
 ```
 
-## Contoh _code_ penggunaan Sprintln
+## Contoh code penggunaan Sprintln
 
 ```go
 package main
@@ -272,7 +277,7 @@ some func          : 5
 
 ```
 
-## Contoh _code_ penggunaan Sprintf
+## Contoh code penggunaan Sprintf
 
 ```go
 package main
@@ -334,27 +339,4 @@ some struct        : {Username:member_01 Password:Test123}
 some channel       : 1
 for boolean        : false
 some func                  : 5
-```
-
-## Printf vs Sprintf
-
-```go
-package main
-  
-import (
-    "error"
-    "fmt"
-)
-
-func main() {
-    // a := fmt.Printf("Test %d", 123) // ssignment mismatch: 1 variable but fmt.Printf returns 2 values
-
-    b := fmt.Sprintf("Test %d", 123)
-    fmt.Println(b)
-    
-    err = errors.New("test error")
-    if err != nil {
-        log.Print(fmt.Sprintf("error : %s", err))
-    }
-}
 ```
