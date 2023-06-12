@@ -1,6 +1,10 @@
-# Exercise 1.3 : Random Worker (Go Routine + Channel + Context)
+# Exercise 2 : Worker (Go Routine + Channel + Context)
 
-Cari nama Wina di slice bernama usernames menggunakan worker (beberapa go routine) dan context Wait Timeout dengan catatan yang bekerja tidak harus worker ke-1 terlebih dahulu.
+## Soal
+
+Cari nama Wina di slice bernama usernames menggunakan worker (beberapa go routine) dan context wait timeout.
+
+## Contoh Jawaban
 
 ```go
 package main
@@ -45,8 +49,8 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 	}()
 
 	var channelUserFound = make(chan string, numOfBuffer)
-	wg.Add(numberOfWorkers)
 	for workerIndex := 0; workerIndex < numberOfWorkers; workerIndex++ {	
+		wg.Add(1)
 		var total int
 
 		go func(workerIndex int) {
@@ -61,15 +65,15 @@ func checkNameWithChannelAndWorker(ctx context.Context) {
 					}
 				}
 			}
-						
+					
 			duration := time.Since(start)
 			fmt.Println("worker -", workerIndex+1, "found", total, "of Wina. Done in", duration.Seconds(), "seconds")
 
 			wg.Done()
 		}(workerIndex)
-	}
 
-	wg.Wait()
+		wg.Wait()
+	}
 }
 
 var usernames []string = []string{
@@ -113,27 +117,10 @@ var usernames []string = []string{
 ```
 
 ```
-D:\bootcamp-go\go-routine>go run main.go
 end send data to channel
-worker - 1 found 0 of Wina. Done in 0.0005516 seconds
-worker - 2 found 0 of Wina. Done in 0.0005516 seconds
-worker - 4 found 0 of Wina. Done in 0.0005516 seconds
-worker - 3 found 1 of Wina. Done in 0.0005516 seconds
-worker - 5 found 0 of Wina. Done in 0.0005516 seconds
-
-D:\bootcamp-go\go-routine>go run main.go
-end send data to channel
-worker - 4 found 0 of Wina. Done in 0.0005427 seconds
-worker - 2 found 0 of Wina. Done in 0.0005427 seconds
-worker - 5 found 0 of Wina. Done in 0.0005427 seconds
-worker - 1 found 1 of Wina. Done in 0.0005427 seconds
-worker - 3 found 0 of Wina. Done in 0.0005427 seconds
-
-D:\bootcamp-go\go-routine>go run main.go
-end send data to channel
-worker - 1 found 0 of Wina. Done in 0 seconds
-worker - 4 found 1 of Wina. Done in 0 seconds
-worker - 2 found 0 of Wina. Done in 0 seconds
-worker - 3 found 0 of Wina. Done in 0 seconds
-worker - 5 found 0 of Wina. Done in 0 seconds
+worker - 1 found 1 of Wina. Done in 0.0010737 seconds
+worker - 2 found 0 of Wina. Done in 0.0027665 seconds
+worker - 3 found 0 of Wina. Done in 0.0037713 seconds
+worker - 4 found 0 of Wina. Done in 0.004041 seconds
+worker - 5 found 0 of Wina. Done in 0.0046647 seconds
 ```

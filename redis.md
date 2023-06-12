@@ -16,15 +16,17 @@ Perlu memiliki docker terlebih dahulu, jalankan docker. Lalu install redis melal
 docker pull redis
 ```
 
-## Go Redis
-
-[https://github.com/redis/go-redis](https://github.com/redis/go-redis)
-
 ## Contoh penggunaan redis pada CMD
 
 ![](<.gitbook/assets/image (4) (1).png>)
 
-## Contoh _code_ golang dengan Redis
+## Package Redis di Golang
+
+Untuk penggunaan redis di golang dapat menggunakan package berikut [https://github.com/redis/go-redis](https://github.com/redis/go-redis).
+
+## Contoh code golang dengan Redis
+
+Redis dapat digunakan untuk menyimpan value dari tipe data apapun di Golang selama dapat dikonversi menjadi byte. Cara konversi dari tipe data tertentu menjadi byte dapat menggunakan fungsi Marshal dari package "encoding/json".
 
 ```go
 package main

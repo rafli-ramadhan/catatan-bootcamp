@@ -1,52 +1,11 @@
-# Context WithValue, WithDeadline, WithTimeout, WithCancel, Done
+# Context WithDeadline, WithTimeout, WithCancel, Done
 
-WithValue -> Untuk membuat child atau percabangan context
+Context memiliki beberapa jenis diantarnya:
 
-WithCancel -> Untuk mengakhiri context
-
-WithDeadline (waktu diakhiri) -> Untuk mengakhiri context dengan deadline waktu sekarang + beberapa waktu.
-
-```
-time.Now().Add(5*Second) // durasi waktu sekarang + 5 detik
-```
-
-WithTimeout (durasi) -> Untuk mengakhiri context mirip with deadline -> Context akan jalan sampai waktu tertentu.
-
-Done -> Untuk cek apakah context sudah selesai atau belum
-
-## WithValue
-
-```go
-package main
-
-import(
-    "context"
-    "fmt"
-)
-
-func main() {
-    value := map[string]interface{}{
-        "1":        "member_01",
-        "2":        "member_02",
-        "isActive": true,
-    }
-    background := context.Background()
-    child := context.WithValue(background, "key-1", value)
-    todo := context.TODO()
-
-    fmt.Println(background)
-    fmt.Println(child)
-    fmt.Println(child.Value("key-1"))
-    fmt.Println(todo)
-}
-```
-
-```
-context.Background
-context.Background.WithValue(type string, val <not Stringer>)
-map[1:one 2:two]
-context.TODO
-```
+* WithCancel digunakan untuk mengakhiri context.
+* WithDeadline (waktu diakhiri) digunakan untuk mengakhiri context dengan deadline waktu sekarang + beberapa waktu kedepan.
+* WithTimeout (durasi) digunakan untuk menjalankan suatu code sampai waktu tertentu.
+* Done -> Untuk cek apakah context sudah selesai atau belum
 
 ## WithDeadline
 

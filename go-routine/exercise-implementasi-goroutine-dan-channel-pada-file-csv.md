@@ -1,6 +1,10 @@
-# Exercise 2 : Go Routine + Channel
+# Exercise : Implementasi Goroutine dan Channel pada File CSV
 
-Enter 1,000,000 data in the form of names and comments into the csv using the go routine and channels.
+## Soal
+
+Masukkan 1.000.000 data ke dalam 1 file csv menggunakan go routine dan channel.
+
+## Contoh Jawaban
 
 ```go
 package main
