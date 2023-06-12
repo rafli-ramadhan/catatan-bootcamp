@@ -1,6 +1,8 @@
 # Router
 
-Untuk membuat router bisa menggunakan method sesuai HTTP Verb yang akan dipakai. Contoh untuk GET bisa menggunakan method GET.
+Untuk membuat router bisa menggunakan method sesuai HTTP Verb yang akan dipakai. Contoh untuk GET bisa menggunakan method GET seperti contoh code berikut.
+
+## Contoh code router dengan HTTP method GET
 
 ```go
 package main
@@ -22,6 +24,8 @@ func welcome(ctx *gin.Context) {
 ```
 
 <figure><img src="../.gitbook/assets/1 (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+## Contoh code router dengan HTTP method GET, POST, PATCH dan DELETE
 
 ```go
 package main

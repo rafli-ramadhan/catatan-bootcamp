@@ -1,6 +1,6 @@
 # Exit
 
-Exit -> untuk menghentikan blok fungsi secara paksa.
+Exit digunakan untuk menghentikan blok fungsi secara paksa.
 
 ```go
 package main

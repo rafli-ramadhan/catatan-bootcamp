@@ -1,15 +1,18 @@
-# Assertion & Require
+# Package Assert & Require
 
-**Assert** -> jika pengecekan gagal, maka assert akan memanggil Fail(), artinya eksekusi unit test akan tetap dilanjutkan.
+Package **assert** dan **require** merupakan package bawaan dari github.com/stretchr/testify yang memiliki beberapa fungsi yang dapat digunakan untuk pengecekan expected result dan real result dari suatu fungsi yang di test. Untuk instalasi package testify tertera pada link berikut [https://github.com/stretchr/testify](https://github.com/stretchr/testify) atau bisa menggunakan command berikut.
 
-**Require** -> jika pengecekan gagal, maka assert akan memanggil FailNow(), artinya eksekusi unit test akan tetap dilanjutkan.
-
-```bash
+```
 go get github.com/stretchr/testify
 ```
 
-main.go
+Pada setiap akhir fungsi di package assert akan memanggil method Fail() dari package testing, artinya eksekusi unit test akan tetap dilanjutkan meskipun suatu unit testing dianggap gagal.&#x20;
 
+Pada setiap akhir fungsi di package require akan memanggil method FailNow() dari package testing, artinya eksekusi unit test tidak akan dilanjutkan saat suatu unit testing telah gagal.
+
+## Contoh code penggunaan fungsi Equal() dari package assertion dan require di unit testing
+
+{% code title="main.go" %}
 ```go
 package main
 
@@ -27,11 +30,9 @@ func SayHi(name string) string {
 }
 
 ```
+{% endcode %}
 
-## Assertion
-
-main\_test.go
-
+{% code title="main_test.go" %}
 ```go
 package main
 
@@ -56,6 +57,7 @@ func TestSayHi(t *testing.T) {
 	})
 }
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi
@@ -98,10 +100,7 @@ exit status 1
 FAIL    unit-testing    0.395s
 ```
 
-## Require
-
-main\_test.go
-
+{% code title="" %}
 ```go
 package main
 
@@ -126,6 +125,7 @@ func TestSayHi(t *testing.T) {
 	})
 }
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi

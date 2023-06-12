@@ -14,7 +14,7 @@ Buffered Channel -> buffer yang bisa digunakan untuk menampung data antrian di C
 
 Jika di set misal 5, artinya channel bisa menerima 5 data di buffer.&#x20;
 
-Jika dikirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong -> Ini cocok sekali ketika memang goroutine yang menerima data lebih lambat dari yang mengirim data
+Jika dikirim data ke 6, maka kita diminta untuk menunggu sampai buffer ada yang kosong. Buffer channel cocok digunakan apabila goroutine yang menerima data lebih lambat dari yang mengirim data
 
 ```go
 package main

@@ -1,6 +1,8 @@
-# t.Fail, t.FailNow, t.Error & t.Fatal, t.Skip
+# Method di Package Testing
 
-* t.Fail() -> menggagalkan unit test, namun tetap melanjutkan eksekusi unit test -> Unit test tersebut dianggap gagal.
+Package testing golang memiliki beberapa method bawaan untuk keperluan testing seperti t.Fail, t.FailNow, t.Error & t.Fatal, t.Skip. Penjelasan masing-masing method dirinci sebagai berikut:
+
+* t.Fail() digunakan untuk menggagalkan unit test, namun tetap melanjutkan eksekusi unit test. Unit test tersebut dianggap gagal.
 
 ```go
 func (c *common) Fail() {
@@ -17,32 +19,14 @@ func (c *common) Fail() {
 }
 ```
 
-* t.FailNow() -> menggagalkan unit test saat ini juga, tanpa melanjutkan eksekusi unit test.
+* t.FailNow() digunakan untuk menggagalkan unit test saat ini juga, tanpa melanjutkan eksekusi unit test selanjutnya.
 
 ```go
 func (c *common) FailNow() {
 	c.checkFuzzFn("FailNow")
 	c.Fail()
 
-	// Calling runtime.Goexit will exit the goroutine, which
-	// will run the deferred functions in this goroutine,
-	// which will eventually run the deferred lines in tRunner,
-	// which will signal to the test loop that this test is done.
-	//
-	// A previous version of this code said:
-	//
-	//	c.duration = ...
-	//	c.signal <- c.self
-	//	runtime.Goexit()
-	//
-	// This previous version duplicated code (those lines are in
-	// tRunner no matter what), but worse the goroutine teardown
-	// implicit in runtime.Goexit was not guaranteed to complete
-	// before the test exited. If a test deferred an important cleanup
-	// function (like removing temporary files), there was no guarantee
-	// it would run on a test failure. Because we send on c.signal during
-	// a top-of-stack deferred function now, we know that the send
-	// only happens after any other stacked defers have completed.
+	// ...
 	c.mu.Lock()
 	c.finished = true
 	c.mu.Unlock()
@@ -50,7 +34,7 @@ func (c *common) FailNow() {
 }
 ```
 
-* t.Error() -> log (print) error -> otomatis memanggil function Fail(), sehingga mengakibatkan unit test dianggap gagal -> eksekusi unit test akan tetap berjalan sampai selesai.
+* t.Error() digunakan untuk menampilkan error dengan log dan memanggil function Fail(), sehingga eksekusi unit test akan tetap berjalan sampai selesai meskipun unit test saat ini telah gagal.
 
 ```go
 func (c *common) Error(args ...any) {
@@ -60,7 +44,7 @@ func (c *common) Error(args ...any) {
 }
 ```
 
-* t.Fatal() mirip dengan Error() -> otomatis memanggil FailNow() -> sehingga mengakibatkan eksekusi unit test berhenti.
+* t.Fatal() mirip dengan Error() namun diakhiri dengan FailNow(), sehingga mengakibatkan eksekusi unit test berhenti.
 
 ```go
 func (c *common) Fatal(args ...any) {
@@ -70,7 +54,7 @@ func (c *common) Fatal(args ...any) {
 }
 ```
 
-* t.Skip() -> skip suatu unit test + return argument
+* t.Skip() digunakan untuk skip suatu unit test dan menampilkan suatu argument dengan log.
 
 ```go
 func (c *common) Skip(args ...any) {
@@ -80,7 +64,7 @@ func (c *common) Skip(args ...any) {
 }
 ```
 
-* t.SkipNow() -> Skip suatu unit test + exit
+* t.SkipNow digunakan untuk skip suatu unit test dan exit.
 
 ```go
 func (c *common) SkipNow() {
@@ -93,47 +77,34 @@ func (c *common) SkipNow() {
 }
 ```
 
-## Implementasi Fatal
+## Contoh code
 
+Berikut adalah code function SayHi pada package main yang ingin dibuat unit test-nya.
+
+{% code title="main.go" %}
 ```go
 package main
 
 import (
 	"fmt"
-	"testing"
-	// "github.com/stretchr/testify/assert"
 )
 
-func TestSayHi(t *testing.T) {
-	t.Run("Test-1", func(t *testing.T) {
-		result := SayHi("Amar")
-		if result != "Andi" {
-			t.Fatal("Not Andi")
-		}
-		fmt.Println("Next")
-		result = SayHi("Andi")
-		if result != "Andi" {
-			t.Fatal("Andi")
-		}
-	})
+func main() {
+	result := SayHi("Utsman")
+	fmt.Println(result)
 }
 
+func SayHi(name string) string {
+	return "Hello " + name
+}
 ```
+{% endcode %}
 
-```
-PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi
-=== RUN   TestSayHi
-=== RUN   TestSayHi/Test-1
-    main_test.go:13: Not Andi
---- FAIL: TestSayHi (0.00s)
-    --- FAIL: TestSayHi/Test-1 (0.00s)
-FAIL
-exit status 1
-FAIL    unit-testing    0.316s
-```
+## Implementasi method Error
 
-## Implementasi Error
+Berikut contoh code unit testing yang menerapkan method error.
 
+{% code title="main_test.go" %}
 ```go
 package main
 
@@ -158,6 +129,7 @@ func TestSayHi(t *testing.T) {
 }
 
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi
@@ -173,8 +145,53 @@ exit status 1
 FAIL    unit-testing    0.374s
 ```
 
-## Implementasi Skip
+## Implementasi method Fatal
 
+Berikut contoh code unit testing yang menerapkan method fatal.
+
+{% code title="main_test.go" %}
+```go
+package main
+
+import (
+	"fmt"
+	"testing"
+)
+
+func TestSayHi(t *testing.T) {
+	t.Run("Test-1", func(t *testing.T) {
+		result := SayHi("Amar")
+		if result != "Andi" {
+			t.Fatal("Not Andi")
+		}
+		fmt.Println("Next")
+		result = SayHi("Andi")
+		if result != "Andi" {
+			t.Fatal("Andi")
+		}
+	})
+}
+
+```
+{% endcode %}
+
+```
+PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi
+=== RUN   TestSayHi
+=== RUN   TestSayHi/Test-1
+    main_test.go:13: Not Andi
+--- FAIL: TestSayHi (0.00s)
+    --- FAIL: TestSayHi/Test-1 (0.00s)
+FAIL
+exit status 1
+FAIL    unit-testing    0.316s
+```
+
+## Implementasi method Skip
+
+Berikut contoh code unit testing yang menerapkan method skip.
+
+{% code title="main_test.go" %}
 ```go
 package main
 
@@ -199,6 +216,7 @@ func TestSayHi(t *testing.T) {
 }
 
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi

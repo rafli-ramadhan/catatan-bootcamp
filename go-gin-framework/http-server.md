@@ -1,6 +1,6 @@
 # HTTP Server
 
-Untuk membuat server di gin bisa menggunakan method Run().
+Untuk membuat server di gin bisa menggunakan method Run() seperti code berikut.
 
 ```go
 package main

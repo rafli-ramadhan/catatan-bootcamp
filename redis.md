@@ -1,5 +1,6 @@
 ---
 description: https://redis.io/
+coverY: 0
 ---
 
 # Golang dan Redis
@@ -18,7 +19,7 @@ docker pull redis
 
 ## Contoh penggunaan redis pada CMD
 
-![](<.gitbook/assets/image (4) (1).png>)
+<figure><img src=".gitbook/assets/redis.png" alt=""><figcaption><p>Sumber gambar : dokcumentasi bootcamp PT Phincon</p></figcaption></figure>
 
 ## Package Redis di Golang
 
@@ -28,6 +29,7 @@ Untuk penggunaan redis di golang dapat menggunakan package berikut [https://gith
 
 Redis dapat digunakan untuk menyimpan value dari tipe data apapun di Golang selama dapat dikonversi menjadi byte. Cara konversi dari tipe data tertentu menjadi byte dapat menggunakan fungsi Marshal dari package "encoding/json".
 
+{% code title="main.go" %}
 ```go
 package main
 
@@ -149,6 +151,7 @@ func (r rdb) RedisDeleteKey(key string) {
 	}
 }
 ```
+{% endcode %}
 
 ```
 Redis initialization

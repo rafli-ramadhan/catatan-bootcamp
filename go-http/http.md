@@ -1,5 +1,6 @@
 ---
 description: The Hypertext Transfer Protocol
+coverY: 0
 ---
 
 # Pengenalan HTTP

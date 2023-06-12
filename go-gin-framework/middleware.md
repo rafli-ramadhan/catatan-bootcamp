@@ -1,6 +1,8 @@
 # Middleware
 
-Untuk membuat middleware di Golang bisa menggunakan keyword Use seperti _code_ di bawah ini. Setiap group route juga dapat dibuat middleware yang berbeda.
+Untuk membuat middleware di Golang bisa menggunakan method Use seperti code di bawah ini. Setiap group route juga dapat dibuat middleware yang berbeda.
+
+## Contoh code middleware di beberapa router group
 
 ```go
 package main
@@ -16,8 +18,10 @@ import (
 func main() {
 	r := gin.Default()
 	r.Use(Logging())
+	// router group
 	r1 := r.Group("/api1")
 	r2 := r.Group("/api2")
+	// middleware
 	r1.Use(ErrorMiddleware())
 	r2.Use(LoggingTime())
 
@@ -72,7 +76,9 @@ func LoggingTime() gin.HandlerFunc {
 
 <figure><img src="../.gitbook/assets/post.png" alt=""><figcaption></figcaption></figure>
 
-Middleware juga bisa di set untuk 1 route tertentu seperti _code_ di bawah ini.
+## Contoh code middleware di beberapa route
+
+Middleware juga bisa di set untuk 1 route tertentu. Pada code di bawah ini middleware ErrorMiddleware() dan LoggingTime() di set sebelum handler Welcome.
 
 ```go
 package main
@@ -137,6 +143,8 @@ func LoggingTime() gin.HandlerFunc {
 	}
 }
 ```
+
+## Contoh code middleware sebelum dan sesudah suatu handler
 
 Di Gin juga memungkinkan untuk membuat middleware sebelum dan setelah suatu handler. Sebagai contoh handler welcome memiliki 2 middleware yang dijalankan sebelum dan sesudah handler tersebut dijalankan.
 
