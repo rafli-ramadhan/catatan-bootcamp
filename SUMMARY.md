@@ -46,6 +46,7 @@
   * [Looping For](looping.md)
   * [Looping for range](looping/looping-for-range.md)
   * [Infinite Looping](looping/infinite-looping.md)
+  * [Penerapan Looping pada Sorting](looping/penerapan-looping-pada-sorting.md)
 * [Operator di Golang](operator-di-golang/README.md)
   * [Arithmetic Operator](operator-di-golang/arithmetic-operator.md)
   * [Assignment Operator](operator-di-golang/assignment-operator.md)
