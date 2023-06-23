@@ -1,9 +1,10 @@
 # Table Test
 
-Table test -> digunakan untuk test secara dinamis -> menyediakan data beruba slice yang berisi parameter dan ekspektasi hasil dari unit test.
+Kita juga dapat menggunakan tabel test untuk membuat unit testing di Golang. Perbedaannya dengan code test sebelumnya adalah, di tabel test kita akan memanfaatkan looping. Setiap data untuk input fungsi / method, hasil yang diharapkan dan sebagainya ditampung dalam sebuah struct. Kemudian looping digunakan untuk menjalankan setiap unit test seperti contoh code berikut.
 
-main.go
+## Contoh code
 
+{% code title="main.go" %}
 ```go
 package main
 
@@ -21,15 +22,14 @@ func SayHi(name string) string {
 }
 
 ```
+{% endcode %}
 
-main\_test.go
-
+{% code title="main_test.go" %}
 ```go
 package main
 
 import (
 	"testing"
-	// "github.com/stretchr/testify/assert"
 )
 
 type TestTable struct {
@@ -70,6 +70,7 @@ func TestSayHi2(t *testing.T) {
 	}
 }
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi2
