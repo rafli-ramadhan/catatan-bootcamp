@@ -84,7 +84,7 @@ Untuk mendapatkan data-data yang tidak duplikat dari kolom name dan no\_telp tab
 select distinct name, no_telp from pelanggan;
 ```
 
-Perlu di ingat, jika misal di kolom name terdapat 20 data _distinct_ (data tidak duplikat) dan kolom no\_telp terdapat 30 data _distinct_. Maka jumlah data yang terpilih akan menjadi 30, menyesuaikan kolom dengan jumlah data _distinct_ terbanyak.&#x20;
+Perlu di ingat, jika misal di kolom name terdapat 20 data distinct (data tidak duplikat) dan kolom no\_telp terdapat 30 data distinct. Maka jumlah data yang terpilih akan menjadi 30, menyesuaikan kolom dengan jumlah data distinct terbanyak.&#x20;
 
 ## Insert
 
@@ -110,38 +110,8 @@ Untuk menghapus data 1 baris dari tabel pelanggan dapat menggunakan query beriku
 delete FROM contact where id = 1
 ```
 
-## Insert Query di Golang
-
-Ada kalanya suatu client dapat melakukan _sql injection_, yaitu dengan mengeksekusi query SQL yang tidak sesuai dengan niat untuk membobol keamanan. Untuk menghindari SQL injection gunakan tanda "?" pada query seperti berikut.
-
-```sql
-insert into comments (email, comment) value (?,?)
-```
-
-```sql
-update contact SET name = ?, no_telp = ? where id = ?
-```
-
-```sql
-delete FROM contact where id = ?
-```
-
-Pada pgx (PostgreSQL Database Driver) dapat juga menggukan operator $1, $2, dst.
-
-```sql
-insert into comments (email, comment) value ($1,$2)
-```
-
-```sql
-update contact SET name = $1, no_telp = $2 where id = $3
-```
-
-```sql
-delete FROM contact where id = $1
-```
-
 Reference :
 
-[https://www.w3schools.com/SQL](https://www.w3schools.com/SQL)
+{% embed url="https://www.w3schools.com/SQL" %}
 
-[https://www.w3schools.com/Sql/trysql.asp?filename=trysql\_select\_no\_distinct](https://www.w3schools.com/Sql/trysql.asp?filename=trysql\_select\_no\_distinct)
+{% embed url="https://www.w3schools.com/Sql/trysql.asp?filename=trysql_select_no_distinct" %}

@@ -1,6 +1,6 @@
-# Setting RabbitMQ
+# Setting RabbitMQ (Durable, Auto Delete dan Ack)
 
-## Declare
+## Durable
 
 RabbitMQ akan menghapus queue dan pesan saat berhenti atau crash. Hal tersebut dapat dihindari dengan mengaktifkan message durability pada bagian QueueDeclare di sender.go atau publisher.go menjadi `true`. Dengan begitu pesan dan queue pada RabbitMQ akan dapat bertahan saat RabbitMQ di restart.
 
@@ -36,7 +36,7 @@ Auto delete merupakan setting dari RabbitMQ yang memungkinkan queue yang tidak t
 
 AutoAck bisa di setting di _code_ receiver atau consumer pada bagian Consume.
 
-```
+```go
         msgs, err := ch.Consume(
 		q.Name, // queue
 		"",     // consumer

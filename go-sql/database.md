@@ -1,8 +1,8 @@
 # Golang Native SQL
 
-## Query Parameter
+## SQL Query di Golang dan Query Parameter
 
-Untuk mencegah SQL Injection -> SQL injection adalah teknik untuk mencari celah keamanan melalui SQL query.
+Berikut adalah contoh query di Golang Native SQL.
 
 ```go
  queryInsert := `insert into pelanggan (name, no_telp) values (?, ?)`
@@ -14,26 +14,43 @@ Untuk mencegah SQL Injection -> SQL injection adalah teknik untuk mencari celah 
  }
 ```
 
+Pada query di atas terdapat query parameter yang dapat diganti dengan value tertentu. Tujuan adanya query parameter adalah untuk menghindari SQL injection. Jika menggunakan MySQL, query parameter dapat disisipkan di query dengan tanda ?. Lalu value di query dapat di input melalui fungsi ExecContext() untuk query Insert, Update dan Delete atau fungsi QueryContext() untuk query Get seperti code di bawah ini.
+
+Variabel queryInsert di atas dapat diganti dengan query di bawah ini.
+
+```sql
+insert into comments (email, comment) value (?,?)
+```
+
+```sql
+update contact SET name = ?, no_telp = ? where id = ?
+```
+
+```sql
+delete FROM contact where id = ?
+```
+
+Jika menggunakan pgx atau driver Golang untuk database PostgreSQL, query parameter disisipkan di query dengan tanda $1, $2 dan seterusnya sesuai urutan  parameter.
+
+```sql
+insert into comments (email, comment) value ($1,$2)
+```
+
+```sql
+update contact SET name = $1, no_telp = $2 where id = $3
+```
+
+```sql
+delete FROM contact where id = $1
+```
+
 ## Prepare Statement
 
-Untuk memastikan query yang di eksekusi berada dalam 1 koneksi yang sama
-
-```go
- db := client.GetDB("mysql").GetMysqlConnection()
-
- queryInsert := `insert into pelanggan (name, no_telp) values (?, ?)`
- prepareMysql, err := db.PrepareContext(ctx, queryInsert)
- for i, v := range listContent {
- _, err := prepareMysql.ExecContext(ctx, i, v)
- if err != nil {
- 	 panic(err)
- 	 }
- }
-```
+Prepare statment digunakan untuk memastikan query yang di eksekusi berada dalam 1 koneksi database yang sama.
 
 ## Database Transaction
 
-Database transaction Supaya SQL yang dikirim tidak langsung di commit ke database. Database transaction di awali dengan inisiasi berikut.
+Database transaction digunakan supaya SQL yang dikirim tidak langsung di commit ke database. Implementasi database transaction semisal jika kita ingin melakukan insert beberapa database, lalu ada 1 data yang gagal di create. Maka kita bisa menggunakan database transaction untuk me-rollback atau membatalkan create seluruh data yang telah di insert ke database. Database transaction di awali dengan inisiasi berikut.
 
 ```go
 trx, err := db.BeginTx(ctx, nil)
@@ -56,6 +73,10 @@ if err != nil {
 }
 ```
 
-## Contoh _code_ lengkap implementasi query, prepare statement dan database transaction
+## Link Code
 
-[https://github.com/rafli-ramadhan/sales-go/tree/master/repository](https://github.com/rafli-ramadhan/sales-go/tree/master/repository)
+Berikut contoh code penerapan query parameter, prepare statement dan database transaction di Golang.
+
+{% embed url="https://github.com/rafli-ramadhan/contact-go/blob/master/repository/contact_http_db_impl.go" %}
+
+{% embed url="https://github.com/rafli-ramadhan/sales-go/tree/master/repository" %}

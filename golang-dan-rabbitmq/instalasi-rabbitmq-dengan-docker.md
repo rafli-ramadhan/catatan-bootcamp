@@ -6,7 +6,7 @@ Instalasi rabbitmq di docker dapat dicermati pada link berikut [https://hub.dock
 
 <figure><img src="../.gitbook/assets/d (1).png" alt=""><figcaption><p>Tampilan docker dekstop</p></figcaption></figure>
 
-1. Buka CMD/ powershell / bash dan copy paste command berikut dan tunggu sampai proses download selesai.
+2. Buka CMD/ powershell / bash dan copy paste command berikut dan tunggu sampai proses download selesai.
 
 ```
 docker pull rabbitmq:3-management-alpine
@@ -14,7 +14,11 @@ docker pull rabbitmq:3-management-alpine
 
 <figure><img src="../.gitbook/assets/r 1.png" alt=""><figcaption></figcaption></figure>
 
-3. RabbitMQ akan otomatis muncul di tab image di docker desktop. Untuk menjalankannya bisa dengan klik tanda run di sebelah kanan. Isi port 5672 dan 15672 dengan nilai yang sama. Port 5672 digunakan sebagai server RabbitMQ, sementara port 15672 digunakan sebagai UI-nya.
+Jika menggunakan Docker Dekstop, installasi RabbitMQ bisa dilakukan dengan search image RabbitMQ lalu klik pull. Setelah installasi selesai baik dengan command di atas atau langsung di docker dekstop, image akan otomatis muncul di tab image di Docker Dekstop.
+
+<figure><img src="../.gitbook/assets/rabbitmq.png" alt=""><figcaption></figcaption></figure>
+
+3. Untuk menjalankan image RabbitMQ bisa dengan klik tanda run di sebelah kanan. Kemudian klik optional settings dan isi port dengan alamat 5672 dan 15672. Port 5672 digunakan sebagai server RabbitMQ, sementara port 15672 digunakan sebagai UI-nya.
 
 <figure><img src="../.gitbook/assets/os.png" alt=""><figcaption></figcaption></figure>
 

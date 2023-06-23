@@ -1,26 +1,22 @@
 # Golang Database Driver
 
-## Golang Database Driver
-
-<figure><img src=".gitbook/assets/cara kerja database.png" alt=""><figcaption></figcaption></figure>
-
 Golang memiliki beberapa driver untuk koneksi database, diantarnya :
 
-1. MySQL
+### 1. MySQL
 
 Untuk instalasi dan set up bisa klik link berikut.
 
-[https://github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+{% embed url="https://github.com/go-sql-driver/mysql" %}
 
-2. PostgreSQL
+### 2. PostgreSQL
 
 Untuk instalasi dan set up bisa klik link berikut.
 
-[https://github.com/jackc/pgx](https://github.com/jackc/pgx)
+{% embed url="https://github.com/jackc/pgx" %}
 
 ## Golang Database Pool
 
-Database pool digunakan untuk management access
+Database pool digunakan untuk management access database di Golang. Di package "database/sql", Golang menyediakan 4 parameter management access seperti berikut.
 
 ```go
 // database pool -> managemen koneksi
@@ -35,13 +31,20 @@ db.SetConnMaxIdleTime(5 * time.Minute)
 db.SetConnMaxLifetime(60 * time.Minute)
 ```
 
+Jika SetMaxIdleConns dan SetMaxOpenCons diinisiasi value-nya, koneksi perlu segera mungkin di close setelah menjalankan query di suatu function di aplikasi Golang agar bisa digunakan untuk menjalankan query di function lain di satu aplikasi yang sama. Untuk close dapat menggunakan fungsi Close.
+
 ```go
-// to prevent connection leak
 defer db.Close()
 ```
 
-## Link _code_&#x20;
+## Link code&#x20;
 
-Berikut link _code_ lengkap koneksi database MySQL dan PostgreSQL dan contoh env-nya.
+Berikut link code lengkap contoh koneksi database MySQL dan PostgreSQL di Golang.
 
-[https://github.com/rafli-ramadhan/sales-go/blob/master/db/client.go](https://github.com/rafli-ramadhan/sales-go/blob/master/db/client.go)
+{% embed url="https://github.com/rafli-ramadhan/contact-go/blob/master/db/client.go" %}
+
+{% embed url="https://github.com/rafli-ramadhan/sales-go/blob/master/db/client.go" %}
+
+Reference:
+
+{% embed url="https://stackoverflow.com/questions/4111594/why-always-close-database-connection" %}

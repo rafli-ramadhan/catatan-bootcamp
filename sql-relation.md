@@ -24,6 +24,6 @@ _Has many_ merupakan istilah yang dapat digunakan untuk mendiskripsikan relasi o
 
 Referensi :
 
-[https://medium.com/@fahmisyaifudin35/relasi-tabel-database-one-to-one-one-to-many-many-to-many-44010f703f57](https://medium.com/@fahmisyaifudin35/relasi-tabel-database-one-to-one-one-to-many-many-to-many-44010f703f57)
+{% embed url="https://medium.com/@fahmisyaifudin35/relasi-tabel-database-one-to-one-one-to-many-many-to-many-44010f703f57" %}
 
-[https://softwareengineering.stackexchange.com/questions/152731/what-is-the-main-difference-between-has-many-and-belongs-to-relationship-in-mysq](https://softwareengineering.stackexchange.com/questions/152731/what-is-the-main-difference-between-has-many-and-belongs-to-relationship-in-mysq)
+{% embed url="https://softwareengineering.stackexchange.com/questions/152731/what-is-the-main-difference-between-has-many-and-belongs-to-relationship-in-mysq" %}
