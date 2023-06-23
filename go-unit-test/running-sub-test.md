@@ -1,15 +1,33 @@
 # Running Sub Test
 
-Format :
+Untuk menjalankan suatu file ..\_test.go, kita dapat menggunakan command dengan format berikut.
 
 ```
 go test path_name -v -run function_name/sub_unit_name
 ```
 
-Example :&#x20;
+## Contoh code&#x20;
 
-main.go
+{% code title="main.go" %}
+```go
+package main
 
+import (
+	"fmt"
+)
+
+func main() {
+	result := SayHi("Utsman")
+	fmt.Println(result)
+}
+
+func SayHi(name string) string {
+	return "Hello " + name
+}
+```
+{% endcode %}
+
+{% code title="main_test,go" %}
 ```go
 package main
 
@@ -45,6 +63,7 @@ func TestSayHi(t *testing.T) {
 }
 
 ```
+{% endcode %}
 
 ```
 PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi/Test-1
@@ -64,4 +83,3 @@ PS D:\bootcamp-go\go-unit-test> go test -v -run TestSayHi/Test-2
 PASS
 ok      unit-testing    0.290s
 ```
-
