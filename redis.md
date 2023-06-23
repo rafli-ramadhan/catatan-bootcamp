@@ -7,15 +7,19 @@ coverY: 0
 
 Redis bisa digunakan untuk caching dan message broker. Cache digunakan untuk menyimpan informasi yang sifatnya sementara.
 
-## Install Redis melalui Docker
+## Installasi Redis melalui Docker
 
-[https://hub.docker.com/\_/redis](https://hub.docker.com/\_/redis)
+Untuk meng-install Redis di local komputer, pastikan sudah meng-install docker terlebih dahulu. Pertama jalankan docker, lalu install redis melalui CMD dengan command berikut.
 
-Perlu memiliki docker terlebih dahulu, jalankan docker. Lalu install redis melalui CMD dengan command berikut.
-
-```bash
+```
 docker pull redis
 ```
+
+Untuk pengguna docker dekstop dapat install Redis dengan cara search Redis Image di bagian search docker, lalu klik pull. Begitu installasi selesai, image akan langsung muncul di Tab Image.
+
+<figure><img src=".gitbook/assets/redis (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Redis 2.png" alt=""><figcaption></figcaption></figure>
 
 ## Contoh penggunaan redis pada CMD
 
@@ -27,7 +31,7 @@ Untuk penggunaan redis di golang dapat menggunakan package berikut [https://gith
 
 ## Contoh code golang dengan Redis
 
-Redis dapat digunakan untuk menyimpan value dari tipe data apapun di Golang selama dapat dikonversi menjadi byte. Cara konversi dari tipe data tertentu menjadi byte dapat menggunakan fungsi Marshal dari package "encoding/json".
+Redis dapat digunakan untuk menyimpan value dari tipe data apapun di Golang. Cara yang mudah yaitu dengan mengkonversi value dengan suatu tipe data menjadi byte. Data byte tersebut dapat disimpan ke dalam Redis dengan tipe data Redis String. Cara konversi dari tipe data tertentu menjadi byte dapat menggunakan fungsi Marshal dari package "encoding/json".
 
 {% code title="main.go" %}
 ```go
@@ -49,6 +53,7 @@ type rdb struct {
 	redisClient *redis.Client
 }
 
+// inisialisasi redis
 func (r *rdb) InitiateRedis() {
 	r.redisClient = redis.NewClient(&redis.Options{
 		// localhost:6379
@@ -122,6 +127,7 @@ func main() {
 	redisTest.RedisDeleteKey("password")
 }
 
+// redis set key and value
 func (r rdb) RedisSetKey(key string, value interface{}) {
 	err := r.redisClient.Set(ctx, key, value, 5*time.Minute).Err()
     if err != nil {
@@ -130,6 +136,7 @@ func (r rdb) RedisSetKey(key string, value interface{}) {
 	fmt.Printf("Key %s with value %v is set\n", key, value)
 }
 
+// redis get value by key
 func (r rdb) RedisGetKey(key string) (value string, err error) {
 	value, err = r.redisClient.Get(ctx, key).Result()
 	if err == redis.Nil {
@@ -142,6 +149,7 @@ func (r rdb) RedisGetKey(key string) (value string, err error) {
 	}
 }
 
+// redis delete value by key
 func (r rdb) RedisDeleteKey(key string) {
 	if err := r.redisClient.Get(ctx, key).Err(); err != nil {
 		if err = r.redisClient.Del(ctx, key).Err(); err != nil {
