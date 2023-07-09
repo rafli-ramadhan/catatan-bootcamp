@@ -168,7 +168,7 @@
   * [Running Sub Test](go-unit-test/running-sub-test.md)
   * [Table Test](go-unit-test/table-test.md)
   * [Generate Coverage Unit Testing dalam Bentuk HTML](go-unit-test/generate-coverage-unit-testing-dalam-bentuk-html.md)
-  * [Sonar Qube dan Sonar Scanner](go-unit-test/sonar-qube-dan-sonar-scanner.md)
+* [Sonar Qube dan Sonar Scanner](sonar-qube-dan-sonar-scanner.md)
 * [Logging](logging.md)
 * [Golang dan Redis](redis.md)
 * [Golang dan RabbitMQ](rabbitmq.md)
