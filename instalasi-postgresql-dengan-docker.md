@@ -4,18 +4,22 @@ description: https://hub.docker.com/_/postgres/
 
 # Instalasi PostgreSQL dengan Docker
 
-Jalankan docker terlebih dahulu. Untuk pengguna docker dekstop bisa langsung membuka aplikasi, maka docker akan running dengan sendirinya. Lalu buka CMD, bash atau powershell dan eksekusi _code_ berikut.
+Jalankan docker desktop, lalu buka tab search dan cari image PostgreSQL. Pada tutorial ini digunakan image PostgreSQL dengan tag alpine3.18.
 
-```
-docker pull postgres
-```
+<figure><img src=".gitbook/assets/postgres tag.png" alt=""><figcaption></figcaption></figure>
 
-Setelah itu buat volume untuk menyimpan data. Untuk pengguna docker dekstop dapat meng-klik tab volume. Lalu buat volume baru, misal dengan nama postgres-volume.
+Selanjutnya pull image MySQL dan tunggu sampai proses download selesai. Setelah proses download selesai, image MySQL akan otomatis muncul di tab Images.
 
-<figure><img src=".gitbook/assets/postgres volume.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/postgres images.png" alt=""><figcaption></figcaption></figure>
 
-Setelah itu set konfigurasi database dengan format di bawah ini di CMD, bash atau _powershell_. Untuk bagian some-postgres dan your\_password dapat di ubah sesuai keinginan.
+Selanjutnya klik tombol run di sebelah kanan image PostgreSQL dan klik drop down optional setting.
 
-```
-docker run --name some-postgres -e POSTGRES_PASSWORD=your_password -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -d postgres
-```
+<figure><img src=".gitbook/assets/postgres optional setting.png" alt=""><figcaption></figcaption></figure>
+
+Definisikan environment variable POSTGRES\_PASSWORD dan isi sesuai keinginan.
+
+<figure><img src=".gitbook/assets/postgres optional setting true.png" alt=""><figcaption></figcaption></figure>
+
+Lalu klik run dan cek tab container untuk memastikan container PostgreSQL sudah berjalan.
+
+<figure><img src=".gitbook/assets/postgres container.png" alt=""><figcaption></figcaption></figure>

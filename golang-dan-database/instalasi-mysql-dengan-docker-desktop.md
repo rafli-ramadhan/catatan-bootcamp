@@ -1,3 +1,7 @@
+---
+description: https://hub.docker.com/_/mysql/
+---
+
 # Instalasi MySQL dengan Docker Desktop
 
 Jalankan docker desktop, lalu buka tab search dan cari image MySQL.
@@ -8,7 +12,11 @@ Selanjutnya pull image MySQL dan tunggu sampai proses download selesai. Setelah 
 
 <figure><img src="../.gitbook/assets/Docker mysql images.png" alt=""><figcaption></figcaption></figure>
 
-Selanjutnya jalankan Images tersebut dengan setting sebagai berikut. Definisikan environment variable MYSQL\_ROOT\_PASSWORD dan MYSQL\_DATABASE dan isi sesuai keinginan.
+Selanjutnya klik tombol run di sebelah kanan image MySQL dan klik drop down optional setting.&#x20;
+
+<figure><img src="../.gitbook/assets/mysql optional setting.png" alt=""><figcaption></figcaption></figure>
+
+Definisikan environment variable MYSQL\_ROOT\_PASSWORD dan MYSQL\_DATABASE dan isi sesuai keinginan.
 
 <figure><img src="../.gitbook/assets/docker mysql run.png" alt=""><figcaption></figcaption></figure>
 
