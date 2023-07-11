@@ -26,7 +26,7 @@ Lalu klik run dan cek tab container untuk memastikan container MySQL sudah berja
 
 <figure><img src="../.gitbook/assets/docker mysql image.png" alt=""><figcaption></figcaption></figure>
 
-Gunakan GUI seperti DBeaver untuk cek koneksi MySQL. Untuk URL dapat diisi dengan format berikut. Nama database diisi dengan nama database yang sama saat mengisi optional setting env saat ingin running image MySQL.
+Gunakan GUI seperti DBeaver untuk cek koneksi MySQL. Untuk URL dapat diisi dengan format di bawah ini. Nama database diisi dengan nama database yang sama saat mengisi optional setting env saat ingin running image MySQL.  Lalu klik Test Connection terlebih dahulu, lalu klik OK untuk membuka database.
 
 ```
 jdbc:mysql://localhost:3306/nama_database?allowPublicKeyRetrieval=true
