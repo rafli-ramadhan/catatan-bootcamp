@@ -2,7 +2,7 @@
 
 Variabel dan constant di golang sama-sama dapat di inisiasi suatu value dengan tipe data tertentu. Perbedaannya nilai dari suatu constant tidak bisa diubah saat sudah di inisiasi suatu value.
 
-## Contoh _code_
+## Contoh code
 
 ```go
 package main
@@ -35,9 +35,9 @@ func main() {
 2
 ```
 
-## Contoh _code_ deklarasi multi variabel dan constant
+## Contoh code deklarasi multi variabel dan constant
 
-Contoh _code_ untuk deklarasi multi variabel dan constant dapat dilihat di bawah ini.
+Contoh code untuk deklarasi multi variabel dan constant dapat dilihat di bawah ini.
 
 ```go
 package main
