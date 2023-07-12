@@ -178,3 +178,4 @@
   * [Publisher dan Multi Consumer](golang-dan-rabbitmq/publisher-dan-multi-consumer.md)
   * [Setting RabbitMQ (Durable, Auto Delete dan Ack)](golang-dan-rabbitmq/setting-rabbitmq-durable-auto-delete-dan-ack.md)
 * [Git Command](git-command.md)
+* [Git Clone dengan SSH](git-clone-dengan-ssh.md)

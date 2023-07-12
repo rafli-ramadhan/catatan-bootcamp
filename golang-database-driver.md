@@ -85,6 +85,8 @@ Jika SetMaxIdleConns dan SetMaxOpenCons diinisiasi value-nya, koneksi perlu sege
 defer db.Close()
 ```
 
+Penerapan `db.Close()` dapat dilihat di materi selanjutnya.
+
 Reference:
 
 {% embed url="https://stackoverflow.com/questions/4111594/why-always-close-database-connection" %}
