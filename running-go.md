@@ -47,7 +47,7 @@ Perbedaan go run . akan mencari function main di package main di folder tempat c
 go build main.go
 ```
 
-Go build akan menghasilkan file berekstensi .exe yang bisa dijalankan dengan command berikut.
+Untuk Windows OS, go build akan menghasilkan file ber-ekstensi .exe yang bisa dijalankan dengan command berikut.
 
 ```
 start nama_file_exe
