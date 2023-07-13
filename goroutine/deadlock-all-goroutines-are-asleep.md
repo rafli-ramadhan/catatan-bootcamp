@@ -27,13 +27,12 @@ func main() {
 }
 ```
 
-```
-fatal error: all goroutines are asleep - deadlock!
-goroutine 1 [chan send]:
-main.main()
+<pre><code>fatal error: all goroutines are asleep - deadlock!
+<strong>goroutine 1 [chan send]:
+</strong>main.main()
 /tmp/uv1yQwKDgN.go:7 +0x37
 exit status 2
-```
+</code></pre>
 
 ```go
 package main
