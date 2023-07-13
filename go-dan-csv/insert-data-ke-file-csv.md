@@ -1,13 +1,8 @@
----
-description: Package "encoding/csv"
-coverY: 0
----
+# Insert Data ke File CSV
 
-# Go dan CSV
+Berikut adalah contoh code penggunaan package "encoding/csv" untuk generate file bookstore.csv dan menampilkan isi dari file csv di terminal. Struktur dari folder golang kurang lebih seperti ini.
 
-Berikut adalah contoh code penggunaan package "encoding/csv" untuk generate file csv melalui kode golang dan menampilkan isi dari file csv di terminal. Struktur dari folder golang kurang lebih seperti ini.
-
-<figure><img src=".gitbook/assets/csv.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/csv.png" alt=""><figcaption></figcaption></figure>
 
 {% code title="main.go" %}
 ```go
@@ -134,6 +129,6 @@ Books of quantity : 72
 Location : Malang
 ```
 
-File csv akan ter-generate di path yang sudah di definisikan di code.
+File bookstore.csv akan ter-generate di path yang sudah di definisikan di code.
 
-<figure><img src=".gitbook/assets/csv 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/csv 2.png" alt=""><figcaption></figcaption></figure>
